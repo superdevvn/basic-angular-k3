@@ -6,4 +6,4 @@ function fullName(firstName, lastName) {
     var fullName = `My name is: ${firstName} ${lastName}`;
     alert(fullName);
 }
-fullName("Dark","Peter");
+fullName("Quan","Duong");
