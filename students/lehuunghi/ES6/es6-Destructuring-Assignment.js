@@ -1,10 +1,10 @@
 function test(){
     var data = {
         house: 'this is house',
-        mouse: 'mouse'
+        mouse: 'this is mouse'
     }
 
-    let {house, mouse} = data;
+    var {house, mouse} = data;
     alert(house);
     alert(mouse);
 }
