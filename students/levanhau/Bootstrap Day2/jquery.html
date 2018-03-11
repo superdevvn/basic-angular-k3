@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+
+<body>
+    <div class="col-md-4">
+        <input id="input1" type="date" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <input id="input2" type="date" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <button id="btn1" class="btn btn-primary">Click me!</button>
+    </div>
+    <div class="col-md-4">
+        <select id="select1">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+        </select>
+    </div>
+    <script>
+        $("#btn1").click(() => {
+            let inputValue = $("#input1").val();
+            $("#input2").val(inputValue);
+        });
+        $("#input1").change(() => {
+            let inputValue = $("#input1").val();
+            let s1 = new Date(inputValue);
+            var datedue = new Date(s1.setDate(s1.getDate()+15));
+            console.log(inputValue);
+            console.log(datedue);
+            $("#input2").val(new Date(datedue));
+        });
+        $("#select1").change(()=>{
+            alert(`${("#select1").val()}`);
+        });
+        $("label").css('color', 'red');
+    </script>
+</body>
+
+</html>
