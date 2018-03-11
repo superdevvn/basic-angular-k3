@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <style>
+        .outputHoTen {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3 class="well text-center">Thông tin đăng ký</h3>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+                <label>Họ tên</label>
+                <input class="form-control" id="inputHoTen">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+                <label>Địa chỉ</label>
+                <input class="form-control" id="inputDiaChi">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+                <label>Số điện thoại</label>
+                <input class="form-control" id="inputSDT">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+                <label>Email</label>
+                <input class="form-control" id="inputEmail">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+                <button class="btn btn-primary" style="margin-right: 20px;" id="btnLuu">Lưu</button>
+                <button class="btn btn-danger" id="btnXoa">Xóa</button>
+            </div>
+        </div>
+
+
+        <h4 class="text-center alert alert-info">Bảng thông tin</h4>
+        <table class="table table-hover" id="mytable">
+            <colgroup>
+                <col style="width: 150px;">
+                <col style="width: 200px;">
+                <col style="width: 400px;">
+                <col>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Họ tên</th>
+                    <th>Số điện thoại</th>
+                    <th>Email</th>
+                    <th>Địa chỉ</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+    <script>
+       
+
+        //    $( "tbody" ).append("<tr>" + 
+        //                             "<td>" + "inputHoTen" +"</td>" 
+        //                             + "<td>" + "inputSDT" +"</td>" 
+        //                             + "<td>" + "inputEmail" +"</td>" 
+        //                             + "<td>" + "inputDiaChi" +"</td>" 
+        //                         +"</tr>");
+
+
+        // $("#btn1").click(() => {
+        //     let input1 = $("#input1").val();
+        //     $("#input2").val(input1);
+        // });
+
+        // $("#input1").keyup(() => {
+        //     let input1 = $("#input1").val();
+        //     $("#input2").val(input1);
+        // });
+
+
+        // $("#select1").change(()=>{
+        //     alert($("#select1").val());
+        // });
+
+
+        // $('label').css('color', 'red');
+
+
+        $("#btnLuu").click(function () {
+            let inputHoTen = $("#inputHoTen").val();
+            let inputSDT = $("#inputSDT").val();
+            let inputEmail = $("#inputEmail").val();
+            let inputDiaChi = $("#inputDiaChi").val();
+            $("tbody").append("<tr>" +
+                "<td class=\"outputHoTen\">" + inputHoTen + "</td>"
+                + "<td class=\"outputSDT\">" + inputSDT + "</td>"
+                + "<td class=\"outputEmail\">" + inputEmail + "</td>"
+                + "<td class=\"outputDiaChi\">" + inputDiaChi + "</td>"
+                + "</tr>");
+            $("#inputHoTen").val("");
+            $("#inputSDT").val("");
+            $("#inputEmail").val("");
+            $("#inputDiaChi").val("");
+            $("#inputHoTen").focus();
+            
+        });
+        $("#mytable tbody tr").click(function () {
+                $(".info").removeClass("info");
+                $(this).addClass("info");
+                var outputHoTen = $(".outputHoTen", this).html();
+                var outputSDT = $(".outputSDT", this).html();
+                var outputEmail = $(".outputEmail", this).html();
+                var outputDiaChi = $(".outputDiaChi", this).html();
+                $("#inputHoTen").val(outputHoTen);
+                $("#inputSDT").val(outputSDT);
+                $("#inputEmail").val(outputEmail);
+                $("#inputDiaChi").val(outputDiaChi);
+                alert(outputHoTen);
+            });
+    </script>
+
+
+</body>
+
+</html>
