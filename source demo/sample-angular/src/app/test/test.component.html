@@ -1,4 +1,5 @@
-<input [(ngModel)] = "firstName" />
-<input [(ngModel)] = "lastName" />
-<input [(ngModel)] = "fullName" />
+<input [(ngModel)] = "firstName" (keyup)="change()" />
+<input [(ngModel)] = "lastName" (keyup)="change()" />
+<!-- <input [(ngModel)] = "fullName" /> -->
+<label>{{'Hello' + firstName + ' ' + lastName}}</label>
 <button (click)="hello()">Hello</button>
