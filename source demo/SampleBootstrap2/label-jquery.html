@@ -1,0 +1,50 @@
+<html>
+<header>
+    <linK href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</header>
+
+<body>
+    <div class="col-md-12">
+        <h2>TEST 1: </h2>
+        <label>Label 1</label>
+        <label>Label 2</label>
+        <label>Label 3</label>
+        <button id="btn1" class="btn btn-primary">Click me</button>
+    </div>
+    <div class="col-md-12">
+        <h2>TEST 2: </h2>
+        <label id="lbl1">Label</label>
+        <button id="btn2" class="btn btn-primary">Click me</button>
+    </div>
+    <script>
+        $("#btn1").click(() => {
+            $("label").toggleClass("text-primary");
+            if ($("label").css("font-size") != "20px")
+                $("label").css("font-size", "20px");
+            else $("label").css("font-size", "10px");
+        });
+
+        $("#btn2").click(() => {
+            if ($("#lbl1").hasClass("text-primary")) {
+                $("#lbl1").removeClass("text-primary");
+                $("#lbl1").addClass("text-danger");
+            } else if ($("#lbl1").hasClass("text-danger")) {
+                $("#lbl1").removeClass("text-danger");
+                $("#lbl1").addClass("text-success");
+            } else if ($("#lbl1").hasClass("text-success")) {
+                $("#lbl1").removeClass("text-success");
+                $("#lbl1").addClass("text-info");
+            } else if ($("#lbl1").hasClass("text-info")) {
+                $("#lbl1").removeClass("text-info");
+                $("#lbl1").addClass("text-warning");
+            } else if ($("#lbl1").hasClass("text-warning")) {
+                $("#lbl1").removeClass("text-warning");
+                $("#lbl1").addClass("text-primary");
+            } else $("#lbl1").addClass("text-primary");
+        });
+    </script>
+</body>
+
+</html>
