@@ -15,33 +15,45 @@
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>Ho Ten</th>
-                    <th>Ngay Sinh</th>
-                    <th>Dia Chi Email</th>
+                    <th>Input 1</th>
+                    <th>Input 2</th>
+                    <th>Input 3</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>R1C1</td>
-                    <td>R1C2</td>
-                    <td>R1C3</td>
+                    <td><input class="form-control" type="text" id="input1_1"></td>
+                    <td><input class="form-control" type="text" id="input2_1"></td>
+                    <td><input class="form-control" type="text" id="input3_1"></td>
                 </tr>
                 <tr>
-                    <td>R1C1</td>
-                    <td>R1C2</td>
-                    <td>R1C3</td>
+                    <td><input class="form-control" type="text" id="input1_2"></td>
+                    <td><input class="form-control" type="text" id="input2_2"></td>
+                    <td><input class="form-control" type="text" id="input3_2"></td>
                 </tr>
                 <tr>
-                    <td>R1C1</td>
-                    <td>R1C2</td>
-                    <td>R1C3</td>
+                    <td><input class="form-control" type="text" id="input1_3"></td>
+                    <td><input class="form-control" type="text" id="input2_3"></td>
+                    <td><input class="form-control" type="text" id="input3_3"></td>
                 </tr>
             </tbody>
         </table>
     </div>
     <div class="container">
-        <button type="button" class="btn btn-primary">Save</button>
+        <div class="checkbox">
+            <label><input type="checkbox" id="ckc1">Same Every Row</label>
+        </div>
     </div>
+    <div class="container">
+        <button id="btn1" type="button" class="btn btn-primary">Save1</button>
+    </div>
+    <script>
+        $("#btn1").click(function(){
+            let input_cur = $("#input1_1").val();
+            $("#input2_1").val(input_cur);
+            $("#input3_1").val(input_cur); 
+        });
+    </script>
 </body>
 
 </html>
