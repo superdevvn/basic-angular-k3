@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    </head>
+    <body ng-app="myapp">
+        <div ng-controller="MyController">
+            Nhap ten cua ban: 
+            <input type="text" value="" ng-model="username">
+            <button ng-click="sayHello()">In thong bao</button>
+            <hr>
+            {{greeting}}
+        </div>
+        
+        <script>
+            angular.module("myapp", [])
+            .controller("MyController", ["$scope", function($scope){
+                $scope.sayHello = function(){
+                    $scope.greeting = "Xin Chao " + $scope.username + "!";
+                };
+            }]);
+        </script>
+    </body>
+</html>
