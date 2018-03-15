@@ -19,15 +19,15 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
-      ],
-      "scripts": [
+        "styles.css",
         "assets/AutoHint/fonts/icomoon/icomoon.css",
         "assets/AutoHint/js/plugins/fullcalendar/fullcalendar.min.css",
         "assets/AutoHint/js/plugins/magnific/magnific-popup.css",
         "assets/AutoHint/js/plugins/c3charts/c3.min.css",
-        "assets/AutoHint/skin/default_skin/css/theme.css",
-        "assets/AutoHint/allcp/forms/css/forms.css",
+        "assets/AutoHint/skin/default_skin/css/theme.min.css",
+        "assets/AutoHint/allcp/forms/css/forms.css"
+      ],
+      "scripts": [
         "assets/AutoHint/img/favicon.ico",
         "assets/AutoHint/js/jquery/jquery-1.11.3.min.js",
         "assets/AutoHint/js/jquery/jquery_ui/jquery-ui.min.js",
