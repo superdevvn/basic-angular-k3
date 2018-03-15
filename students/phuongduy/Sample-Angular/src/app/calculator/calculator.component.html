@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+
+    <h2>Calculator</h2>
+    Chon mot phep tinh:
+
+    <select [(ngModel)]= "phepTinh">
+      <option value="cong">+</option>
+      <option value="tru">-</option>
+      <option value="nhan">x</option>
+      <option value="chia">:</option>
+    </select>
+    <br>
+    <br>
+    <label></label>
+    <div class="col-md-4">
+      Nhap so a: <input [(ngModel)] = "soA" type="number" class="form-control" placeholder="">
+      Nhap so b: <input [(ngModel)] = "soB" type="number" class="form-control">
+      <button class="btn" (click) = "tinh()">Tinh</button>
+      <div>Ket qua: {{ketQua}}</div>
+    </div>
+
+  </div>
+</div>
