@@ -1,0 +1,11 @@
+v.1.2
+    + google map api key added
+    * sidebar left scroll fix
+    * icon fix on widgets-panels.html page
+    * user form input masks fixed
+v.1.1
+    * sidebar right improved
+    * minor changes and improvements
+    + new header colors added
+v.1.0
+    - Release
