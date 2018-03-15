@@ -1,0 +1,52 @@
+<html>
+    <header>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    </header>
+    <body>
+        <h3>
+            Login Form
+        </h3>
+        <div class="col-md-4">
+            <label>name</label>
+            <input id="name1" class="form-control"/>
+        </div>
+        <div class="col-md-4">
+            <label>password</label>
+            <input id="pwd" type="password" class="form-control"/>
+        </div>
+        <div class="col-md-4">
+            <label>email</label>
+            <input id="email" type="email" class="form-control"/>
+        </div>
+        <div class="col-md-4">
+            <label>select</label>
+            <select id="select1" class="form-control">
+                <option value="1">VIP</option>
+                <option value="2">MemberShip</option>
+            </select>
+        </div>
+        <div class="col-md-4" style="margin-top:25px">
+                <button id="btn1" class="btn btn-primary">Click This</button>
+            </div>
+            <script>
+                $("#btn1").click(function () {
+                    let input1 = $("#input1").val();
+                    $("#input2").val(input1);
+        
+                });
+                $("#input1").keyup(() => {
+                    //lấy giá trị input1
+                    let input1 = $("#input1").val();
+                }
+                )
+        
+                $("label").css(`color`,`red`);
+                <input id="input2" class="form-control" />
+                </script>
+            </div>
+            
+    </body>
+</html>
