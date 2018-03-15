@@ -1,6 +1,6 @@
 const path = require('path');
 module.exports = {
-    entry: './arrow-function.ts',
+    entry: './index.ts',
     devtool : "source-map",
     module: {
         rules: [
