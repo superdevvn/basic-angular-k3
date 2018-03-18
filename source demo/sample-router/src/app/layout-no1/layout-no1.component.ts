@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-layout-no1',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutNo1Component implements OnInit {
 
-  constructor() { }
+  firstNumber: number;
+  secondNumber: number;
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    console.log(this.apiService.userInfo);
   }
-
+  sum() {
+    alert(this.apiService.sum(this.firstNumber,this.secondNumber,this.firstNumber));
+  }
 }
