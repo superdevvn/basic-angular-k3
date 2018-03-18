@@ -9,8 +9,8 @@ import { LoginService } from './login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username:string;
-  password:string;
+  username: string;
+  password: string;
   constructor(private router: Router,
     private apiService: ApiService,
     private loginService: LoginService) { }
@@ -23,10 +23,23 @@ export class LoginComponent implements OnInit {
       lastName: "Dark"
     }
 
-    this.loginService.login(this.username, this.password).then((res:any) => {
-      alert(res.message);
+    this.loginService.login(this.username, this.password).then((res: any) => {
+      this.apiService.post('api/getUsers',{}).then(res=>{
+        console.log(res);
+      }).catch(err=>{
+        alert(err);
+      });
     }).catch((err) => {
       alert(err);
+    });
+  }
+
+  getDistricts() {
+    this.apiService.post(
+      "http://api.serverapi.host/api/v1/apiv3/GetDistricts", {
+      "token": "TokenTest"
+    }).then(res => {
+      console.log(res);
     });
   }
 }
