@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -36,6 +37,7 @@ let routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     RouterModule.forRoot(routes)
   ],
   providers: [ApiService,LoginService],

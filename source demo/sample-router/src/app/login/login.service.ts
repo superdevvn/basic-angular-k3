@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
+import { ApiService } from '../services/api.service';
 
 @Injectable()
 export class LoginService {
-  constructor() { }
-  login(username:string,password:string){
-    return new Promise((resolve,reject)=>{
-        setTimeout(() => {
-            if(username == "Dark") resolve({
-                status: 200,
-                message: "Login Successful"
-            });
-            else reject("Login fail");
-        }, 5000);
-    });
-  }
+    constructor(private apiService: ApiService) { }
+    login(username: string, password: string) {
+        return new Promise((resolve, reject) => {
+            this.apiService.post("api/login", {
+                username: username,
+                password: password
+            }).then(res => {
+                this.apiService.token = res as string;
+                resolve(res);
+            }).catch(err => {
+                reject(err);
+            })
+        });
+    }
 }

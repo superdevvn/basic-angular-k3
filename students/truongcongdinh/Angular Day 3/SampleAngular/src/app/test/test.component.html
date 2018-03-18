@@ -1,0 +1,11 @@
+<input [(ngModel)] = "firstName" (keyup)="getFullName();"/>
+<input [(ngModel)] = "lastName" (keyup)="getFullName();"/>
+<input [(ngModel)] = "type" type="checkbox">
+<select [(ngModel)] = "sex">
+  <option value="Dan Ong">Man</option>
+  <option value="Dan Ba">Woman</option>
+</select>
+<!-- <input [(ngModel)] = "birthDate" type="date" (change)="getInfo();"/> -->
+<!-- <input [(ngModel)] = "fullName"/> -->
+<!-- <input [(ngModel)] = "inFo"/> --> {{'Hello ' + firstName + ' ' + lastName }}
+<button (click)="hello();">Hello!</button>
