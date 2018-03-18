@@ -1,0 +1,343 @@
+<!-- -------------- Topbar -------------- -->
+<header id="topbar" class="ph10">
+  <div class="topbar-left">
+    <ul class="nav nav-list nav-list-topbar pull-left">
+      <li>
+        <a [routerLink]="['/main/dashboard2']">Overview</a>
+      </li>
+      <li>
+        <a [routerLink]="['/main/sales-stats-products']">Products</a>
+      </li>
+      <li>
+        <a [routerLink]="['/main/sales-stats-purchases']">Orders</a>
+      </li>
+      <li class="active">
+        <a [routerLink]="['/main/sales-stats-clients']">Clients</a>
+      </li>
+      <li>
+        <a [routerLink]="['/main/sales-stats-general-settings']">Settings</a>
+      </li>
+    </ul>
+  </div>
+  <div class="topbar-right hidden-xs hidden-sm mt5 mr35">
+    <a [routerLink]="['/main/sales-stats-purchases']" class="btn btn-primary btn-sm ml10" title="New Order">
+      <span class="fa fa-plus pr5"></span>
+      <span class="fa fa-file-o pr5"></span>
+    </a>
+    <a [routerLink]="['/main/sales-stats-products']" class="btn btn-primary btn-sm ml10" title="New Product">
+      <span class="fa fa-plus pr5"></span>
+      <span class="fa fa-shopping-cart pr5"></span>
+    </a>
+    <a [routerLink]="['/main/sales-stats-clients']" class="btn btn-primary btn-sm ml10" title="New User">
+      <span class="fa fa-plus pr5"></span>
+      <span class="fa fa-user pr5"></span>
+    </a>
+  </div>
+</header>
+<!-- -------------- /Topbar -------------- -->
+
+<!-- -------------- Content -------------- -->
+<section id="content" class="table-layout animated fadeIn">
+
+  <!-- -------------- Column Left -------------- -->
+  <aside class="chute chute-left chute290" data-chute-height="match">
+
+    <!-- -------------- Menu Block -------------- -->
+    <div class="allcp-form theme-primary">
+
+      <h5 class="pln"> Find Users</h5>
+
+      <h6 class="mb15"> by ID</h6>
+
+      <div class="section mb20">
+        <label for="customer-id" class="field prepend-icon">
+          <input type="text" name="customer-id" id="customer-id" class="gui-input" placeholder="ID #">
+          <label for="customer-id" class="field-icon">
+            <i class="fa fa-user"></i>
+          </label>
+        </label>
+      </div>
+
+      <h6 class="mb15"> by name</h6>
+
+      <div class="section mb20">
+        <label for="customer-name" class="field prepend-icon">
+          <input type="text" name="customer-name" id="customer-name" class="gui-input" placeholder="Name">
+          <label for="customer-name" class="field-icon">
+            <i class="fa fa-user"></i>
+          </label>
+        </label>
+      </div>
+      <h6 class="mb15"> by email</h6>
+
+      <div class="section mb20">
+        <label for="customer-email" class="field prepend-icon">
+          <input type="text" name="customer-email" id="customer-email" class="gui-input" placeholder="Email">
+          <label for="customer-email" class="field-icon">
+            <i class="fa fa-envelope-o"></i>
+          </label>
+        </label>
+      </div>
+
+      <h6 class="mb15"> by country</h6>
+
+      <div class="section mb20">
+        <label class="field select">
+          <select id="customer-location" name="customer-location">
+            <option value="0" selected="selected">Location</option>
+            <option value="1">USA</option>
+            <option value="2">Canada</option>
+            <option value="3">France</option>
+            <option value="4">China</option>
+            <option value="4">Spain</option>
+          </select>
+          <i class="arrow double"></i>
+        </label>
+      </div>
+
+      <h6 class="mb15"> by date</h6>
+
+      <div class="section row mb20">
+        <div class="col-md-6 ph10">
+          <label for="datepicker1" class="field prepend-icon">
+            <input type="text" id="datepicker1" name="datepicker1" class="gui-input fs13" placeholder="From">
+            <label class="field-icon">
+              <i class="fa fa-calendar"></i>
+            </label>
+          </label>
+        </div>
+        <div class="col-md-6 ph10">
+          <label for="datepicker2" class="field prepend-icon">
+            <input type="text" id="datepicker2" name="datepicker2" class="gui-input fs13" placeholder="To">
+            <label class="field-icon">
+              <i class="fa fa-calendar"></i>
+            </label>
+          </label>
+        </div>
+      </div>
+
+      <hr class="short">
+
+      <div class="section">
+        <button class="btn btn-primary pull-right ph30" type="button">Search</button>
+      </div>
+
+    </div>
+
+  </aside>
+  <!-- -------------- /Column Left -------------- -->
+
+  <!-- -------------- Column Center -------------- -->
+  <div class="chute chute-center pt30">
+
+    <!-- -------------- Table -------------- -->
+    <div class="panel">
+      <div class="panel-menu allcp-form theme-primary mtn">
+        <div class="row">
+          <div class="col-md-6">
+            <label class="field select">
+              <select id="filter-purchases" name="filter-purchases">
+                <option value="0">Filter by Purchases</option>
+                <option value="1">1-49</option>
+                <option value="2">50-499</option>
+                <option value="1">500-999</option>
+                <option value="2">1000+</option>
+              </select>
+              <i class="arrow double"></i>
+            </label>
+          </div>
+          <div class="col-md-6">
+            <label class="field select">
+              <select id="filter-group" name="filter-group">
+                <option value="0">Filter by Group</option>
+                <option value="1">Clients</option>
+                <option value="2">Vendors</option>
+                <option value="3">Distributors</option>
+                <option value="4">Employees</option>
+              </select>
+              <i class="arrow double"></i>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body pn">
+        <div class="table-responsive">
+          <table class="table allcp-form theme-warning tc-checkbox-1 fs13">
+            <thead>
+              <tr class="bg-light">
+                <th class="text-center">Select</th>
+                <th class="">Name</th>
+                <th class="">Email</th>
+                <th class="">Group</th>
+                <th class="">Registered</th>
+                <th class="">Purchases</th>
+                <th class="">Total Spent</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">John Doe</td>
+                <td class="">mail@mail.com</td>
+                <td class="">Clients</td>
+                <td class="">11/01/2015</td>
+                <td class="">5</td>
+                <td class="">$1,000</td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">Jane Doe</td>
+                <td class="">trash@mail.com</td>
+                <td class="">Clients</td>
+                <td class="">11/01/2015</td>
+                <td class="">13</td>
+                <td class="">$15,885</td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">Doublas Abrams</td>
+                <td class="">da@mail.com</td>
+                <td class="">Clients</td>
+                <td class="">11/01/2015</td>
+                <td class="">13</td>
+                <td class="">$13,999</td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">Abram Douglas</td>
+                <td class="">ad@mail.com</td>
+                <td class="">Vendors</td>
+                <td class="">11/01/2015</td>
+                <td class="">10</td>
+                <td class="">$20,300</td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">Nesli Lislen</td>
+                <td class="">trash@mail.com</td>
+                <td class="">Distributors</td>
+                <td class="">11/01/2015</td>
+                <td class="">148</td>
+                <td class="">$230,600</td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">Kira Soul</td>
+                <td class="">ksoul@mail.com</td>
+                <td class="">Employes</td>
+                <td class="">11/01/2015</td>
+                <td class="">3</td>
+                <td class="">$1,200</td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">Abram Douglas</td>
+                <td class="">ad@mail.com</td>
+                <td class="">Vendors</td>
+                <td class="">11/01/2015</td>
+                <td class="">06</td>
+                <td class="">$1,400</td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">Jane Doe</td>
+                <td class="">trash@mail.com</td>
+                <td class="">Distributors</td>
+                <td class="">11/01/2015</td>
+                <td class="">16</td>
+                <td class="">$4,200</td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">Then Hven</td>
+                <td class="">nyam@mail.com</td>
+                <td class="">Employes</td>
+                <td class="">11/01/2015</td>
+                <td class="">1</td>
+                <td class="">$500</td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">Kefi Ranet</td>
+                <td class="">net@mail.com</td>
+                <td class="">Clients</td>
+                <td class="">11/01/2015</td>
+                <td class="">10</td>
+                <td class="">$15,100</td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">John Doe</td>
+                <td class="">mail@mail.com</td>
+                <td class="">Clients</td>
+                <td class="">11/01/2015</td>
+                <td class="">12</td>
+                <td class="">$8,555</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- -------------- /Column Center -------------- -->
+
+</section>
+<!-- -------------- /Content -------------- -->

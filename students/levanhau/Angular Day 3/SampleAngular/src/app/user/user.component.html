@@ -1,11 +1,16 @@
-  <input placeholder="User Name" [(ngModel)]="userName"/>
-  <input placeholder="Password" [(ngModel)]="passWord" type="password"/>
-  <input placeholder="Email" [(ngModel)]="email"/>
-  <input placeholder="Birth Date" [(ngModel)]="birthDate" type="date"/>
-  <label><input type="checkbox" [(ngModel)]="isActive"/>Active</label>
-  <select [(ngModel)]="typeAcc">
-    <option>Admin</option>
-    <option>Employee</option>
-  </select>
-  <input placeholder="Salary" [(ngModel)]="salary" type="number">
-  <button (click)="save()">Save</button>
+<div class="panel panel-primary">
+  <div class="panel-body">
+    <input class="form-control" placeholder="User Name" [(ngModel)]="userName" />
+    <input class="form-control" placeholder="Password" [(ngModel)]="passWord" type="password" />
+    <input class="form-control" placeholder="Email" [(ngModel)]="email" />
+    <input class="form-control" placeholder="Birth Date" [(ngModel)]="birthDate" type="date" />
+    <label class="form-control">
+      <input type="checkbox" [(ngModel)]="isActive" />Active</label>
+    <select class="form-control" [(ngModel)]="typeAcc">
+      <option>Admin</option>
+      <option>Employee</option>
+    </select>
+    <input class="form-control" placeholder="Salary" [(ngModel)]="salary" type="number">
+    <button class="btn btn-success" (click)="save()">Save</button>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+  <input placeholder="User Name" [(ngModel)]="userName"/>
+  <input placeholder="Password" [(ngModel)]="passWord" type="password"/>
+  <input placeholder="Email" [(ngModel)]="email"/>
+  <input placeholder="Birth Date" [(ngModel)]="birthDate" type="date"/>
+  <label><input type="checkbox" [(ngModel)]="isActive"/>Active</label>
+  <select [(ngModel)]="typeAcc">
+    <option>Admin</option>
+    <option>Employee</option>
+  </select>
+  <input placeholder="Salary" [(ngModel)]="salary" type="number">
+  <button (click)="save()">Save</button>
