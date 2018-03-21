@@ -1,16 +1,68 @@
-<input [(ngModel)] = "username" />
-<input [(ngModel)] = "password" type="password"/>
-<input [(ngModel)] = "email" type="email"/>
-<select [(ngModel)] = "sex">
-  <option value="Man">Male</option>
-  <option value="Woman">Female</option>
-  <option value="None">None</option>
-</select>
-<select [(ngModel)] = "account">
-  <option value = "Admin">Admin</option>
-  <option value = "User">User</option>
-</select>
-<input type="checkbox" [(ngModel)]="type">
-<button (click)="save()">Save</button>
+<div class="jumbotron">
+    <h2 class="text-center">Dang Ky</h2>
+</div>
+
+
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="username">Username:</label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="username" type="text" />
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="password">Password:</label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="password" type="password" />
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Email:</label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="email" type="email" />
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="sex1">Sex:</label>
+      <div class="col-sm-10">
+        <select [(ngModel)]="sex">
+          <option value="Man">Male</option>
+          <option value="Woman">Female</option>
+          <option value="None">None</option>
+        </select>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="account">Account:</label>
+      <div class="col-sm-10">
+          <select [(ngModel)]="account">
+              <option value="Admin">Admin</option>
+              <option value="User">User</option>
+            </select>
+      </div>   
+    </div>
+    
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="type">Type:</label>
+      <div class="col-sm-10">
+          <input type="checkbox" [(ngModel)]="type">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="save">Submit:</label>
+      <div class="col-sm-10">
+          <button class="btn btn-primary" (click)="save()">Save</button>
+      </div>   
+    </div>
+    
+  </form>
+
+
+
 
 

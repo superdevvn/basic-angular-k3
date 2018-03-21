@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Animated Icons
 // --------------------------
 
@@ -32,3 +33,39 @@
             transform: rotate(359deg);
   }
 }
+=======
+// Animated Icons
+// --------------------------
+
+.@{el-css-prefix}-spin {
+  -webkit-animation: el-spin 2s infinite linear;
+          animation: el-spin 2s infinite linear;
+}
+
+.@{el-css-prefix}-pulse {
+  -webkit-animation: el-spin 1s infinite steps(8);
+          animation: el-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes el-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes el-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+>>>>>>> superdev_develop

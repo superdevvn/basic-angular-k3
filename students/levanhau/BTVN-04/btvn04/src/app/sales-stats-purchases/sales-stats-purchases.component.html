@@ -1,0 +1,718 @@
+<!-- -------------- Topbar -------------- -->
+<header id="topbar" class="ph10">
+  <div class="topbar-left">
+    <ul class="nav nav-list nav-list-topbar pull-left">
+      <li>
+        <a [routerLink]="['/main/dashboard2']">Overview</a>
+      </li>
+      <li>
+        <a [routerLink]="['/main/sales-stats-products']">Products</a>
+      </li>
+      <li class="active">
+        <a [routerLink]="['/main/sales-stats-purchases']">Orders</a>
+      </li>
+      <li>
+        <a [routerLink]="['/main/sales-stats-clients']">Clients</a>
+      </li>
+      <li>
+        <a [routerLink]="['/main/sales-stats-general-settings']">Settings</a>
+      </li>
+    </ul>
+  </div>
+  <div class="topbar-right hidden-xs hidden-sm mt5 mr35">
+    <a [routerLink]="['/main/sales-stats-purchases']" class="btn btn-primary btn-sm ml10" title="New Order">
+      <span class="fa fa-plus pr5"></span>
+      <span class="fa fa-file-o pr5"></span>
+    </a>
+    <a [routerLink]="['/main/sales-stats-products']" class="btn btn-primary btn-sm ml10" title="New Product">
+      <span class="fa fa-plus pr5"></span>
+      <span class="fa fa-shopping-cart pr5"></span>
+    </a>
+    <a [routerLink]="['/main/sales-stats-clients']" class="btn btn-primary btn-sm ml10" title="New User">
+      <span class="fa fa-plus pr5"></span>
+      <span class="fa fa-user pr5"></span>
+    </a>
+  </div>
+</header>
+<!-- -------------- /Topbar -------------- -->
+
+<!-- -------------- Content -------------- -->
+<section id="content" class="table-layout animated fadeIn">
+
+  <!-- -------------- Column Left -------------- -->
+  <aside class="chute chute-left chute290" data-chute-height="match">
+
+    <!-- -------------- Menu Block -------------- -->
+    <div class="allcp-form theme-primary">
+
+      <h5 class="pln"> Filter Orders</h5>
+
+      <h6 class="mb15"> by ID</h6>
+
+      <div class="section mb20">
+        <label for="order-id" class="field prepend-icon">
+          <input type="text" name="order-id" id="order-id" class="gui-input" placeholder="Order ID #">
+          <label for="order-id" class="field-icon">
+            <i class="fa fa-tag"></i>
+          </label>
+        </label>
+      </div>
+
+      <h6 class="mb15"> by price</h6>
+
+      <div class="section row mb20">
+        <div class="col-md-6 ph10">
+          <label for="price1" class="field prepend-icon mb5">
+            <input type="text" name="price1" id="price1" class="gui-input" placeholder="0">
+            <label for="price1" class="field-icon">
+              <i class="fa fa-usd"></i>
+            </label>
+          </label>
+        </div>
+        <div class="col-md-6 ph10">
+          <label for="price2" class="field prepend-icon mb5">
+            <input type="text" name="price2" id="price2" class="gui-input" placeholder="1000">
+            <label for="price2" class="field-icon">
+              <i class="fa fa-usd"></i>
+            </label>
+          </label>
+        </div>
+      </div>
+
+      <h6 class="mb15"> by date</h6>
+
+      <div class="section row mb20">
+        <div class="col-md-6 ph10">
+          <label for="datepicker1" class="field prepend-icon mb5">
+            <input type="text" id="datepicker1" name="datepicker1" class="gui-input fs13" placeholder="From">
+            <label class="field-icon">
+              <i class="fa fa-calendar"></i>
+            </label>
+          </label>
+        </div>
+        <div class="col-md-6 ph10">
+          <label for="datepicker2" class="field prepend-icon mb5">
+            <input type="text" id="datepicker2" name="datepicker2" class="gui-input fs13" placeholder="To">
+            <label class="field-icon">
+              <i class="fa fa-calendar"></i>
+            </label>
+          </label>
+        </div>
+      </div>
+
+      <h6 class="mb15"> by Category</h6>
+
+      <div class="section mb20">
+        <label class="field select">
+          <select id="filter-categories" name="filter-categories">
+            <option value="0" selected="selected">Filter by Categories</option>
+            <option value="1">iPhone</option>
+            <option value="2">iPad</option>
+            <option value="2">iMac</option>
+          </select>
+          <i class="arrow double"></i>
+        </label>
+      </div>
+
+      <hr class="short">
+
+      <div class="section">
+        <button class="btn btn-primary pull-right ph30" type="button">Search</button>
+      </div>
+
+    </div>
+
+  </aside>
+  <!-- -------------- /Column Left -------------- -->
+
+  <!-- -------------- Column Center -------------- -->
+  <div class="chute chute-center pt30">
+
+    <!-- -------------- Recent Orders -------------- -->
+    <div class="panel">
+      <div class="panel-menu allcp-form theme-primary mtn">
+        <div class="row">
+          <div class="col-md-6">
+            <label for="filter-datepicker" class="field prepend-picker-icon">
+              <input type="text" value="11/01/2015" id="filter-datepicker" name="filter-datepicker" class="gui-input" placeholder="Filter by Date">
+            </label>
+          </div>
+          <div class="col-md-6">
+            <label class="field select">
+              <select id="filter-status" name="filter-status">
+                <option value="0">Filter by Status</option>
+                <option value="1">Pending</option>
+                <option value="2">Canceled</option>
+                <option value="3">Completed</option>
+                <option value="4">Archived</option>
+              </select>
+              <i class="arrow double"></i>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body pn">
+        <div class="table-responsive">
+          <table class="table allcp-form theme-warning tc-checkbox-1 fs13">
+            <thead>
+              <tr class="bg-light">
+                <th class="text-center">Select</th>
+                <th class="">Order Date</th>
+                <th class="">Order ID</th>
+                <th class="">Customer</th>
+                <th class="">Notes</th>
+                <th class="text-center">Order Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">
+                  11/01/2015
+                </td>
+                <td class="">#12345</td>
+                <td class="w175">
+                  <span>John Doe</span>
+                </td>
+                <td class="">Typi non habent claritatem insitam</td>
+                <td class="text-right">
+                  <div class="btn-group text-right">
+                    <button type="button" class="btn btn-info br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Pending
+                      <span class="caret ml5"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li>
+                        <a href="#">Edit</a>
+                      </li>
+                      <li>
+                        <a href="#">Delete</a>
+                      </li>
+                      <li>
+                        <a href="#">Archive</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">Completed</a>
+                      </li>
+                      <li class="active">
+                        <a href="#">Pending</a>
+                      </li>
+                      <li>
+                        <a href="#">Canceled</a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">
+                  11/01/2015
+                </td>
+                <td class="">#12345</td>
+                <td class="w175">
+                  <span>John Doe</span>
+                </td>
+                <td class="">Typi non habent claritatem insitam</td>
+                <td class="text-right">
+                  <div class="btn-group text-right">
+                    <button type="button" class="btn btn-info br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Pending
+                      <span class="caret ml5"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li>
+                        <a href="#">Edit</a>
+                      </li>
+                      <li>
+                        <a href="#">Delete</a>
+                      </li>
+                      <li>
+                        <a href="#">Archive</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">Completed</a>
+                      </li>
+                      <li class="active">
+                        <a href="#">Pending</a>
+                      </li>
+                      <li>
+                        <a href="#">Canceled</a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">
+                  11/01/2015
+                </td>
+                <td class="">#12345</td>
+                <td class="w175">
+                  <span>Jane Doe</span>
+                </td>
+                <td class="">Typi non habent claritatem insitam</td>
+                <td class="text-right">
+                  <div class="btn-group text-right">
+                    <button type="button" class="btn btn-info br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Pending
+                      <span class="caret ml5"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li>
+                        <a href="#">Edit</a>
+                      </li>
+                      <li>
+                        <a href="#">Delete</a>
+                      </li>
+                      <li>
+                        <a href="#">Archive</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">Completed</a>
+                      </li>
+                      <li class="active">
+                        <a href="#">Pending</a>
+                      </li>
+                      <li>
+                        <a href="#">Canceled</a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">
+                  11/01/2015
+                </td>
+                <td class="">#12345</td>
+                <td class="w175">
+                  <span>Douglas Abrams</span>
+                </td>
+                <td class="">Typi non habent claritatem insitam</td>
+                <td class="text-right">
+                  <div class="btn-group text-right">
+                    <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Completed
+                      <span class="caret ml5"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li>
+                        <a href="#">Edit</a>
+                      </li>
+                      <li>
+                        <a href="#">Delete</a>
+                      </li>
+                      <li>
+                        <a href="#">Archive</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">Completed</a>
+                      </li>
+                      <li class="active">
+                        <a href="#">Pending</a>
+                      </li>
+                      <li>
+                        <a href="#">Canceled</a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">
+                  11/01/2015
+                </td>
+                <td class="">#12345</td>
+                <td class="w175">
+                  <span>Abram Douglas</span>
+                </td>
+                <td class="">Typi non habent claritatem insitam</td>
+                <td class="text-right">
+                  <div class="btn-group text-right">
+                    <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Completed
+                      <span class="caret ml5"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li>
+                        <a href="#">Edit</a>
+                      </li>
+                      <li>
+                        <a href="#">Delete</a>
+                      </li>
+                      <li>
+                        <a href="#">Archive</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">Completed</a>
+                      </li>
+                      <li class="active">
+                        <a href="#">Pending</a>
+                      </li>
+                      <li>
+                        <a href="#">Canceled</a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">
+                  11/01/2015
+                </td>
+                <td class="">#12345</td>
+                <td class="w175">
+                  <span>Chen Pok</span>
+                </td>
+                <td class="">Typi non habent claritatem insitam</td>
+                <td class="text-right">
+                  <div class="btn-group text-right">
+                    <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Completed
+                      <span class="caret ml5"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li>
+                        <a href="#">Edit</a>
+                      </li>
+                      <li>
+                        <a href="#">Delete</a>
+                      </li>
+                      <li>
+                        <a href="#">Archive</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">Completed</a>
+                      </li>
+                      <li class="active">
+                        <a href="#">Pending</a>
+                      </li>
+                      <li>
+                        <a href="#">Canceled</a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">
+                  11/01/2015
+                </td>
+                <td class="">#12345</td>
+                <td class="w175">
+                  <span>Abram Douglas</span>
+                </td>
+                <td class="">Typi non habent claritatem insitam</td>
+                <td class="text-right">
+                  <div class="btn-group text-right">
+                    <button type="button" class="btn btn-warning br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Archived
+                      <span class="caret ml5"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li>
+                        <a href="#">Edit</a>
+                      </li>
+                      <li>
+                        <a href="#">Delete</a>
+                      </li>
+                      <li>
+                        <a href="#">Archive</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">Completed</a>
+                      </li>
+                      <li class="active">
+                        <a href="#">Pending</a>
+                      </li>
+                      <li>
+                        <a href="#">Canceled</a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">
+                  11/01/2015
+                </td>
+                <td class="">#12345</td>
+                <td class="w175">
+                  <span>Chen Pok</span>
+                </td>
+                <td class="">Typi non habent claritatem insitam</td>
+                <td class="text-right">
+                  <div class="btn-group text-right">
+                    <button type="button" class="btn btn-warning br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Archived
+                      <span class="caret ml5"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li>
+                        <a href="#">Edit</a>
+                      </li>
+                      <li>
+                        <a href="#">Delete</a>
+                      </li>
+                      <li>
+                        <a href="#">Archive</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">Completed</a>
+                      </li>
+                      <li class="active">
+                        <a href="#">Pending</a>
+                      </li>
+                      <li>
+                        <a href="#">Canceled</a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">
+                  11/01/2015
+                </td>
+                <td class="">#12345</td>
+                <td class="w175">
+                  <span>Lion Ess</span>
+                </td>
+                <td class="">Typi non habent claritatem insitam</td>
+                <td class="text-right">
+                  <div class="btn-group text-right">
+                    <button type="button" class="btn btn-warning br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Archived
+                      <span class="caret ml5"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li>
+                        <a href="#">Edit</a>
+                      </li>
+                      <li>
+                        <a href="#">Delete</a>
+                      </li>
+                      <li>
+                        <a href="#">Archive</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">Completed</a>
+                      </li>
+                      <li class="active">
+                        <a href="#">Pending</a>
+                      </li>
+                      <li>
+                        <a href="#">Canceled</a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">
+                  11/01/2015
+                </td>
+                <td class="">#12345</td>
+                <td class="w175">
+                  <span>Chen Pok</span>
+                </td>
+                <td class="">Typi non habent claritatem insitam</td>
+                <td class="text-right">
+                  <div class="btn-group text-right">
+                    <button type="button" class="btn btn-danger br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Canceled
+                      <span class="caret ml5"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li>
+                        <a href="#">Edit</a>
+                      </li>
+                      <li>
+                        <a href="#">Delete</a>
+                      </li>
+                      <li>
+                        <a href="#">Archive</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">Completed</a>
+                      </li>
+                      <li class="active">
+                        <a href="#">Pending</a>
+                      </li>
+                      <li>
+                        <a href="#">Canceled</a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">
+                  11/01/2015
+                </td>
+                <td class="">#12345</td>
+                <td class="w175">
+                  <span>Lion Ess</span>
+                </td>
+                <td class="">Typi non habent claritatem insitam</td>
+                <td class="text-right">
+                  <div class="btn-group text-right">
+                    <button type="button" class="btn btn-danger br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Canceled
+                      <span class="caret ml5"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li>
+                        <a href="#">Edit</a>
+                      </li>
+                      <li>
+                        <a href="#">Delete</a>
+                      </li>
+                      <li>
+                        <a href="#">Archive</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">Completed</a>
+                      </li>
+                      <li class="active">
+                        <a href="#">Pending</a>
+                      </li>
+                      <li>
+                        <a href="#">Canceled</a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="">
+                  <label class="option block mn">
+                    <input type="checkbox" name="inputname" value="FR">
+                    <span class="checkbox mn"></span>
+                  </label>
+                </td>
+                <td class="">
+                  11/01/2015
+                </td>
+                <td class="">#12345</td>
+                <td class="w175">
+                  <span>Lion Ess</span>
+                </td>
+                <td class="">Typi non habent claritatem insitam</td>
+                <td class="text-right">
+                  <div class="btn-group text-right">
+                    <button type="button" class="btn btn-danger br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Canceled
+                      <span class="caret ml5"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li>
+                        <a href="#">Edit</a>
+                      </li>
+                      <li>
+                        <a href="#">Delete</a>
+                      </li>
+                      <li>
+                        <a href="#">Archive</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#">Completed</a>
+                      </li>
+                      <li class="active">
+                        <a href="#">Pending</a>
+                      </li>
+                      <li>
+                        <a href="#">Canceled</a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- -------------- /Column Center -------------- -->
+
+</section>
+<!-- -------------- /Content -------------- -->

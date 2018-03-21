@@ -1,0 +1,86 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "btvn04"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css",
+        "assets/fonts/icomoon/icomoon.css",
+        "assets/js/plugins/fullcalendar/fullcalendar.min.css",
+        "assets/js/plugins/magnific/magnific-popup.css",
+        "assets/js/plugins/c3charts/c3.min.css",
+        "assets/skin/default_skin/css/theme.min.css",
+        "assets/allcp/forms/css/forms.css"
+      ],
+      "scripts": [
+        "assets/js/jquery/jquery-1.11.3.min.js",
+        "assets/js/jquery/jquery_ui/jquery-ui.min.js",
+        "assets/js/plugins/highcharts/highcharts.js",
+        "assets/js/plugins/c3charts/d3.min.js",
+        "assets/js/plugins/c3charts/c3.min.js",
+        "assets/js/plugins/circles/circles.js",
+        "assets/js/plugins/jvectormap/jquery.jvectormap.min.js",
+        "assets/js/plugins/jvectormap/assets/jquery-jvectormap-us-lcc-en.js",
+        "assets/js/plugins/fullcalendar/lib/moment.min.js",
+        "assets/js/plugins/fullcalendar/fullcalendar.min.js",
+        "assets/allcp/forms/js/jquery-ui-monthpicker.min.js",
+        "assets/allcp/forms/js/jquery-ui-datepicker.min.js",
+        "assets/js/plugins/magnific/jquery.magnific-popup.js",
+        "assets/js/utility/utility.js",
+        "assets/js/demo/demo.js",
+        "assets/js/main.js",
+        "assets/js/demo/widgets.js",
+        "assets/js/demo/widgets_sidebar.js",
+        "assets/js/pages/dashboard1.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "component": {}
+  }
+}

@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 @function golden-ratio($value, $increment) {
   @return modular-scale($value, $increment, $golden)
 }
+=======
+@function golden-ratio($value, $increment) {
+  @return modular-scale($value, $increment, $golden)
+}
+>>>>>>> superdev_develop

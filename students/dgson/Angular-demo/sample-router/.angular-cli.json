@@ -1,0 +1,87 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "sample-router"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css",
+        "assets/AutoHint/fonts/icomoon/icomoon.css",
+        "assets/AutoHint/js/plugins/fullcalendar/fullcalendar.min.css",
+        "assets/AutoHint/js/plugins/magnific/magnific-popup.css",
+        "assets/AutoHint/js/plugins/c3charts/c3.min.css",
+        "assets/AutoHint/skin/default_skin/css/theme.min.css",
+        "assets/AutoHint/allcp/forms/css/forms.css"
+      ],
+      "scripts": [
+        "assets/AutoHint/img/favicon.ico",
+        "assets/AutoHint/js/jquery/jquery-1.11.3.min.js",
+        "assets/AutoHint/js/jquery/jquery_ui/jquery-ui.min.js",
+        "assets/AutoHint/js/plugins/highcharts/highcharts.js",
+        "assets/AutoHint/js/plugins/c3charts/d3.min.js",
+        "assets/AutoHint/js/plugins/c3charts/c3.min.js",
+        "assets/AutoHint/js/plugins/circles/circles.js",
+        "assets/AutoHint/js/plugins/jvectormap/jquery.jvectormap.min.js",
+        "assets/AutoHint/js/plugins/jvectormap/assets/jquery-jvectormap-us-lcc-en.js",
+        "assets/AutoHint/js/plugins/fullcalendar/lib/moment.min.js",
+        "assets/AutoHint/js/plugins/fullcalendar/fullcalendar.min.js",
+        "assets/AutoHint/allcp/forms/js/jquery-ui-monthpicker.min.js",
+        "assets/AutoHint/allcp/forms/js/jquery-ui-datepicker.min.js",
+        "assets/AutoHint/js/plugins/magnific/jquery.magnific-popup.js",
+        "assets/AutoHint/js/utility/utility.js",
+        "assets/AutoHint/js/demo/demo.js",
+        "assets/AutoHint/js/main.js",
+        "assets/AutoHint/js/demo/widgets.js",
+        "assets/AutoHint/js/demo/widgets_sidebar.js",
+        "assets/AutoHint/js/pages/dashboard1.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "component": {}
+  }
+}

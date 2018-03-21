@@ -1,0 +1,24 @@
+<h2>
+  Form đăng nhập
+</h2>
+<label>UserName: </label>
+<input [(ngModel)]="userName">
+<label>PassWord: </label>
+<input type="password" [(ngModel)]="passWord">
+<input type="checkbox" [(ngModel)]="luu">
+<label>Nho dang nhap</label>
+<br>
+
+<button (click)="dangNhap()">Dang nhap</button>
+<button (ngModel)="dangKy()">Dang ky</button>
+<br>
+<label>Email: </label>
+<input [(ngModel)]="email">
+<br>
+<label>Trang thai online: </label>
+<input type="checkbox" [(ngModel)]="trangThai">
+<br>
+<label>Vai tro: </label>
+<input [(ngModel)]="role" type="radio" name="role" value="admin"> Admin
+<input [(ngModel)]="role" type="radio" name="role" value="super"> Super
+<input [(ngModel)]="role" type="radio" name="role" value="user"> User

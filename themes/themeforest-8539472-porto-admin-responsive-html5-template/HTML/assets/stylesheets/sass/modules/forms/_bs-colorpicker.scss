@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // DARK SKIN
 // -----------------------------------------------------------------------------
 html.dark {
@@ -13,4 +14,21 @@ html.dark {
 		}
 
 	}
+=======
+// DARK SKIN
+// -----------------------------------------------------------------------------
+html.dark {
+	.colorpicker {
+		background-color: $dark-color-3;
+
+		&:before {
+			border-bottom-color: $dark-color-1;
+		}
+
+		&:after {
+			border-bottom-color: $dark-color-3;
+		}
+
+	}
+>>>>>>> superdev_develop
 }
