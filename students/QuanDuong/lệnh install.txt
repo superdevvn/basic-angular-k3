@@ -1,0 +1,11 @@
+git add .
+
+git commit - m "message"
+
+git pull
+
+git push
+
+ng serve --o
+
+dem code CSS b? zô file JSon Scripts
