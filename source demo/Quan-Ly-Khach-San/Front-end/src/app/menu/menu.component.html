@@ -1,0 +1,61 @@
+<div id="main">
+
+    <!-- -------------- Header  -------------- -->
+    <header class="navbar navbar-fixed-top bg-dark">
+        <div class="navbar-logo-wrapper">
+            <a class="navbar-logo-text" href="#" [routerLink]="['/main/dashboard']">
+                <b>KHÁCH SẠN MỘNG MƠ</b>
+            </a>
+            <span id="sidebar_left_toggle" class="ad ad-lines"></span>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user" [routerLink]="['/login']"></span> Sign Out</a></li>
+          </ul>
+
+
+
+    </header>
+    <aside id="sidebar_left" class="nano nano-light affix">
+        <div class="sidebar-left-content nano-content">
+
+            <ul class="nav sidebar-menu">
+                <li>
+                    <a class="accordion-toggle" href="#" [routerLink]="['/main/dashboard']">
+                        <span class="fa fa-dashboard"></span>
+                        <span class="sidebar-title">DASHBOARD</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="accordion-toggle" href="#" [routerLink]="['/main/role-list']">
+                        <span class="fa fa-cog"></span>
+                        <span class="sidebar-title">VAI TRÒ</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="accordion-toggle" href="#" [routerLink]="['/main/user-list']">
+                        <span class="fa fa-male"></span>
+                        <span class="sidebar-title">NHÂN VIÊN</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a class="accordion-toggle" href="#" [routerLink]="['/main/room-list']">
+                        <span class="fa fa-university"></span>
+                        <span class="sidebar-title">PHÒNG</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a class="accordion-toggle menu" href="#" [routerLink]="['/main/thue-phong']">
+                        <span class="fa fa-home"></span>
+                        <span class="sidebar-title">THUÊ PHÒNG</span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </aside>
+    <section id="content_wrapper">
+        <router-outlet></router-outlet>
+    </section>
+
+</div>

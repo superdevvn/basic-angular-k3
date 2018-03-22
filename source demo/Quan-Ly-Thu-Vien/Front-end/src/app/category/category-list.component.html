@@ -1,0 +1,106 @@
+<div class="page-content">
+  <div class="page-header">
+    <h1>
+      <strong>CATEGORY LIST</strong>
+    </h1>
+  </div>
+  <!-- /.page-header -->
+  <button class="btn btn-primary" (click)="create()">New Category </button>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <!-- PAGE CONTENT BEGINS -->
+      <div class="row">
+        <div class="col-xs-12">
+
+          <table id="simple-table" class="table table-bordered table-hover">
+              <colgroup>
+                <col style="width:50px" />               
+                <col />
+                <col style="width:200px" />
+                <col style="width:100px" />
+              </colgroup>
+            <thead>
+              <tr>
+                <th class="center">
+                  #
+                </th>
+                
+                <th>Name</th>
+                <th>Description</th>
+                <th class="text-center">
+                    <i class="fa fa-pencil"></i>
+                    <i class="fa fa-trash-o"></i>
+                  </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let role of roles, let idx=index">
+                <td class="text-center">
+                  {{idx+1}}
+                </td>
+                
+                <td>{{role.Name}}</td>
+                <td>{{role.Description}}</td>
+                <td>
+                  <div class="text-center">
+                    <div class="hidden-sm hidden-xs btn-group">
+
+
+                      <button class="btn btn-xs btn-info" (click)="detail(role)">
+                        <i class="ace-icon fa fa-pencil bigger-120"></i>
+                      </button>
+
+                      <button class="btn btn-xs btn-danger" (click)="delete(role)">
+                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                      </button>
+                    </div>
+                  </div>
+
+
+                  <div class="hidden-md hidden-lg">
+                    <div class="inline pos-rel">
+                      <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
+                        <i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+                      </button>
+
+                      <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+                        <li>
+                          <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+                            <span class="blue">
+                              <i class="ace-icon fa fa-search-plus bigger-120"></i>
+                            </span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+                            <span class="green">
+                              <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+                            </span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                            <span class="red">
+                              <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                            </span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <!-- /.span -->
+      </div>
+      <!-- /.row -->
+    </div>
+  </div>
+</div>

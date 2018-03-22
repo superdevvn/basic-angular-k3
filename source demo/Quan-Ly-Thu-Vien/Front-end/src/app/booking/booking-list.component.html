@@ -1,0 +1,84 @@
+<div class="page-content">
+  <div class="page-header">
+    <h1>
+      <strong>TRANSACTION LIST</strong>
+    </h1>
+  </div>
+  <!-- /.page-header -->
+  <button class="btn btn-primary" (click)="create()">New transaction </button>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <!-- PAGE CONTENT BEGINS -->
+      <div class="row">
+        <div class="col-xs-12">
+          <table id="simple-table" class="table table-bordered table-hover">
+            <colgroup>
+              <col style="width:30px" />
+              <col style="width:75px" />
+              <col style="width:75px" />
+              <col style="width:125px" />
+              <col style="width:125px" />
+              <col style="width:125px" />
+              <col style="width:75px" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="text-center">
+                  #
+                </th>
+
+                <th>User</th>
+                <th>Customer</th>
+                <th>Book</th>
+                <th>From Date</th>
+                <th>To Date</th>
+                <th class="text-center">
+                  <i class="fa fa-check"></i>
+                  <i class="fa fa-pencil"></i>
+                  <i class="fa fa-trash-o"></i>
+                  
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let inOut of inOuts; let idx=index">
+                <td class="center">
+                  {{idx+1}}
+                </td>
+                <td>{{inOut.Username}}</td>
+                <td>{{inOut.CustomerName}}</td>
+                <td>{{inOut.BookName}}</td>
+                <td>{{inOut.FromDate | date:'yyyy-MM-dd HH:mm a z':'+0700'}}</td>
+                <td>{{inOut.ToDate | date:'yyyy-MM-dd HH:mm a z':'+0700'}}</td>
+                
+              
+                <td>
+                  <div class="text-center">
+                    <div class="hidden-sm hidden-xs btn-group">
+                        <button class="btn btn-xs btn-success" (click)="redirect(inOut)"  [disabled]="inOut.ToDate">
+                            <i class="ace-icon fa fa-check bigger-120"></i>
+                          </button>
+                      <button class="btn btn-xs btn-info" (click)="detail(inOut)">
+                        <i class="ace-icon fa fa-pencil bigger-120"></i>
+                      </button>
+
+                      <button class="btn btn-xs btn-danger" (click)="delete(inOut)">
+                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                      </button>
+
+
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- /.span -->
+      </div>
+      <!-- /.row -->
+    </div>
+  </div>
+</div>

@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 
@@ -11,11 +9,9 @@ import { LayoutNo2Component } from './layout-no2/layout-no2.component';
 import { LayoutNo3Component } from './layout-no3/layout-no3.component';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
-import { ApiService } from './services/api.service';
-import { LoginService } from './login/login.service';
 
 let routes: Routes = [
-  { path :'', redirectTo:'login' ,pathMatch:"full"},
+  { path :'', redirectTo:'main' ,pathMatch:"full"},
   { path :'main', component:MainComponent, children: [
     { path :'', redirectTo:'layout1' ,pathMatch:"full"},
     { path :'layout1', component:LayoutNo1Component},
@@ -36,11 +32,9 @@ let routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ApiService,LoginService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
