@@ -2,304 +2,48 @@
     <div class="col-xs-12">
         <div class="panel">
             <div class="panel-heading">
-                <span class="panel-title hidden-xs"> Products status</span>
+                <span class="panel-title hidden-xs"> Role List</span>
             </div>
+            <button class="btn btn-primary btn-xs pull-right">
+                <i class="fa fa-plus"></i>
+                <span class="hidden-xs hidden-sm">New Role</span>
+            </button>
             <div class="panel-body pn">
                 <div class="table-responsive">
-                    <table class="table allcp-form theme-warning tc-checkbox-1 fs13">
+                    <table class="table table-condensed allcp-form theme-warning tc-checkbox-1 fs13">
+                        <colgroup>
+                            <col style="width:50px">
+                            <col style="width:50px">
+                            <col style="width:120px">
+                            <col >
+                            <col style="width:200px">
+                        </colgroup>
                         <thead>
-                        <tr class="bg-light">
-                            <th class="text-center"></th>
-                            <th class="">Image</th>
-                            <th class="">Product Title</th>
-                            <th class="">SKU</th>
-                            <th class="">Price</th>
-                            <th class="">Stock</th>
-                            <th class="text-right">Status</th>
-
-                        </tr>
+                            <tr class="bg-light">
+                                <th class="text-center">#</th>
+                                <th class="text-center">Id</th>
+                                <th class="text-center">Name</th>
+                                <th class="text-center">Description</th>
+                                <th class="text-center">Action</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td class="text-center">
-                                <label class="option block mn">
-                                    <input type="checkbox" name="inputname" value="FR">
-                                    <span class="checkbox mn"></span>
-                                </label>
-                            </td>
-                            <td class="w100">
-                                <img class="img-responsive mw40 ib mr10" title="user" src="assets/img/pages/products/1.jpg">
-                            </td>
-                            <td class="">Apple iPhone 5</td>
-                            <td class="">#123</td>
-                            <td class="">$500</td>
-                            <td class="">300</td>
-                            <td class="text-right">
-                                <div class="btn-group text-right">
-                                    <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Active
-                                        <span class="caret ml5"></span>
+                            <tr *ngFor="let role of roles;let idx = index">
+                                <td>{{idx}}</td>
+                                <td>{{role.Id}}</td>
+                                <td>{{role.Name}}</td>
+                                <td>{{role.Description}}</td>
+                                <td class="text-center">
+                                    <button class="btn btn-info btn-xs" (click)="detail(role)">
+                                        <i class="fa fa-pencil"></i>
+                                        <span class="hidden-xs hidden-sm">Edit</span>
                                     </button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li>
-                                            <a href="#">Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Delete</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Archive</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li class="active">
-                                            <a href="#">Active</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Inactive</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Low Stock</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Out of Stock</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">
-                                <label class="option block mn">
-                                    <input type="checkbox" name="inputname" value="FR">
-                                    <span class="checkbox mn"></span>
-                                </label>
-                            </td>
-                            <td class="w100">
-                                <img class="img-responsive mw40 ib mr10" title="user" src="assets/img/pages/products/2.jpg">
-                            </td>
-                            <td class="">Apple iPhone 6</td>
-                            <td class="">#1234</td>
-                            <td class="">$600</td>
-                            <td class="">500</td>
-                            <td class="text-right">
-                                <div class="btn-group text-right">
-                                    <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Active
-                                        <span class="caret ml5"></span>
+                                    <button class="btn btn-danger btn-xs" (click)="delete(role)">
+                                        <i class="fa fa-trash-o"></i>
+                                        <span class="hidden-xs hidden-sm">Delete</span>
                                     </button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li>
-                                            <a href="#">Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Delete</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Archive</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li class="active">
-                                            <a href="#">Active</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Inactive</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Low Stock</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Out of Stock</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">
-                                <label class="option block mn">
-                                    <input type="checkbox" name="inputname" value="FR">
-                                    <span class="checkbox mn"></span>
-                                </label>
-                            </td>
-                            <td class="w100">
-                                <img class="img-responsive mw40 ib mr10" title="user" src="assets/img/pages/products/3.jpg">
-                            </td>
-                            <td class="">Apple iPad</td>
-                            <td class="">#2345</td>
-                            <td class="">$400</td>
-                            <td class="">300</td>
-                            <td class="text-right">
-                                <div class="btn-group text-right">
-                                    <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Active
-                                        <span class="caret ml5"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li>
-                                            <a href="#">Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Delete</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Archive</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li class="active">
-                                            <a href="#">Active</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Inactive</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Low Stock</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Out of Stock</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">
-                                <label class="option block mn">
-                                    <input type="checkbox" name="inputname" value="FR">
-                                    <span class="checkbox mn"></span>
-                                </label>
-                            </td>
-                            <td class="w100">
-                                <img class="img-responsive mw40 ib mr10" title="user" src="assets/img/pages/products/4.jpg">
-                            </td>
-                            <td class="">Apple iPad Air</td>
-                            <td class="">#4563</td>
-                            <td class="">$800</td>
-                            <td class="">500</td>
-                            <td class="text-right">
-                                <div class="btn-group text-right">
-                                    <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Active
-                                        <span class="caret ml5"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li>
-                                            <a href="#">Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Delete</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Archive</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li class="active">
-                                            <a href="#">Active</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Inactive</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Low Stock</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Out of Stock</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">
-                                <label class="option block mn">
-                                    <input type="checkbox" name="inputname" value="FR">
-                                    <span class="checkbox mn"></span>
-                                </label>
-                            </td>
-                            <td class="w100">
-                                <img class="img-responsive mw40 ib mr10" title="user" src="assets/img/pages/products/9.jpg">
-                            </td>
-                            <td class="">Apple iPhone 6S 32GB</td>
-                            <td class="">#1011</td>
-                            <td class="">$1195</td>
-                            <td class="text-danger">
-                                <b>0 - Sold Out</b>
-                            </td>
-                            <td class="text-right">
-                                <div class="btn-group text-right">
-                                    <button type="button" class="btn btn-danger br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Sold Out
-                                        <span class="caret ml5"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li>
-                                            <a href="#">Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Delete</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Archive</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li>
-                                            <a href="#">Active</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Inactive</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Low Stock</a>
-                                        </li>
-                                        <li class="active">
-                                            <a href="#">Out of Stock</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">
-                                <label class="option block mn">
-                                    <input type="checkbox" name="inputname" value="FR">
-                                    <span class="checkbox mn"></span>
-                                </label>
-                            </td>
-                            <td class="w100">
-                                <img class="img-responsive mw40 ib mr10" title="user" src="assets/img/pages/products/10.jpg">
-                            </td>
-                            <td class="">Apple iPhone 6S 64GB</td>
-                            <td class="">#1012</td>
-                            <td class="">$1395</td>
-                            <td class="text-danger">
-                                <b>0 - Sold Out</b>
-                            </td>
-                            <td class="text-right">
-                                <div class="btn-group text-right">
-                                    <button type="button" class="btn btn-danger br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Sold Out
-                                        <span class="caret ml5"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li>
-                                            <a href="#">Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Delete</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Archive</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li>
-                                            <a href="#">Active</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Inactive</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Low Stock</a>
-                                        </li>
-                                        <li class="active">
-                                            <a href="#">Out of Stock</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
