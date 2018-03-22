@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 @mixin appearance ($value) {
   @include prefixer(appearance, $value, webkit moz ms o spec);
 }
+=======
+@mixin appearance ($value) {
+  @include prefixer(appearance, $value, webkit moz ms o spec);
+}
+>>>>>>> superdev_develop

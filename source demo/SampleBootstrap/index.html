@@ -1,6 +1,10 @@
 <html>
 <header>
+<<<<<<< HEAD
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+=======
     <linK href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+>>>>>>> 6fa560bf2e11169133e450213728ed655c55be3c
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </header>
@@ -12,6 +16,34 @@
     </div>
     <div class="col-md-4">
         <label>Input 2</label>
+<<<<<<< HEAD
+        <input id="input1" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label>Select</label>
+        <select id="select1" class="form-control">
+            <option value="1">Opt1</option>
+            <option value="1">Opt2</option>
+        </select>
+
+    </div>
+    <div class="col-md-4" style="margin-top:25px">
+        <button id="btn1" class="btn btn-primary">Click This</button>
+    </div>
+    <script>
+        $("#btn1").click(function () {
+            let input1 = $("#input1").val();
+            $("#input2").val(input1);
+
+        });
+        $("#input1").keyup(() => {
+            //lấy giá trị input1
+            let input1 = $("#input1").val();
+        }
+        )
+
+        $("label").css(`color`,`red`);
+=======
         <input id="input2" class="form-control" />
     </div>
     <div class="col-md-4">
@@ -57,6 +89,7 @@
             // $("label").removeClass('text-primary');
             // $("label").addClass('text-primary');
         });
+>>>>>>> 6fa560bf2e11169133e450213728ed655c55be3c
     </script>
 </body>
 

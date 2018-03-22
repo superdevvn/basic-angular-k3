@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
@@ -28,6 +29,38 @@
 </switch>
 <i:pgf  id="adobe_illustrator_pgf">
 	<![CDATA[
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1"
+	 id="svg2" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" inkscape:version="0.48.4 r9939" sodipodi:docname="quotes.svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1200px" height="1200px"
+	 viewBox="0 0 1200 1200" enable-background="new 0 0 1200 1200" xml:space="preserve">
+<switch>
+	<foreignObject requiredExtensions="&ns_ai;" x="0" y="0" width="1" height="1">
+		<i:pgfRef  xlink:href="#adobe_illustrator_pgf">
+		</i:pgfRef>
+	</foreignObject>
+	<g i:extraneous="self">
+		<path id="path17923" inkscape:connector-curvature="0" d="M681.526,1094.657c212.643-14.942,518.306-48.892,518.474-465.344
+			v-523.97H725.496v560.61h157.559c9.98,149.693-113.285,188.346-247.329,218.017L681.526,1094.657z M45.802,1094.657
+			c212.644-14.942,518.307-48.894,518.474-465.344v-523.97H89.77v560.61h157.559C257.311,815.647,134.044,854.3,0,883.971
+			L45.802,1094.657L45.802,1094.657z"/>
+	</g>
+</switch>
+<i:pgf  id="adobe_illustrator_pgf">
+	<![CDATA[
+>>>>>>> superdev_develop
 	eJzdfXtf6jrT6PkCfAdQEZBbuV9UlKs3VBTvNyxQlSVSbMtaez1/nM9+kvRekjZt8X32e/b+LYQm
 nUkmyWRmMpMJh3r9ZH3MD7lkLsUEA+FwU+BYiReqQfQ0eDSdLkRJgI+il7FgpphiQKX6UXmgVLzh
 BHHCz6qoCBV24NvRFv/7bywYjYEHVxNpyoFH3wte4pJT7k1Kib/fYyoy8HaLlUCFbDpTSWcKwUyV
@@ -99,9 +132,15 @@ jWt95vfOX2u5RjlXLj4Uvx52kq8dvnSbY8Z6KXM44JqBsCDUdof1xPzseP+kItbKhzu3qQ7/kL9p
 C08PTOuhc3/V2a3vjjJb9dJMwZLbcNc1QDG5c4KQDyVuXo5CyXKyHIqPUn3YqzJ81g4lBuNCKDb5
 nIZiUmMCuxYzdi2fuGTS+f6lhlnueG0e25mDXh1/BcJKv9jLhvLt9XgPdTiVFgvf4Ft/vlQFEEEs
 d2ZX2WjlfoMZb2ZQJ8/1IRGexPdyKtctL+K1g9AmwKJRGYAtH+Rut9ffwM+DKXj7vqU2rysKwrb4
+<<<<<<< HEAD
 IDxv985hu+XWGpEeZJ7ydx/dBA4pGJfn98ahjtaCtJj9lQ6RkA6Fl3T8Fo/0rBFbvw==
 	]]>
 	<![CDATA[
+=======
+IDxv985hu+XWGpEeZJ7ydx/dBA4pGJfn98ahjtaCtJj9lQ6RkA6Fl3T8Fo/0rBFbvw==
+	]]>
+	<![CDATA[
+>>>>>>> superdev_develop
 	nk+7CGkgbEErrr8UGySkh7WL0uwGjzQfu4tvj85PcUgDYXGt85LX0VqQMp3GyT4BaXF9YybEdglI
 71+YzttZHyEFc8zS17WD0M5m5nhwhUV6cJi9IpI3+1C7ekVIwbQftnWkcL1si7fC06LWhWhjy6Ma
 vc89TjMxgDTPW6fSc5dRyduLRCxIC4WvwRwhDYQtaCHSgfD8MbsiIN1ni6XORgaL9GXv9RKHNBBG
@@ -173,9 +212,15 @@ slT7tkbPNO5eqAVHG1lWqi2cIob0xU4A4RQtpwMgnYtJe9a7RJZA9O4y6MOBOzfuvjcCFCFuFMre
 IVHZ0/wudOkZL4odOrMHBwAYLwKbkSaGhTkEygWcB7km2sSJm0Ua/KJ4P6RZ+070dFbhDHqlQ5Qc
 5faGPZNAHAbG7Dmt8y1KORJz1gljrOzjYq1yJDnSx07OMM9kh/Ajh/A4M9cxCpDm2+eibfJ+7k4e
 e5bCYbI85mrFH9mveJ1KAQeVEjQqHvFIJ5N/Mowdc2fecR0ZZ4x+omiUHM7myiIDm2TYK82NcmWR
+<<<<<<< HEAD
 sWmS9U4VH3RysshYLFemRpktMrmNymfabJE5prXIBKzXnlkDRzaqa77MFiiwyaBZuA==
 	]]>
 	<![CDATA[
+=======
+sWmS9U4VH3RysshYLFemRpktMrmNymfabJE5prXIBKzXnlkDRzaqa77MFiiwyaBZuA==
+	]]>
+	<![CDATA[
+>>>>>>> superdev_develop
 	C89ZDvs62aSzXVCE52xUMxH3XbPolV/Hvi0yMAzNanjwcJ/SsXuLDC4iFYah+bXIoOg8yx13HglT
 oA3OUe8bJzi7HBPDc1wF52inPNWeZI1D3bsOO3jT0AjLQJZb9x+TeELhyaDd2uSgtcxP/NwbZt6R
 qxdR/13DuOzpFkXKGVq9CFG5Lpjm59KdkHDMaZyBHePqjE6z1ruhXMTVufBdJ2hJkDBUISSOvhiQ
@@ -247,9 +292,15 @@ Z5/Vz9bf0kVeP/sZESATyxoQu3wFcRM8eydHdcsLV82XRL7ENMZgTLuPdqZdvOO9Ib+YOXCxY/ES
 bhptWK/hqWnZQ5FN8yGWGbNCgpgy+nJfaoUer1PUoovC2LfDcjK0uWjfNm5D4Fl/rlQZcE1B2M02
 atfP99FQeFbKhyJVphPa4vsXoWy1fxrfnlYbcFx2hf349clHhGmfzXNMp9LeZzqNkzZzkFhcMt1S
 45HpPj6MmNMtMcX0tyMFpj/YazDXv4Zj5iYy+2Buuplv5mZ+vMHc7g1bzPP55wnzLKXumMFRcsa8
+<<<<<<< HEAD
 bl1CC8nrzktMEM6SEUGsPxcFkd88EhZV6VFcnzfeUrlueaFEdr7zvVoxEjq9boSzpQ==
 	]]>
 	<![CDATA[
+=======
+bl1CC8nrzktMEM6SEUGsPxcFkd88EhZV6VFcnzfeUrlueaFEdr7zvVoxEjq9boSzpQ==
+	]]>
+	<![CDATA[
+>>>>>>> superdev_develop
 	KBvheus3D1e1jZmQ7mxm84OzyGu/Wl67Oh4l41edXqR2scMV41o+vsJH5JB7aidL3c1fYEjiHRj2
 lgwJk+d0+HxyeonEfcyyN0aXxibTSig+zV+YUkDCbJL5GOT8OzvJKpZYiBygw5vM62n0wr6n8e1R
 HrzL7NWYztVthzlY53uCWL4do0hSLSI1H7uK76aTKBvlmhyT2G7/SgviE78Nn61bBHZ5lejLp7Y7
@@ -321,9 +372,15 @@ CBx3xf0jtfjR4oubScFqMF3vN4+OyoUWN+LHXDAhW2xL2ixOKrxA4RnGC1tMlkF0RNRovVUOPg/X
 L3fZ1htzX1u6/yF3uAsPsS4DYehetyO75iU+JqDo9S0Vii+qfbiLtkJJ5jQLT6OwtyAamNJD8eth
 J/na4Uu3OWZs8VeA0lttd1hPzM+O908qYq18uHOb6vAP+Zu28PTAtB4691ed3fruCDF5c5CyfJED
 xTUOoC9+L3KguMYhEP4RscAiFGhSwmrFAotQYIwrXqFYYBEKINf7AbHAIhRodwiuViywCAUKlpVd
+<<<<<<< HEAD
 u4C/xiEQ9n2RA4WoAGay34scKEQFIIv4vciBQlTQJNEfFRX0082fFBUCYd8XOVBc4w==
 	]]>
 	<![CDATA[
+=======
+u4C/xiEQ9n2RA4WoAGay34scKEQFIIv4vciBQlTQJNEfFRX0082fFBUCYd8XOVBc4w==
+	]]>
+	<![CDATA[
+>>>>>>> superdev_develop
 	YPDM9nqRA8U1DgH/FznEna9xgH3xeZEDxTUOcCb7vMiB4hoH5cYiPxc5xJ2vcTBnJrC9yMHHMaRy
 jqIfRP7IMSSULkwHkT9yDAmkC/NB5I8cQxri8OWDyB85hrS3C6/qGBJQzHwQ+SPHkMiryXgQ+SPH
 kMpMNhLhB44hDbeVpfTZv+pjSMNpje2hk79jSKSFGg8if+QY0vm0ZhXHkH4t6XTHkLarcmXHkDLF
@@ -347,7 +404,14 @@ S4VgLpcDaCsF8AgsulKlUg6CrTiVzYKWJDMlsA5LTAm0AtOfbuANL2NGcwB2plDJGcaz0aiPgIR7
 yUuspK03NCLJXAXQu1LOmkiFcDOw+TqtMllAPqacV4mVK6FHpVIhb6CX9shAHvBCMVXKMQX8Q51C
 yQxsQilTMT0rgWdlRCOVbMkck00BcmYMdEvmc4C8Jqrh+tYlPF0JMbeu8VBKykKFq6f/ARjf1V8q
 Rv/f3AXcsP4RP5txI4kXkqOF8JuVFgIVU7R///9PBjlnpQ8wo7M5Gy7ZbcjKJ1BFkeqZTAK9tMe+
+<<<<<<< HEAD
 c1cCO5kCVfRdZH9zQXY2g1OQm4OS4LvAiYCAXFD84P/AJ+AVtTpQas87gf8HKND9Sg==
 	]]>
 </i:pgf>
 </svg>
+=======
+c1cCO5kCVfRdZH9zQXY2g1OQm4OS4LvAiYCAXFD84P/AJ+AVtTpQas87gf8HKND9Sg==
+	]]>
+</i:pgf>
+</svg>
+>>>>>>> superdev_develop

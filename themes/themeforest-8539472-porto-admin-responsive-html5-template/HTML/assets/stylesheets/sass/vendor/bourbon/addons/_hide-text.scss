@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @mixin hide-text {
   overflow: hidden;
 
@@ -8,3 +9,15 @@
     height: 100%;
   }
 }
+=======
+@mixin hide-text {
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+  }
+}
+>>>>>>> superdev_develop

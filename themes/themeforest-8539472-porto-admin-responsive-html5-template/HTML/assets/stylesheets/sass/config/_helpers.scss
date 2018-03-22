@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @mixin font-size($size: 14) {
 	font-size: ($size / $root-font-size) + rem;
 }
@@ -18,4 +19,26 @@
 	&:-ms-input-placeholder {
 		color: $color;
 	}
+=======
+@mixin font-size($size: 14) {
+	font-size: ($size / $root-font-size) + rem;
+}
+
+@mixin line-height($size: 14) {
+	line-height: ($size / $root-font-size) + rem;
+}
+
+@mixin placeholder-color($color) {
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+
+	&::-moz-placeholder {
+		color: $color;
+	}
+
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+>>>>>>> superdev_develop
 }

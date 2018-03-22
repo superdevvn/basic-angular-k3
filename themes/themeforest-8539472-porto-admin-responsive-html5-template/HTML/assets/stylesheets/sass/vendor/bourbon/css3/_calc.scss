@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 @mixin calc($property, $value) {
   #{$property}: -webkit-calc(#{$value});
   #{$property}:         calc(#{$value});
 }
+=======
+@mixin calc($property, $value) {
+  #{$property}: -webkit-calc(#{$value});
+  #{$property}:         calc(#{$value});
+}
+>>>>>>> superdev_develop

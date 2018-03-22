@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 MyObject:
+=======
+MyObject:
+>>>>>>> superdev_develop
   Prop1: {key1:val1}

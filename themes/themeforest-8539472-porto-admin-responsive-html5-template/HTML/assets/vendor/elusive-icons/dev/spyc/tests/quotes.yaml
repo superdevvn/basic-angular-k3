@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html_tags:
   - <br>
   - <p>
@@ -5,4 +6,13 @@ html_content:
   - <p>hello world</p>
   - hello<br>world
 text_content:
+=======
+html_tags:
+  - <br>
+  - <p>
+html_content:
+  - <p>hello world</p>
+  - hello<br>world
+text_content:
+>>>>>>> superdev_develop
   - hello world

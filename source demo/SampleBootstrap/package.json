@@ -1,7 +1,6 @@
 {
-  "name": "samplebootstrap",
+  "name": "quan",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +10,6 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "jquery": "^2.2.4"
-  }
+  },
+  "description": ""
 }
