@@ -1,0 +1,83 @@
+<html>
+    <header>
+        <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+
+        <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+    </header>
+    <body>
+        <div class="col-md-4">
+            <label>Input 1</label>
+            <input id="input1" class="form-control"/>
+        </div>
+        <div class="col-md-4">
+            <label>Input 2</label>
+            <input id="input1" class="form-control"/>
+        </div>
+        <div class="col-md-4">
+            <label>Select</label>
+            <select id="select1" class="form-control">
+                <option value="1">Opt1</option>
+                <option value="1">Opt2</option>
+            </select>
+    
+        </div>
+        <div class="col-md-4" style="margin-top:25px">
+            <button id="btn1" class="btn btn-primary">Click This</button>
+        </div>
+        <script>
+            $("#btn1").click(function(){
+                let input1 = $("#input1").val();
+                $("#input2").val(input1);
+            });
+            $("#input1").keyup(()=>{
+                //get input1
+                let input1 = $("#input1").val();
+            })
+            $("label").css(`color`,`red`);
+            <input id="input2" class="form-control"/>
+            
+        </script>
+        <div class="col-md-4">
+            <label>Select 11</label>
+            <select id="select1" class="form-control">
+                <option value="1">Opt 1</option>
+                <option value="2">Opt 2</option>
+            </select>
+        </div>
+        <div class="col-md-4" style="margin-top:25px">
+            <button id="btn1" class="btn btn-primary">Click Here 1</button>
+        </div>
+        <div class="col-md-4" style="margin-top:25px">
+            <button id="btn2" class="btn btn-warning">Click Here 2</button>
+        </div>
+        <script>
+            $("#btn1").click(function () {
+                // Lấy giá trị input 1
+                let input1 = $("#input1").val();
+                // Gán giá trị input 1 cho input 2
+                $("#input2").val(input1);
+            });
+    
+            $("#input1").keyup(() => {
+                // Lấy giá trị input 1
+                let input1 = $("#input1").val();
+                // Gán giá trị input 1 cho input 2
+                $("#input2").val(input1);
+            });
+    
+            $("#select1").change(() => {
+                alert($("#select1").val())
+            });
+    
+            $("#btn2").click(() => {
+                
+                $("label").toggleClass('text-primary');
+                
+            });
+    
+        </script>
+    </body>
+</html>
