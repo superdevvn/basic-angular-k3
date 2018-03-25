@@ -18,18 +18,18 @@ export class RoleService {
 
     getRole(id:number) {
         return new Promise((resolve, reject) => {
-            this.apiService.get(`api/getRole/${id}`).then(roles => {
-                resolve(roles);
+            this.apiService.get(`api/getRole/${id}`).then(role => {
+                resolve(role);
             }).catch(err => {
                 reject(err);
             });
         });
     }
 
-    saveRole(id:number) {
+    saveRole(role: any) {
         return new Promise((resolve, reject) => {
-            this.apiService.post(`api/saveRole/`, {}).then(roles => {
-                resolve(roles);
+            this.apiService.post(`api/saveRole`, role).then(role => {
+                resolve(role);
             }).catch(err => {
                 reject(err);
             });

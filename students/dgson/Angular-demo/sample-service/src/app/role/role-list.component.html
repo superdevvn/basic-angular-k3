@@ -29,10 +29,10 @@
                         </thead>
                         <tbody>
                         <tr *ngFor="let role of roles; let idx=index">
-                            <td>{{idx}}</td>
-                            <td>{{role.Id}}</td>
-                            <td>{{role.Name}}</td>
-                            <td>{{role.Description}}</td>
+                            <td class="text-center">{{idx}}</td>
+                            <td class="text-center">{{role.Id}}</td>
+                            <td class="text-center">{{role.Name}}</td>
+                            <td class="text-center">{{role.Description}}</td>
                             <td class="text-center">
                                 <button class="btn btn-info" (click)="detail(role)">
                                     <i class="fa fa-pencil"></i>
