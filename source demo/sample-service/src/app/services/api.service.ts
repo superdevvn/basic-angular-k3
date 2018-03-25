@@ -22,15 +22,16 @@ export class ApiService {
   post(url: string, body: any) {
     let headers = new Headers();
     headers.append("Auth-SuperDev", this.token);
+    
     return new Promise((resolve, reject) => {
-      this.http.post(this.host + url, body, { headers: headers }).toPromise().then(res => {
+      this.http.post(this.host + url, body,  {headers: headers} ).toPromise().then(res => {
         resolve(res.json());
       }).catch((err) => {
         reject(err);
       });
     });
   }
-
+ 
   sum(...args) {
     let result = 0;
     args.forEach(value => {

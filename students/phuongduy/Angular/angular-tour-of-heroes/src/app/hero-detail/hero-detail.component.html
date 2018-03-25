@@ -1,3 +1,4 @@
+<button (click)="goBack()" >Go Back</button>
 <div *ngIf="hero">
     <h2>{{hero.name | uppercase}} Details</h2>
     <div>
@@ -11,3 +12,4 @@
       </label>
     </div>
   </div>
+  <button (click)="save()">save</button>
