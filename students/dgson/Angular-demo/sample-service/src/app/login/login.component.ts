@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     }
 
     this.loginService.login(this.username, this.password).then((res:any)=>{
-
+      this.router.navigate(['main/role-list']);
     }).catch((err)=>{
       alert(err);
     });

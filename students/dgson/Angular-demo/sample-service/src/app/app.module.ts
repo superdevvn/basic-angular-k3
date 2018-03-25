@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http'
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 
 import { AppComponent } from './app.component';
@@ -13,6 +14,11 @@ import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { ApiService } from './api.service';
 import { LoginService } from './login/login.service';
+import { RoleListComponent } from './role/role-list.component';
+import { RoleService } from './role/role.service';
+import { RoleDetailComponent } from './role/role-detail.component';
+// import { UserListComponent } from './user-list/user-list.component';
+
 
 let routes: Routes = [
   { path :'', redirectTo:'main' ,pathMatch:"full"},
@@ -21,6 +27,8 @@ let routes: Routes = [
     { path :'layout1', component:LayoutNo1Component},
     { path :'layout2', component:LayoutNo2Component},
     { path :'layout3', component:LayoutNo3Component},
+    { path: 'role-list',component:RoleListComponent},
+    { path: 'role-detail/:id', component:RoleDetailComponent}
   ]},
   { path :'login', component:LoginComponent}
 ]
@@ -32,7 +40,9 @@ let routes: Routes = [
     LayoutNo2Component,
     LayoutNo3Component,
     MainComponent,
-    LoginComponent
+    LoginComponent,
+    RoleListComponent,
+    RoleDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +50,7 @@ let routes: Routes = [
     RouterModule.forRoot(routes),
     HttpModule
   ],
-  providers: [ApiService, LoginService],
+  providers: [CookieService, ApiService, LoginService, RoleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
