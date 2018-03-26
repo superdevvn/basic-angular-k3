@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 
 namespace SuperDev.Models
@@ -19,6 +20,8 @@ namespace SuperDev.Models
 
         public int UnitId { get; set; }
 
+        [Index("IX_Code", IsUnique = true)]
+        [MaxLength(50)]
         public string Code { get; set; }
 
         public string Name { get; set; }
