@@ -1,0 +1,10 @@
+git pull
+git add .
+git commit- m"message"
+git push
+Router,
+RouterModule,
+routerLink, 
+<base href="/">
+ctrl .
+<router-outlet></router-outlet>

@@ -10,7 +10,9 @@ export class LoginService {
                 username: username,
                 password: password
             }).then(res => {
+                alert(this.apiService.token);
                 this.apiService.token = res as string;
+                alert(this.apiService.token);
                 resolve(res);
             }).catch(err => {
                 reject(err);
