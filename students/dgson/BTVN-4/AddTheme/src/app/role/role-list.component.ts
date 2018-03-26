@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RoleService } from './role.service';
+import { LoadingService } from '../../services/loading.service';
 
 @Component({
     selector: 'app-role-list',
@@ -12,12 +13,15 @@ export class RoleListComponent implements OnInit {
 
     constructor( 
         private router: Router,
-        private roleService: RoleService
+        private roleService: RoleService,
+        private loadingService: LoadingService
     ) { }
 
     ngOnInit() {
+        this.loadingService.star();
         this.roleService.getList().then((roles:any[])=>{
             this.roles = roles;
+            this.loadingService.stop();
         })
     }
 
