@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RoleService } from './role.service';
+import { NotifyService } from '../../services/notify.service';
 
 @Component({
     selector: 'app-role-detail',
@@ -13,7 +14,8 @@ export class RoleDetailComponent implements OnInit {
     constructor(
         private router: Router,
     private roleService: RoleService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private notifyService: NotifyService) { }
 
     ngOnInit() {
         this.activatedRoute.params.subscribe(params=>{
@@ -27,6 +29,10 @@ export class RoleDetailComponent implements OnInit {
     }
 
     save() {
-        this.roleService.saveRole(this.role);
+        this.roleService.saveRole(this.role).then(role=>{
+            this.notifyService.confirm("Luu thanh cong");
+        }).catch(err=>{
+            this.notifyService.error("Luu that bai");
+        })
     }
 }
