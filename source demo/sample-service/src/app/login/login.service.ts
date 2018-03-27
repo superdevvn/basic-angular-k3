@@ -14,8 +14,13 @@ export class LoginService {
                 username: username,
                 password: password
             }).then(res => {
+                alert(this.apiService.token);
                 this.apiService.token = res as string;
+<<<<<<< HEAD
                 this.cookieService.set('auth-superdev', this.apiService.token);
+=======
+                alert(this.apiService.token);
+>>>>>>> superdev_develop
                 resolve(res);
             }).catch(err => {
                 reject(err);

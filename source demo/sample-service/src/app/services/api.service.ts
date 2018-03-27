@@ -12,6 +12,7 @@ export class ApiService {
         this.token = this.cookieSV.check('author-superdev') ? this.cookieSV.get('author-superdev') : 'none';
     }
 
+<<<<<<< HEAD
     get(url: string) {
         let headers = new Headers();
         headers.append("Auth-SuperDev", this.token);
@@ -55,4 +56,31 @@ export class ApiService {
     //   b = +b;
     //   return a + b;
     // }
+=======
+  post(url: string, body: any) {
+    let headers = new Headers();
+    headers.append("Auth-SuperDev", this.token);
+    
+    return new Promise((resolve, reject) => {
+      this.http.post(this.host + url, body,  {headers: headers} ).toPromise().then(res => {
+        resolve(res.json());
+      }).catch((err) => {
+        reject(err);
+      });
+    });
+  }
+ 
+  sum(...args) {
+    let result = 0;
+    args.forEach(value => {
+      result = result + (+value);
+    });
+    return result;
+  }
+  // sum(a: number | string, b: number | string) {
+  //   a = +a;
+  //   b = +b;
+  //   return a + b;
+  // }
+>>>>>>> superdev_develop
 }

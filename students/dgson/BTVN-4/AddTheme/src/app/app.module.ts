@@ -4,22 +4,32 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import {CookieService} from 'ngx-cookie-service';
+
 import { AppComponent } from './app.component';
 import { Layout1Component } from './layout1/layout1.component';
 import { Layout2Component } from './layout2/layout2.component';
 import { Layout3Component } from './layout3/layout3.component';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
-import { ApiService } from './api.service';
+import {RoleListComponent} from './role/role-list.component';
+import {RoleDetailComponent} from './role/role-detail.component';
+
 import { LoginService } from './login/login.service';
+import { ApiService } from '../services/api.service';
+import { RoleService } from './role/role.service';
+import { LoadingService } from '../services/loading.service';
+import { NotifyService } from '../services/notify.service';
 
 let routes : Routes = [
-  {path: '',redirectTo: 'main' ,pathMatch:"full"},
+  {path: '',redirectTo: 'login' ,pathMatch:"full"},
   {path: 'main',component:MainComponent,children: [
     {path:'',redirectTo:'layout1',pathMatch:"full"},
     {path:'layout1',component:Layout1Component},
     {path:'layout2',component:Layout2Component},
     {path:'layout3',component:Layout3Component},
+    {path:'role-list',component:RoleListComponent},
+    {path:'role-detail/:id',component:RoleDetailComponent},
   ]},
   {path:'login', component:LoginComponent}
 ];
@@ -31,7 +41,9 @@ let routes : Routes = [
     Layout2Component,
     Layout3Component,
     MainComponent,
-    LoginComponent
+    LoginComponent,
+    RoleListComponent,
+    RoleDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +51,7 @@ let routes : Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [ApiService, LoginService],
+  providers: [ApiService, LoginService, RoleService,CookieService, LoadingService, NotifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

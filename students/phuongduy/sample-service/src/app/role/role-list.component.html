@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title hidden-xs"> Products List</span>
+                <button class="btn btn-primary pull-right">New Role</button>
+            </div>
+            <div class="panel-body pn">
+                <div class="table-responsive">
+                    <table class="table table-condensed allcp-form theme-warning tc-checkbox-1 fs13">
+
+                        <thead>
+                            <colgroup>
+                                <col style="width: 200px;">
+                                <col style="width: 100px;">
+                                <col style="width: 100px;">
+                                <col style="width: 100px;">
+                                <col>
+                            </colgroup>
+                            <tr class="bg-light">
+                                <th class="text-center">#</th>
+                                <th class="text-center">Id</th>
+                                <th class="text-center">Name</th>
+                                <th class="text-center">Description</th>
+                                <th class="text-center">Action</th>
+
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let role of roles; let idx = index">
+                                <td>{{idx}}</td>
+                                <td>{{role.Id}}</td>
+                                <td>{{role.Name}}</td>
+                                <td>{{role.Description}}</td>
+                                <td class="text-center">
+                                    <button class="btn btn-info btn-xs" (click)="detail(role)">
+                                        <i class="fa fa-pencil"></i>
+                                        <span>Edit</span>
+                                    </button>
+                                    <button class="btn btn-warning  btn-xs" (click)="delete(role)">
+                                        <i class="fa fa-trash-o"></i>
+                                        <span>Delete</span>
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
