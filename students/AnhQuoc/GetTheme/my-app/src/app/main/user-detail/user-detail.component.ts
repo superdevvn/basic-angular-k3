@@ -45,9 +45,6 @@ export class UserDetailComponent implements OnInit {
                         console.log('User by ID ', this.user);
                     })
             }
-            else {
-
-            }
         });
         this.userListService.getUsers()
             .then((users: any) => {

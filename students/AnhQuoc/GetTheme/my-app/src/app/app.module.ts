@@ -19,8 +19,17 @@ import {NotificationService} from "./service/notification.service";
 import {NotFoundComponent} from './main/not-found/not-found.component';
 import {UserListComponent} from './main/user-list/user-list.component';
 import {UserListService} from "./main/user-list/user-list.service";
-import { UserDetailComponent } from './main/user-detail/user-detail.component';
+import {UserDetailComponent} from './main/user-detail/user-detail.component';
 import {UserDetailService} from "./main/user-detail/user-detail.service";
+import {CustomerListComponent} from './main/customer/customer-list/customer-list.component';
+import {CustomerDetailComponent} from './main/customer/customer-detail/customer-detail.component';
+import {CategoryListComponent} from './main/category/category-list/category-list.component';
+import {CategoryDetailComponent} from './main/category/category-detail/category-detail.component';
+import {BookListComponent} from './main/book/book-list/book-list.component';
+import {BookDetailComponent} from './main/book/book-detail/book-detail.component';
+import {BookService} from "./main/book/book.service";
+import {CategoryService} from "./main/category/category.service";
+import {CustomerService} from "./main/customer/customer.service";
 
 
 @NgModule({
@@ -32,7 +41,14 @@ import {UserDetailService} from "./main/user-detail/user-detail.service";
         RoleDetailComponent,
         NotFoundComponent,
         UserListComponent,
-        UserDetailComponent
+        UserDetailComponent,
+        CustomerListComponent,
+        CustomerDetailComponent,
+        CategoryListComponent,
+        CategoryDetailComponent,
+        BookListComponent,
+        BookDetailComponent,
+
     ],
     imports: [
         BrowserModule,
@@ -48,7 +64,10 @@ import {UserDetailService} from "./main/user-detail/user-detail.service";
         RoleDetailService,
         NotificationService,
         UserListService,
-        UserDetailService
+        UserDetailService,
+        BookService,
+        CategoryService,
+        CustomerService
     ],
     bootstrap: [AppComponent]
 })
