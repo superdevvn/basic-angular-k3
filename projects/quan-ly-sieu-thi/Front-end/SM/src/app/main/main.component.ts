@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AfterViewInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { LoginService } from '../login/login.service';
 import { ApiService } from '../services/api.service';
 import { MainService } from './main.service';
@@ -24,6 +24,11 @@ export class MainComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        console.log(event.url);
+      }
+    });
     this.loginService.getAuthorize().catch(err => {
       this.router.navigate(['login']);
     });
