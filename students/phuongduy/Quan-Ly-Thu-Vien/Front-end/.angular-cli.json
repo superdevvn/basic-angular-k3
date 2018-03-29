@@ -1,0 +1,82 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "angular-menu"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css",
+        "assets/ace-master/css/bootstrap.min.css",
+        "assets/ace-master/font-awesome/4.5.0/css/font-awesome.min.css",
+        "assets/ace-master/css/fonts.googleapis.com.css",
+        "assets/ace-master/css/ace.min.css",
+        "assets/ace-master/css/ace-skins.min.css",
+        "assets/ace-master/css/ace-rtl.min.css"
+
+      
+      ],
+      "scripts": [
+        "assets/ace-master/js/jquery-2.1.4.min.js",
+        "assets/ace-master/js/ace-extra.min.js",
+        "assets/ace-master/js/bootstrap.min.js",
+        "assets/ace-master/js/jquery-ui.custom.min.js",
+        "assets/ace-master/js/jquery.ui.touch-punch.min.js",
+        "assets/ace-master/js/jquery.easypiechart.min.js",
+        "assets/ace-master/js/jquery.sparkline.index.min.js",
+        "assets/ace-master/js/jquery.flot.min.js",
+        "assets/ace-master/js/jquery.flot.pie.min.js",
+        "assets/ace-master/js/jquery.flot.resize.min.js",
+        "assets/ace-master/js/ace-elements.min.js",
+        "assets/ace-master/js/ace.min.js"
+
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "component": {}
+  }
+}

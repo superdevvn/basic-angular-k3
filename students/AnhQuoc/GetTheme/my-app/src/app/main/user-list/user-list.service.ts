@@ -27,8 +27,8 @@ export class UserListService {
                 })
                 .catch(err => {
                     reject(err);
-                })
-        })
+                });
+        });
     }
 
 }

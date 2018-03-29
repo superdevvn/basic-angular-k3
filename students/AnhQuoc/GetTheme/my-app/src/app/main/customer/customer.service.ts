@@ -44,14 +44,15 @@ export class CustomerService {
         })
     }
 
-    deleteRole(id) {
+    deleteCustomer(id) {
         return new Promise((resolve, reject) => {
-            this.apiService.delete(`/api/deleteRole?id=${id}`)
+            this.apiService.delete(`/api/deleteCustomer?id=${id}`)
                 .then(res => {
                     resolve(res);
-                }).catch(err => {
-                reject(err);
-            });
+                })
+                .catch(err => {
+                    reject(err);
+                });
         });
     }
 

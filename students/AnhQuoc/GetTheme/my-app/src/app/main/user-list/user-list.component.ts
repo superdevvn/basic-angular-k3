@@ -33,27 +33,38 @@ export class UserListComponent implements OnInit {
         this.router.navigate(['/main/user/', 0]);
     }
 
-    deleteUser(id: number) {
-        swal({
-            title: 'Are you sure?',
-            text: "Do you want to delete this",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.value) {
-                this.userlistService.deleteUser(id)
-                    .then(() => {
-                        this.userlistService.getUsers()
-                            .then((users: any[]) => {
-                                this.users = users;
-                            })
-                        this.notification.printDeleteSuccess();
-                    })
-            }
-        })
+    delete(user) {
+
+        this.userlistService.deleteUser(user.Id).then(() => {
+            this.userlistService.getUsers().then((users: any[]) => {
+                this.users = users;
+
+                console.log(" this is new userlist after hit delete", this.users);
+            });
+        });
+
+
+        // swal({
+        //     title: 'Are you sure?',
+        //     text: "Do you want to delete this",
+        //     type: 'warning',
+        //     showCancelButton: true,
+        //     confirmButtonColor: '#3085d6',
+        //     cancelButtonColor: '#d33',
+        //     confirmButtonText: 'Yes, delete it!'
+        // }).then((result) => {
+        //     if (result.value) {
+        //         console.log("this is user of user list", user);
+        //         this.userlistService.deleteUser(user.Id)
+        //             .then(() => {
+        //                 this.userlistService.getUsers()
+        //                     .then((users: any[]) => {
+        //                         this.users = users;
+        //                     })
+        //                 this.notification.printDeleteSuccess();
+        //             })
+        //     }
+        // })
 
 
     }

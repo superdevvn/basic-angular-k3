@@ -1,0 +1,91 @@
+
+
+<div class="page-content">
+    <div class="row">
+<div class="col-md-12">
+  <div class="widget-box">
+    <div class="widget-header">
+      <h4 class="widget-title">USER DETAIL</h4>
+    </div>
+    <div class="widget-body">
+      <div class="widget-main">
+          <div class="form">
+              <strong class="text-primary text-center">
+               <h2 style="color:#906E7D">{{title}}</h2>
+               <hr>
+              </strong>
+              <div class="row">
+            
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                  <div class="form-group box">
+                      <strong class="text-primary">USERNAME</strong>
+                    <input type="" class="form-control" id="pwd" [(ngModel)]="user.Username">
+                  </div>
+                </div>
+          
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group box">
+                    <strong class="text-primary">PASSWORD</strong>
+                  <input type="password" class="form-control" id="pwd" [(ngModel)]="user.Password">
+                </div>
+              </div>
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                  <div class="form-group box">
+                      <strong class="text-primary">FIRST NAME</strong>
+                    <input type="text" class="form-control" id="usr" [(ngModel)]="user.FirstName">
+                  </div>
+                </div>
+            
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                  <div class="form-group box">
+                      <strong class="text-primary">LAST NAME</strong>
+                    <input type="" class="form-control" id="pwd" [(ngModel)]="user.LastName">
+                  </div>
+                </div>
+            
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                  <div class="form-group box">
+                  <strong class="text-primary">ROLE</strong>
+                  <select class="form-control" [(ngModel)]="user.RoleId">
+                      <option *ngFor="let role of roles" [ngValue]="role.Id">{{role.Name}}</option>
+                  </select>
+                  </div>
+                </div>
+            
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                  <div class="form-group box">
+                      <strong class="text-primary">STATUS</strong>
+                    <input type="" class="form-control" id="pwd" [(ngModel)]="user.IsActived">
+                  </div>
+                </div>
+            
+                
+            
+               
+            
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                  <div class="form-group box">
+                      <strong class="text-primary">DESCRIPTION</strong>
+                    <textarea class="form-control" id="usr" [(ngModel)]="user.Description" style="height:100px"></textarea>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="myBtn">
+                <button class="btn btn-primary" (click)="save()">
+                  Save
+                </button>
+                <button class="btn btn-warning" (click)="back()">
+                  Back
+                </button>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+ 

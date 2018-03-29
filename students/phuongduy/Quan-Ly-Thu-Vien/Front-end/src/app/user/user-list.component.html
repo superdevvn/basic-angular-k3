@@ -1,0 +1,76 @@
+<div class="page-content">
+  <div class="page-header">
+    <h1>
+      <strong>USER LIST</strong>
+    </h1>
+  </div>
+  <!-- /.page-header -->
+  <button class="btn btn-primary" (click)="create()">New User </button>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <!-- PAGE CONTENT BEGINS -->
+      <div class="row">
+        <div class="col-xs-12">
+          <table id="simple-table" class="table table-bordered table-hover">
+              <colgroup>
+                <col style="width:50px" />
+                <col style="width:100px" />
+                <col style="width:100px" />
+                <col style="width:200px" />
+                <col style="width:150px" />
+                <col style="width:120px" />
+              </colgroup>
+            <thead>
+              <tr>
+               
+                <th class="text-center">#</th>
+                <th class="text-center">First Name</th>
+                <th class="text-center">Last Name</th>
+                <th class="text-center">Full Name</th>
+                <th class="text-center">Status</th>
+                <th class="text-center">Role</th>
+                <th class="text-center">Description</th>
+                <th class="text-center">
+                  <i class="fa fa-pencil"></i>
+                  <i class="fa fa-trash-o"></i>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let user of users; let idx=index">
+                <td class="center">{{idx}}</td>
+                <td>{{user.FirstName}}</td>
+                <td>{{user.LastName}}</td>
+                <td>{{user.FirstName}} {{user.LastName}}</td>
+                <td style="text-align: center;">
+                  <button class="btn" [ngClass]="{'btn-success':user.IsActived, 'btn-danger': !user.IsActived}">
+                    {{user.IsActived?'Actived':'Blocked'}}
+                  </button>
+                </td>
+                <td>{{user.RoleName}}</td>
+                <td>{{user.Description}}</td>
+                <td style="width:125px">
+                  <div class="text-center">
+                    <div class="hidden-sm hidden-xs btn-group">
+                      <button class="btn btn-xs btn-info" (click)="detail(user)">
+                        <i class="ace-icon fa fa-pencil bigger-120"></i>
+                      </button>
+                      <button class="btn btn-xs btn-danger" (click)="delete(user)">
+                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- /.span -->
+      </div>
+      <!-- /.row -->
+    </div>
+  </div>
+</div>
