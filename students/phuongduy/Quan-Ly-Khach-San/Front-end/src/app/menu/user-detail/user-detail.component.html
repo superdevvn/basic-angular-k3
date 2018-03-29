@@ -1,0 +1,113 @@
+<section id="content" class="table-layout animated fadeIn">
+
+  <div class="allcp-form theme-primary tab-pane mw600" id="register" role="tabpanel">
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">
+          {{title}}
+        </span>
+      </div>
+      <!-- -------------- /Panel Heading -------------- -->
+
+      <div method="post" action="/" id="form-register">
+
+        <div class="panel-body pn">
+          <div class="section row">
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">Role *</h6>
+                    <select class="form-control" [(ngModel)]="user.RoleId">
+                      <option *ngFor="let role of roles" [ngValue]="role.Id">{{role.Name}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">Username *</h6>
+                    <div class="form-line">
+                      <input type="text" class="form-control" [(ngModel)]="user.Username" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body pn">
+          <div class="section row">
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">Password *</h6>
+                    <div class="form-line">
+                      <input type="text" class="form-control" [(ngModel)]="user.Password" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">Full Name</h6>
+                    <div class="form-line">
+                      <input type="text" class="form-control" disabled="disabled" value="{{user.FirstName +' '+ user.LastName}}" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body pn">
+          <div class="section row">
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">First Name</h6>
+                    <div class="form-line">
+                      <input type="text" class="form-control" [(ngModel)]="user.FirstName" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">Last Name</h6>
+                    <div class="form-line">
+                      <input type="text" class="form-control" [(ngModel)]="user.LastName" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-sm-9 col-sm-offset-9">
+              <button type="button" class="btn btn-default" (click)="back()">
+                <i class="fa fa-arrow-circle-left"></i>
+                BACK</button>
+              <button class="btn btn-primary" (click)="save()">
+                <i style="cursor:pointer" class="fa fa-save"></i>
+                SAVE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

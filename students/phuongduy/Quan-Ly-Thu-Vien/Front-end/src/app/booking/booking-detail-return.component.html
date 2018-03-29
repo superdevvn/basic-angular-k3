@@ -1,0 +1,76 @@
+<div class="page-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="widget-box">
+        <div class="widget-header">
+            <h4 class="widget-title">TRANSACTION DETAIL</h4>
+        </div>
+        <div class="widget-body">
+          <div class="widget-main">
+            <div class="form">
+              <strong class="text-primary text-center">
+                <h2 style="color:#906E7D">{{title}}</h2>
+                <hr>
+              </strong>
+
+              <div class="row">
+                  <div class="col-sm-4 col-md-4 col-lg-4">
+                  <div class="form-group box">
+                    <strong class="text-primary">USER ID</strong>
+                    <select class="form-control" [(ngModel)]="inOut.UserId"[disabled]="true">
+                        <option *ngFor="let user of users" [ngValue]="user.Id">{{user.FirstName}}</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                  <div class="form-group box">
+                    <strong class="text-primary">CUSTOMER ID</strong>
+                    <select class="form-control" [(ngModel)]="inOut.CustomerId" [disabled]="true">
+                        <option *ngFor="let customer of customers" [ngValue]="customer.Id">{{customer.FirstName}}</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                  <div class="form-group box">
+                    <strong class="text-primary">BOOK ID</strong>
+                    <select class="form-control" [(ngModel)]="inOut.BookId" [disabled]="true">
+                        <option *ngFor="let book of books" [ngValue]="book.Id">{{book.Name}}</option>
+                    </select>
+                  </div>
+                </div>
+
+
+
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                  <div class="form-group box">
+                    <strong class="text-primary">FROM DATE</strong>
+                    <input type="" class="form-control" id="pwd" [(ngModel)]="inOut.FromDate" [disabled]="true">
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                  <div class="form-group box">
+                    <strong class="text-primary">TO DATE</strong>
+                    <input type="text" class="form-control" id="usr" [(ngModel)]="NULL" [disabled]="true">
+                  </div>
+                </div>
+              </div>
+
+              
+              </div>
+              <div class="myBtn">
+                  <button class="btn btn-success" (click)="return()">
+                      Return
+                    </button>
+                <button class="btn btn-warning" (click)="back()">
+                  Back
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

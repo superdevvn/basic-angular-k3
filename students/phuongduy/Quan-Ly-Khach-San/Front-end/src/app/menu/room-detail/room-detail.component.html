@@ -1,0 +1,134 @@
+<section id="content" class="table-layout animated fadeIn">
+
+  <div class="allcp-form theme-primary tab-pane mw600" id="register" role="tabpanel">
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">
+          {{title}}
+        </span>
+      </div>
+      <!-- -------------- /Panel Heading -------------- -->
+
+      <div method="post" action="/" id="form-register">
+
+        <div class="panel-body pn">
+          <div class="section row">
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">CODE *</h6>
+                    <div class="form-line">
+                      <input type="text" class="form-control" [(ngModel)]="room.Code" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">NAME</h6>
+                    <div class="form-line">
+                      <input type="text" class="form-control" [(ngModel)]="room.Name" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body pn">
+          <div class="section row">
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">SIZE</h6>
+                    <div class="form-line">
+                      <!-- <input type="text" class="form-control" [(ngModel)]="room.Size" /> -->
+                      <select class="form-control" [(ngModel)]="room.Size">
+                        <option *ngFor="let size of listSize" [ngValue]="size.value">{{size.text}}</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">TYPE</h6>
+                    <div class="form-line">
+                      <select class="form-control" [(ngModel)]="room.Type">
+                        <option *ngFor="let type of listTypes" [ngValue]="type">{{type}}</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body pn">
+          <div class="section row">
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">PRICE/HOUR</h6>
+                    <div class="form-line">
+                      <input type="text" class="form-control" [(ngModel)]="room.PricePerHour" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">PRICE/DAY</h6>
+                    <div class="form-line">
+                      <input type="text" class="form-control" [(ngModel)]="room.PricePerDay" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body pn">
+          <div class="section row">
+            <div class="col-md-6">
+              <div class="row clearfix">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <h6 class="card-inside-title">DESCRIPTION</h6>
+                    <div>
+                      <textarea rows="5" class="form-control" [(ngModel)]="room.Description"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-sm-9 col-sm-offset-9">
+              <button type="button" class="btn btn-default" (click)="back()">
+                <i class="fa fa-arrow-circle-left"></i>
+                BACK</button>
+              <button class="btn btn-primary" (click)="saveRoom()">
+                <i style="cursor:pointer" class="fa fa-save"></i>
+                SAVE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
