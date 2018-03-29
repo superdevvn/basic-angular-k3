@@ -11,6 +11,7 @@ export class CategoryListComponent implements OnInit {
 
     categories: any[];
 
+
     constructor(private categoryService: CategoryService, private router: Router) {
     }
 
@@ -28,4 +29,15 @@ export class CategoryListComponent implements OnInit {
         this.router.navigate(['/main/category', 0]);
     }
 
+
+    delete(customer) {
+        this.categoryService.deleteRole(customer.Id)
+            .then(() => {
+                this.categoryService.getCategories()
+                    .then((res: any[]) => {
+                        this.categories = res;
+                    })
+                    .catch(err => alert(err));
+            })
+    }
 }

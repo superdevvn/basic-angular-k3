@@ -52,8 +52,8 @@ export class CustomerListComponent implements OnInit {
         //         this.notificationService.printDeleteSuccess();
         //     }
         // })
-
-        this.customerService.deleteRole(customer.Id)
+        console.log("this is customer hit delete", customer.Id);
+        this.customerService.deleteCustomer(customer.Id)
             .then(() => {
                 this.customerService.getCustomers()
                     .then((customers: any[]) => {
