@@ -1,0 +1,80 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+
+import { AppComponent } from './app.component';
+import { MainComponent } from './main/main.component';
+import { LoginComponent } from './login/login.component';
+import { ListuserComponent } from './user/listuser.component';
+import { UserdetailComponent } from './user/userdetail.component';
+import { ApiService } from './services/api.service';
+import { CookieService } from 'ngx-cookie-service';
+import { LoginService } from './login/login.service';
+import { HttpModule } from '@angular/http';
+import { LoadingService } from './services/loading.service';
+import { NotifyService } from './services/notify.service';
+import { ListuserService } from './user/listuser.service';
+import { MainService } from './main/main.service';
+import { RoleComponent } from './role/role.component';
+import { InOutComponent } from './in-out/in-out.component';
+import { ManufacturerComponent } from './manufacturer/manufacturer.component';
+import { ProductComponent } from './product/product.component';
+import { UnitComponent } from './unit/unit.component';
+import { CategoryComponent } from './category/category.component';
+import { WarehouseComponent } from './warehouse/warehouse.component';
+import { RoleService } from './role/role.service';
+import { RoleDetailComponent } from './role/role-detail.component';
+import { ManuDetailComponent } from './manufacturer/manu-detail.component';
+import { ManufacturerService } from './manufacturer/manufacturer.service';
+import { WarehouseDetailComponent } from './warehouse/warehouse-detail.component';
+import { WarehouseService } from './warehouse/warehouse.service';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  {
+    path: 'main', component: MainComponent, children: [
+      { path: 'user-list', component: ListuserComponent },
+      { path: 'user-detail/:id', component: UserdetailComponent },
+      { path: 'role-list', component: RoleComponent },
+      { path: 'role-detail/:id', component: RoleDetailComponent },
+      { path: 'manu-list', component: ManufacturerComponent },
+      { path: 'manu-detail/:id', component: ManuDetailComponent },
+      { path: 'wh-list', component: WarehouseComponent },
+      { path: 'wh-detail/:id', component: WarehouseDetailComponent }
+    ]
+  }
+]
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    MainComponent,
+    LoginComponent,
+    ListuserComponent,
+    UserdetailComponent,
+    RoleComponent,
+    InOutComponent,
+    ManufacturerComponent,
+    ProductComponent,
+    UnitComponent,
+    CategoryComponent,
+    WarehouseComponent,
+    RoleDetailComponent,
+    ManuDetailComponent,
+    WarehouseDetailComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    RouterModule.forRoot(routes)
+  ],
+  providers: [CookieService, ApiService, NotifyService,
+    LoadingService, LoginService, ListuserService,
+    MainService, RoleService, ManufacturerService,
+    WarehouseService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

@@ -1,0 +1,184 @@
+.hl-login {
+    display: inline-block;
+    height: auto;
+    background: rgba(255, 255, 255, .6);
+    border-radius: 15px;
+    margin-top: 100px;
+    padding: 30px;
+    box-shadow: 0px 0px 5px 1px;
+    z-index: 1;
+}
+
+.hl-bg {
+    margin: 0px !important;
+    padding: 0px !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transform: translateY(-121px);
+}
+
+.hl-carousel-control {
+    margin: 0px !important;
+    padding: 0px !important;
+    position: absolute;
+    z-index: 0;
+    height: 91%;
+    transform: translateY(68px);
+}
+
+.hl-opac {
+    opacity: .8;
+}
+
+.hl-chk {
+    font-size: 1.2em;
+}
+
+.hl-chk:hover {
+    cursor: pointer;
+}
+
+.lightning {
+    background: #e4e4e4;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0px;
+    height: 100%;
+    z-index: 9999999999999;
+    transition: all 1s all;
+    animation-name: start-e;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+.page {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 1s all;
+    animation-name: start-page;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: .1s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes start-page {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.1;
+    }
+
+    20% {
+        opacity: 0.2;
+    }
+
+    30% {
+        opacity: 0.3;
+    }
+
+    40% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    60% {
+        opacity: 0.6;
+    }
+
+    70% {
+        opacity: 0.7;
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes start-e {
+    10% {
+        width: 10%;
+        opacity: 0.9;
+    }
+
+    20% {
+        width: 20%;
+        opacity: 0.8;
+    }
+
+    30% {
+        width: 30%;
+        opacity: 0.7;
+    }
+
+    40% {
+        width: 40%;
+        opacity: 0.6;
+    }
+
+    50% {
+        width: 50%;
+        opacity: 0.5;
+    }
+
+    60% {
+        width: 60%;
+        opacity: 0.4;
+    }
+
+    70% {
+        width: 70%;
+        opacity: 0.3;
+    }
+
+    80% {
+        width: 80%;
+        opacity: 0.2;
+    }
+
+    90% {
+        width: 90%;
+        opacity: 0.1;
+    }
+
+    100% {
+        width: 100%;
+        opacity: 0;
+    }
+}
+
+.red-bar {
+    width: 100vw;
+    height: 4px;
+    background: rgb(240, 240, 240);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.blue-scroll {
+    width: 10%;
+    height: 4px;
+    background: rgb(0,131,193);
+}

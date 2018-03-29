@@ -63,6 +63,10 @@
       <Project>{4b4735fd-4e2c-4744-a263-20f507c911b4}</Project>
       <Name>SuperDev.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SuperDev.Utilities\SuperDev.Utilities.csproj">
+      <Project>{2A1E5AAD-8322-4C6F-B930-2F326C21B1E7}</Project>
+      <Name>SuperDev.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
