@@ -1,0 +1,113 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "sm"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css",
+        "assets/vendor/bootstrap/css/bootstrap.css",
+        "assets/vendor/magnific-popup/magnific-popup.css",
+        "assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css",
+        "assets/vendor/jquery-ui/jquery-ui.css",
+        "assets/vendor/jquery-ui/jquery-ui.theme.css",
+        "assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css",
+        "assets/vendor/morris.js/morris.css",
+        "assets/stylesheets/theme.css",
+        "assets/stylesheets/skins/default.css",
+        "assets/stylesheets/theme-custom.css"
+      ],
+      "scripts": [
+        "assets/vendor/modernizr/modernizr.js",
+        "assets/vendor/jquery/jquery.js",
+        "assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js",
+        "assets/vendor/bootstrap/js/bootstrap.js",
+        "assets/vendor/nanoscroller/nanoscroller.js",
+        "assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js",
+        "assets/vendor/magnific-popup/jquery.magnific-popup.js",
+        "assets/vendor/jquery-placeholder/jquery-placeholder.js",
+        "assets/vendor/jquery-ui/jquery-ui.js",
+        "assets/vendor/jqueryui-touch-punch/jqueryui-touch-punch.js",
+        "assets/vendor/jquery-appear/jquery-appear.js",
+        "assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js",
+        "assets/vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.js",
+        "assets/vendor/flot/jquery.flot.js",
+        "assets/vendor/flot.tooltip/flot.tooltip.js",
+        "assets/vendor/flot/jquery.flot.pie.js",
+        "assets/vendor/flot/jquery.flot.categories.js",
+        "assets/vendor/flot/jquery.flot.resize.js",
+        "assets/vendor/jquery-sparkline/jquery-sparkline.js",
+        "assets/vendor/raphael/raphael.js",
+        "assets/vendor/morris.js/morris.js",
+        "assets/vendor/gauge/gauge.js",
+        "assets/vendor/snap.svg/snap.svg.js",
+        "assets/vendor/liquid-meter/liquid.meter.js",
+        "assets/vendor/jqvmap/jquery.vmap.js",
+        "assets/vendor/jqvmap/data/jquery.vmap.sampledata.js",
+        "assets/vendor/jqvmap/maps/jquery.vmap.world.js",
+        "assets/vendor/jqvmap/maps/continents/jquery.vmap.africa.js",
+        "assets/vendor/jqvmap/maps/continents/jquery.vmap.asia.js",
+        "assets/vendor/jqvmap/maps/continents/jquery.vmap.australia.js",
+        "assets/vendor/jqvmap/maps/continents/jquery.vmap.europe.js",
+        "assets/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js",
+        "assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js",
+        "assets/javascripts/theme.js",
+        "assets/javascripts/theme.custom.js",
+        "assets/javascripts/theme.init.js",
+        "assets/vendor/flot/jquery.flot.js",
+        "assets/vendor/flot.tooltip/flot.tooltip.js",
+        "assets/vendor/flot/jquery.flot.pie.js",
+        "assets/vendor/flot/jquery.flot.categories.js",
+        "assets/vendor/flot/jquery.flot.resize.js",
+        "assets/vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "component": {}
+  }
+}

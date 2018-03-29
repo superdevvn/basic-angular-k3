@@ -1,18 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable()
 export class ApiService {
   host:string = "http://103.232.121.69:5203/";
   token: string = "none";
   userInfor: any;
-  constructor(private http: Http) { }
-
-  // sum(a: number | string, b: number | string) {
-  //   a = +a;
-  //   b = +b;
-  //   return a + b;
-  // }
+  constructor(private http: Http, private cookieService: CookieService) { 
+    this.token =  this.cookieService.check('author-superdev') ? this.cookieService.get('author-superdev') : "none";
+  }
 
   get(url: string) {
     let headers = new Headers();
@@ -53,8 +50,5 @@ export class ApiService {
 
   maxValue(...values) {
     return Math.max(...values);;
-    // values.forEach(value => {
-    //   Math.max.apply(Math, values.map((result) => { return result; }))
-    // });
   }
 }

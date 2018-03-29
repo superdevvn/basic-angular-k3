@@ -1,0 +1,87 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <div>
+      <h3>User Information {{user.Username}}</h3>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-6 text-center">
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">ID:</strong>
+      </div>
+      <div class="col-md-12">
+        <input class="form-control hl-readonly" type="text" placeholder="ID" [(ngModel)]="user.Id">
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Role ID:</strong>
+      </div>
+      <div class="col-md-12">
+        <input class="form-control" type="text" placeholder="Role ID" [(ngModel)]="user.RoleId">
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Username:</strong>
+      </div>
+      <div class="col-md-12">
+        <input class="form-control hl-readonly" type="text" placeholder="Username" [(ngModel)]="user.Username">
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Password:</strong>
+      </div>
+      <div class="col-md-12">
+        <input class="form-control hl-readonly" type="text" placeholder="Password" [(ngModel)]="user.Password">
+      </div>
+      <div class="col-md-6">
+        <div class="checkbox text-left">
+          <label>
+            <input type="checkbox" [(ngModel)]="user.IsActived">Actived</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="checkbox text-left">
+          <label>
+            <input type="checkbox" [(ngModel)]="user.IsDeleted">Deleted</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 text-center">
+      <div class="col-md-6">
+        <div class="col-md-12 text-left" style="padding: 0">
+          <strong class="text-muted">First Name:</strong>
+        </div>
+        <div class="col-md-12" style="padding: 0">
+          <input class="form-control" type="text" placeholder="First Name" [(ngModel)]="user.FirstName">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="col-md-12 text-left" style="padding: 0">
+          <strong class="text-muted">Last Name:</strong>
+        </div>
+        <div class="col-md-12" style="padding: 0">
+          <input class="form-control" type="text" placeholder="Last Name" [(ngModel)]="user.LastName">
+        </div>
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Description:</strong>
+      </div>
+      <div class="col-md-12">
+        <textarea class="form-control" rows="5" placeholder="Description" [(ngModel)]="user.Description"></textarea>
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Created Date:</strong>
+      </div>
+      <div class="col-md-12">
+        <input class="form-control hl-date" type="date" [(ngModel)]="user.CreatedDate">
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Created By:</strong>
+      </div>
+      <div class="col-md-12">
+        <input class="form-control" type="text" [(ngModel)]="user.CreatedBy">
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer text-right">
+    <a class="btn btn-default" (click)="cancel();">Cancel</a>
+    <button class="btn btn-primary" (click)="save()">Save</button>
+  </div>
+</div>
