@@ -46,9 +46,9 @@ export class CategoryService {
 
     deleteRole(id) {
         return new Promise((resolve, reject) => {
-            this.apiService.delete(`/api/deleteRole?id=${id}`)
-                .then(res => resolve(res.json()))
-                .catch(err => reject(err));
+            this.apiService.delete(`/api/deleteCategory?id=${id}`)
+                .then(res => resolve(res))
+                .catch(err => reject(err))
         })
     }
 

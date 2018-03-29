@@ -1,6 +1,7 @@
-﻿using SuperDev.Models;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.Linq;
+using SuperDev.Models;
+using SuperDev.Utilities;
 
 namespace SuperDev.Repositories
 {
@@ -22,14 +23,24 @@ namespace SuperDev.Repositories
             using (var context = new SuperDevDbContext())
             {
                 var entity = context.Roles.Find(role.Id);
-                context.CloneObject(entity, role);
+                Utility.CloneObject(entity, role);
                 context.SaveChanges();
                 context.Entry(entity).Reload();
                 return entity;
             }
         }
 
-        public IEnumerable<Role> GetEntities()
+        public void Delete(int id)
+        {
+            using (var context = new SuperDevDbContext())
+            {
+                var role = context.Roles.Find(id);
+                context.Roles.Remove(role);
+                context.SaveChanges();
+            }
+        }
+
+        public IEnumerable GetEntities()
         {
             using (var context = new SuperDevDbContext())
             {

@@ -29,4 +29,14 @@ export class BookListComponent implements OnInit {
         this.router.navigate(['/main/book', 0]);
     }
 
+    deleteBook(id) {
+        this.bookService.deleteBook(id)
+            .then(() => {
+                this.bookService.getBooks()
+                    .then((books: any[]) => {
+                        this.books = books;
+                    })
+            })
+    }
+
 }
