@@ -4,6 +4,10 @@
             <h2>
                 BOOK LIST
             </h2>
+            <button (click)="create()" type="button"
+                    class="btn bg-lime btn-circle waves-effect waves-circle waves-float pull-right">
+                <i class="material-icons">add</i>
+            </button>
         </div>
         <div class="body">
             <div class="row">
@@ -15,7 +19,7 @@
                             <p>
                                 {{book.Description}}
                             </p>
-                            <p>
+                            <p class="contain-button footer">
                                 <button type="button" class="btn btn-info waves-effect"
                                         [routerLink]="['/main/book', book.Id]">
                                     <i class="material-icons">details</i>

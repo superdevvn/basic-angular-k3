@@ -9,7 +9,7 @@ export class BookService {
 
     getBooks() {
         return new Promise((resolve, reject) => {
-            this.apiService.post(`/api/getBooks/`, {})
+            this.apiService.post(`/api/getBooks`, {})
                 .then(res => {
                     resolve(res.json());
                 })
@@ -23,7 +23,7 @@ export class BookService {
         return new Promise((resolve, reject) => {
             this.apiService.get(`/api/getBook/${id}`)
                 .then(res => {
-                    res.json();
+                    resolve(res.json());
                 })
                 .catch(err => {
                     reject(err);
@@ -31,14 +31,28 @@ export class BookService {
         })
     }
 
+    saveCategory(category) {
+        return new Promise((resolve, reject) => {
+            this.apiService.post(`/api/saveCategory`, category)
+                .then(res => {
+                    resolve(res.json())
+                })
+                .catch(err => {
+                    reject(err);
+                    console.log(err);
+                })
+        })
+    }
+
 
     saveBook(book) {
         return new Promise((resolve, reject) => {
-            this.apiService.post(`/api/saveBook/`, book)
+            this.apiService.post(`/api/saveBook`, book)
                 .then(res => {
-                    resolve(res);
+                    resolve(res.json())
                 })
                 .catch(err => {
+                    console.log(err);
                     reject(err);
                 })
         })

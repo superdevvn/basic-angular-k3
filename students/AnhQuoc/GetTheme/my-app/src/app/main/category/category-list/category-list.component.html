@@ -3,19 +3,33 @@
         <h2>
             CATEGORIES
         </h2>
+        <button (click)="create()" type="button"
+                class="btn bg-lime btn-circle waves-effect waves-circle waves-float pull-right">
+            <i class="material-icons">add</i>
+        </button>
     </div>
     <!-- Counter Examples -->
-    <div class="row clearfix">
+    <div class="row clearfix" style="margin-top: 70px">
         <div class="row clearfix">
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" *ngFor="let category of categories; let i = index">
+            <div class="col-md-6 col-xs-12 contain" *ngFor="let category of categories; let i = index">
                 <div class="info-box hover-zoom-effect">
                     <div class="icon"
-                         [ngClass]="{'bg-red': i%4==0, 'bg-blue': i%4==1, 'bg-pink': i%4==2, 'bg-green':i%4==3}">
+                         [ngClass]="{'bg-red': i%4==0, 'bg-blue': i%4==2, 'bg-pink': i%4==1, 'bg-green':i%4==3}">
                         <i class="material-icons">library_books</i>
                     </div>
                     <div class="content">
                         <div class="text">
                             <strong>{{category.Name | uppercase}}</strong>
+                        </div>
+                        <div class="my-overlay">
+                            <button type="button" class="btn btn-info" [routerLink]="['/main/category', category.Id]">
+                                <i class="material-icons">details</i>
+                                <span>DETAIL</span>
+                            </button>
+                            <button type="button" class="btn btn-danger" (click)="delete(customer)">
+                                <i class="material-icons">delete</i>
+                                <span>DELETE</span>
+                            </button>
                         </div>
                     </div>
                 </div>

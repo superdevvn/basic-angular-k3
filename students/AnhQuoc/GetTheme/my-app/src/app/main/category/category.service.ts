@@ -33,13 +33,22 @@ export class CategoryService {
 
     saveCategory(category) {
         return new Promise((resolve, reject) => {
-            this.apiService.post(`/api/saveCategory/`, category)
+            this.apiService.post(`/api/saveCategory`, category)
                 .then(res => {
                     resolve(res.json())
                 })
                 .catch(err => {
                     reject(err);
+                    console.log(err);
                 })
+        })
+    }
+
+    deleteRole(id) {
+        return new Promise((resolve, reject) => {
+            this.apiService.delete(`/api/deleteRole?id=${id}`)
+                .then(res => resolve(res.json()))
+                .catch(err => reject(err));
         })
     }
 
