@@ -25,7 +25,8 @@
         "assets/plugins/animate-css/animate.css",
         "assets/plugins/morrisjs/morris.css",
         "assets/css/style.css",
-        "assets/css/themes/all-themes.css"
+        "assets/css/themes/all-themes.css",
+        "../node_modules/sweetalert2/dist/sweetalert2.css"
       ],
       "scripts": [
         "assets/plugins/jquery/jquery.min.js",
@@ -38,8 +39,7 @@
         "assets/plugins/morrisjs/morris.js",
         "assets/plugins/jquery-sparkline/jquery.sparkline.js",
         "assets/js/admin.js",
-        "assets/js/pages/index.js",
-        "assets/js/demo.js"
+        "../node_modules/sweetalert2/dist/sweetalert2.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

@@ -14,12 +14,16 @@ import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import {RoleListComponent} from './role/role-list.component';
 import {RoleDetailComponent} from './role/role-detail.component';
+import { UserListComponent } from './user/user-list.component';
+import { UserDetailComponent } from './user/user-detail.component';
 
 import { LoginService } from './login/login.service';
 import { ApiService } from '../services/api.service';
 import { RoleService } from './role/role.service';
 import { LoadingService } from '../services/loading.service';
 import { NotifyService } from '../services/notify.service';
+import { UserService } from './user/user.service';
+
 
 let routes : Routes = [
   {path: '',redirectTo: 'login' ,pathMatch:"full"},
@@ -30,6 +34,8 @@ let routes : Routes = [
     {path:'layout3',component:Layout3Component},
     {path:'role-list',component:RoleListComponent},
     {path:'role-detail/:id',component:RoleDetailComponent},
+    {path:'user-list',component:UserListComponent},
+    {path:'user-detail/:id',component:UserDetailComponent}
   ]},
   {path:'login', component:LoginComponent}
 ];
@@ -44,6 +50,8 @@ let routes : Routes = [
     LoginComponent,
     RoleListComponent,
     RoleDetailComponent,
+    UserListComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +59,7 @@ let routes : Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [ApiService, LoginService, RoleService,CookieService, LoadingService, NotifyService],
+  providers: [ApiService, LoginService, RoleService,CookieService, LoadingService, NotifyService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

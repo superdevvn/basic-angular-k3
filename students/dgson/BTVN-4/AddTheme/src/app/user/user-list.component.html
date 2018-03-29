@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title hidden-xs">User List</span>
+            </div>
+            <button class="btn btn-primary btn-xs pull-right">
+                <i class="fa fa-plus"></i>
+                <span class="hidden-xs hidden-sm">New User</span>
+            </button>
+            <div class="panel-body pn">
+                <div class="table-responsive">
+                    <table class="table table-condensed allcp-form theme-warning tc-checkbox-1 fs13">
+                        <colgroup>
+                            <col style="width:50px">
+                            <col style="width:50px">
+                            <col style="width:120px">
+                            <col >
+                            <col style="width:200px">
+                        </colgroup>
+                        <thead>
+                            <tr class="bg-light">
+                                <th class="text-center">#</th>
+                                <th class="text-center">Id</th>
+                                <th class="text-center">FirstName</th>
+                                <th class="text-center">LastName</th>
+                                <th class="text-center">UserName</th>
+                                <th class="text-center">Password</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of users;let idx = index">
+                                <td class="text-center">{{idx}}</td>
+                                <td class="text-center">{{user.Id}}</td>
+                                <td class="text-center">{{user.FirstName}}</td>
+                                <td class="text-center">{{user.LastName}}</td>
+                                <td class="text-center">{{user.Username}}</td>
+                                <td class="text-center">{{user.Password}}</td>
+                                <td class="text-center">
+                                    <button class="btn btn-info btn-xs" (click)="detail(user)">
+                                        <i class="fa fa-pencil"></i>
+                                        <span class="hidden-xs hidden-sm">Edit</span>
+                                    </button>
+                                    <button class="btn btn-danger btn-xs" (click)="delete(user)">
+                                        <i class="fa fa-trash-o"></i>
+                                        <span class="hidden-xs hidden-sm">Delete</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
