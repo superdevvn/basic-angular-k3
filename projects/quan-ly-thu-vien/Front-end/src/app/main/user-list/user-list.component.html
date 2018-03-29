@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="block-header">
+        <h2>COLORED CARDS</h2>
+        <button (click)="createUser()" type="button"
+                class="btn bg-lime btn-circle waves-effect waves-circle waves-float pull-right">
+            <i class="material-icons">add</i>
+        </button>
+    </div>
+    <div class="row margin-top-30">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 parent-card" *ngFor="let user of users; let i = index">
+            <div class="card card-hover">
+                <div [ngClass]="{'bg-light-blue': i%3==0, 'bg-green': i%3 ==1, 'bg-orange': i%3==2  }" class="header">
+                    <h2>
+                        Full Name : {{user?.LastName}} {{user?.FirstName}}
+                        <small>Role : {{user?.RoleName || 'None'}}</small>
+                    </h2>
+                </div>
+                <div class="body">
+                    {{user?.Description || 'None'}}
+                </div>
+            </div>
+            <div class="button-detail">
+                <button class="btn btn-info waves-effect" [routerLink]="['/main/user', user.Id]">
+                    <i class="material-icons">details</i>
+                    <span>DETAIL</span>
+                </button>
+                <button type="button" class="btn btn-danger waves-effect" (click)="delete(user)">
+                    <i class="material-icons">delete</i>
+                    <span>DELETE</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

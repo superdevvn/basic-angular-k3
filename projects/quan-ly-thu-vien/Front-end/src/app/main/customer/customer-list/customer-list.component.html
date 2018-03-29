@@ -1,0 +1,45 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+        <div class="header">
+            <h2>
+                CUSTOMER LIST
+            </h2>
+            <button (click)="create()" type="button"
+                    class="btn bg-lime btn-circle waves-effect waves-circle waves-float pull-right">
+                <i class="material-icons">add</i>
+            </button>
+        </div>
+        <div class="body table-responsive">
+            <table class="table table-condensed table-hover">
+                <thead>
+                <tr class="danger">
+                    <th width="20px">RANK</th>
+                    <th width="20%">NAME</th>
+                    <th>Description</th>
+                    <th>CODE</th>
+                    <th width="250px">OPERATION</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let customer of customers; let  i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{customer?.LastName }} {{customer?.FirstName }}</td>
+                    <td>{{customer?.Description || 'None'}}</td>
+                    <td>{{customer?.Code || 'None'}}</td>
+                    <td>
+                        <button type="button" class="btn btn-info waves-effect"
+                                [routerLink]="['/main/customer',customer.Id ]">
+                            <i class="material-icons">details</i>
+                            <span>DETAIL</span>
+                        </button>
+                        <button type="button" class="btn btn-danger waves-effect" (click)="delete(customer)">
+                            <i class="material-icons">delete</i>
+                            <span>DELETE</span>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

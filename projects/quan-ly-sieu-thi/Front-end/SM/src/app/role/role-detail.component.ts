@@ -33,16 +33,19 @@ export class RoleDetailComponent implements OnInit {
     });
   }
 
-  cancel(){
+  cancel() {
     this.router.navigate(['main/role-list']);
   }
 
   save() {
+    debugger
     this.roleService.saveRole(this.role).then((res: any) => {
+      debugger
       if (this.id == 0) this.router.navigate(['main/role-detail', res.Id]);
       this.notityService.success("Save successful!");
       this.router.navigate(['main/role-list']);
     }).catch(err => {
+      debugger
       this.notityService.error("Save failure!");
     })
   }
