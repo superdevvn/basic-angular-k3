@@ -10,7 +10,7 @@ export class NotifyService {
               id="notificationsSuccess"
               style="position: fixed;
               top: 60px;
-              right:20px;
+              right:0px;
               font-size: 1.5em;
               z-index:999999;
               display: none;">
@@ -18,7 +18,7 @@ export class NotifyService {
               ${message}</div>`);
     $('#notificationsSuccess').slideDown('slow');
     setTimeout(() => {
-      $('#notificationsSuccess').slideUp(1000);
+      $('#notificationsSuccess').slideUp('slow');
       setTimeout(() => {
         $('#notificationsSuccess').remove();
       }, 1000);
@@ -31,7 +31,7 @@ export class NotifyService {
               id="notificationsError"
               style="position: fixed;
               top: 60px;
-              right:20px;
+              right:0px;
               font-size: 1.5em;
               z-index:999999;
               display: none;">
@@ -39,7 +39,7 @@ export class NotifyService {
               ${message}</div>`);
     $('#notificationsError').slideDown('slow');
     setTimeout(() => {
-      $('#notificationsError').slideUp(1000);
+      $('#notificationsError').slideUp('slow');
       setTimeout(() => {
         $('#notificationsError').remove();
       }, 1000);

@@ -253,7 +253,7 @@
         <nav id="menu" class="nav-main" role="navigation">
           <ul class="nav nav-main">
             <li class="nav-active">
-              <a href="index.html">
+              <a [routerLink]="['/main']">
                 <i class="fa fa-home" aria-hidden="true"></i>
                 <span>Home</span>
               </a>
@@ -264,10 +264,44 @@
                 <span>Products Management</span>
               </a>
               <ul class="nav nav-children">
-                <li>
+                <li class="nav-parent">
                   <a>
-                    Product 1
+                    Products
                   </a>
+                  <ul class="nav nav-children">
+                    <li>
+                      <a style="cursor: pointer;" (click)="newManu();">Add New Manufacturer</a>
+                    </li>
+                    <li>
+                      <a [routerLink]="['/main/manu-list']">List Of Manufacturer</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-parent">
+                  <a>
+                    Manufacturer
+                  </a>
+                  <ul class="nav nav-children">
+                    <li>
+                      <a style="cursor: pointer;" (click)="newManu();">Add New Manufacturer</a>
+                    </li>
+                    <li>
+                      <a [routerLink]="['/main/manu-list']">List Of Manufacturer</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-parent">
+                  <a>
+                    Warehouse
+                  </a>
+                  <ul class="nav nav-children">
+                    <li>
+                      <a style="cursor: pointer;" (click)="newWh();">Add New Warehouse</a>
+                    </li>
+                    <li>
+                      <a [routerLink]="['/main/wh-list']">List Of Warehouse</a>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </li>
@@ -300,19 +334,6 @@
                     </li>
                     <li>
                       <a [routerLink]="['/main/role-list']">List Of Role</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-parent">
-                  <a>
-                    Manufacturer
-                  </a>
-                  <ul class="nav nav-children">
-                    <li>
-                      <a style="cursor: pointer;" (click)="newManu();">Add New Manufacturer</a>
-                    </li>
-                    <li>
-                      <a [routerLink]="['/main/manu-list']">List Of Manufacturer</a>
                     </li>
                   </ul>
                 </li>

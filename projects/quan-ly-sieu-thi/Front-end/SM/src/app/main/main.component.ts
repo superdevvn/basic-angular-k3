@@ -46,6 +46,10 @@ export class MainComponent implements OnInit, AfterViewInit {
     this.router.navigate(['main/manu-detail', 0]);
   }
 
+  newWh() {
+    this.router.navigate(['main/wh-detail', 0]);
+  }
+
 
   ngAfterViewInit() {
     $.getScript('assets/javascripts/theme.js', function () {

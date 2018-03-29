@@ -27,6 +27,8 @@ import { RoleService } from './role/role.service';
 import { RoleDetailComponent } from './role/role-detail.component';
 import { ManuDetailComponent } from './manufacturer/manu-detail.component';
 import { ManufacturerService } from './manufacturer/manufacturer.service';
+import { WarehouseDetailComponent } from './warehouse/warehouse-detail.component';
+import { WarehouseService } from './warehouse/warehouse.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -38,7 +40,9 @@ const routes: Routes = [
       { path: 'role-list', component: RoleComponent },
       { path: 'role-detail/:id', component: RoleDetailComponent },
       { path: 'manu-list', component: ManufacturerComponent },
-      { path: 'manu-detail/:id', component: ManuDetailComponent }
+      { path: 'manu-detail/:id', component: ManuDetailComponent },
+      { path: 'wh-list', component: WarehouseComponent },
+      { path: 'wh-detail/:id', component: WarehouseDetailComponent }
     ]
   }
 ]
@@ -58,7 +62,8 @@ const routes: Routes = [
     CategoryComponent,
     WarehouseComponent,
     RoleDetailComponent,
-    ManuDetailComponent
+    ManuDetailComponent,
+    WarehouseDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +73,8 @@ const routes: Routes = [
   ],
   providers: [CookieService, ApiService, NotifyService,
     LoadingService, LoginService, ListuserService,
-    MainService, RoleService, ManufacturerService],
+    MainService, RoleService, ManufacturerService,
+    WarehouseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
