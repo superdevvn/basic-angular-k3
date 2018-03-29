@@ -8,4 +8,14 @@ export class ProductsService {
       private apiService : ApiService
   ) { }
   
+
+  getProducts(){
+    return new Promise((resolve, reject)=>{
+        this.apiService.post("api/getProducts", {}).then(res =>{
+            resolve(res);
+        }).catch(err=>{
+            reject(err);
+        })
+    })
+}
 }
