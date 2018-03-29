@@ -27,7 +27,16 @@ namespace SuperDev.APIs
         public IHttpActionResult SaveRole([FromBody]Role role)
         {
             var roleService = new RoleService();
-            return Ok(roleService.PersistRole(role));
+            return Ok(roleService.Persist(role));
+        }
+
+        [HttpDelete]
+        [Route("api/deleteRole")]
+        public IHttpActionResult DeleteRole(int id)
+        {
+            var roleService = new RoleService();
+            roleService.Delete(id);
+            return Ok();
         }
     }
 }
