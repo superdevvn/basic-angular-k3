@@ -19,6 +19,16 @@ export class NotificationService {
         });
     }
 
+    error(message: string) {
+        swal({
+            position: 'bottom-right',
+            type: 'error',
+            title: message,
+            showConfirmButton: false,
+            timer: 2000
+        });
+    }
+
     confirm(message: string) {
         return new Promise((resolve, reject) => {
             swal({

@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {Http, Headers, Response} from '@angular/http';
-import {Router} from '@angular/router';
-import {CookieService} from "ngx-cookie-service";
+import { Injectable } from '@angular/core';
+import { Http, Headers, Response } from '@angular/http';
+import { Router } from '@angular/router';
+import { CookieService } from "ngx-cookie-service";
 
 @Injectable()
 export class ApiServiceService {
@@ -16,7 +16,7 @@ export class ApiServiceService {
         return new Promise<Response>((resolve, reject) => {
             let headers = new Headers();
             headers.append("Auth-SuperDev", this.token);
-            this.http.post(this.host + url, data, {headers: headers})
+            this.http.post(this.host + url, data, { headers: headers })
                 .toPromise()
                 .then(res => {
                     if (res.status == 200 || res.status == 204) {
@@ -26,10 +26,9 @@ export class ApiServiceService {
                         reject("Có lỗi xảy ra");
                     }
                 }).catch(err => {
-                if (err.status == 401) {
-                }
-                else reject(err);
-            });
+                    if (err.status == 401) this.router.navigate(["/login"]);
+                    else reject(err);
+                });
         });
     }
 
@@ -37,15 +36,14 @@ export class ApiServiceService {
         return new Promise<Response>((resolve, reject) => {
             let headers = new Headers();
             headers.append("Auth-SuperDev", this.token);
-            this.http.get(this.host + url, {headers: headers})
+            this.http.get(this.host + url, { headers: headers })
                 .toPromise()
                 .then(res => {
                     resolve(res);
                 }).catch(err => {
-                if (err.status == 401) {
-                }
-                else reject(err);
-            });
+                    if (err.status == 401) this.router.navigate(["/login"]);
+                    else reject(err);
+                });
         });
     }
 
@@ -53,14 +51,14 @@ export class ApiServiceService {
         return new Promise<Response>((resolve, reject) => {
             let headers = new Headers();
             headers.append("Auth-SuperDev", this.token);
-            this.http.delete(this.host + url, {headers: headers})
+            this.http.delete(this.host + url, { headers: headers })
                 .toPromise()
                 .then(res => {
                     resolve(res);
                 }).catch(err => {
-                if (err.status == 401) this.router.navigate(["/login"]);
-                else reject(err);
-            });
+                    if (err.status == 401) this.router.navigate(["/login"]);
+                    else reject(err);
+                });
         });
     }
 }
