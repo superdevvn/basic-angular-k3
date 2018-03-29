@@ -1,0 +1,39 @@
+<div class="panel panel-info col-md-6" style="padding: 0;">
+    <div class="panel-heading">
+      <div>
+        <h3>Manufacturer Information</h3>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="col-md-12 text-center">
+        <div class="col-md-12 text-left">
+          <strong class="text-muted">ID:</strong>
+        </div>
+        <div class="col-md-12">
+          <input class="form-control hl-readonly" type="text" placeholder="ID" [(ngModel)]="manu.Id">
+        </div>
+        <div class="col-md-12 text-left">
+            <strong class="text-muted">Code</strong>
+          </div>
+          <div class="col-md-12">
+            <input class="form-control" type="text" placeholder="Code" [(ngModel)]="manu.Code">
+          </div>
+        <div class="col-md-12 text-left">
+          <strong class="text-muted">Name</strong>
+        </div>
+        <div class="col-md-12">
+          <input class="form-control" type="text" placeholder="Name" [(ngModel)]="manu.Name">
+        </div>
+        <div class="col-md-12 text-left">
+          <strong class="text-muted">Description:</strong>
+        </div>
+        <div class="col-md-12">
+          <input class="form-control" type="text" placeholder="Description" [(ngModel)]="manu.Description">
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer text-right">
+      <a class="btn btn-default" (click)="cancel();">Cancel</a>
+      <button class="btn btn-primary" (click)="save()">Save</button>
+    </div>
+  </div>

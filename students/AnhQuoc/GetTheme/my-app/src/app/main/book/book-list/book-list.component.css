@@ -1,0 +1,13 @@
+.thumbnail {
+    height: 350px;
+    position: relative;
+}
+
+.contain-button.footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.caption {
+    overflow: hidden;
+}
