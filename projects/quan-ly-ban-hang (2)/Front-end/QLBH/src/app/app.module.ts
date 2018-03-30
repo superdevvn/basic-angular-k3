@@ -24,6 +24,7 @@ import { NotifyService } from './services/notify.service';
 import { LoadingService } from './services/loading.service';
 import { ProductsComponent } from './products/products.component';
 import { ProductsService } from './products/products.service';
+import { ProductsDetailComponent } from './products/products-detail/products-detail.component';
 
 
 const routes: Routes = [
@@ -39,6 +40,7 @@ const routes: Routes = [
       { path: 'user', component: UserComponent },
       { path: 'user-detail/:Id', component: UserDetailComponent },
       { path: 'products', component: ProductsComponent },
+      {path:'products-detail/:Id',component:ProductsDetailComponent},
   ]}
   
 
@@ -57,7 +59,8 @@ const routes: Routes = [
     UserComponent,
     UserDetailComponent,
     ProductsComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductsDetailComponent
   ],
   imports: [
     BrowserModule,
