@@ -1,0 +1,106 @@
+<div class="page-content">
+  <div class="page-header">
+      <h1>
+          <strong>CUSTOMER LIST</strong>
+        </h1>
+  </div>
+  <!-- /.page-header -->
+  <button class="btn btn-primary" (click)="create()">New Customer </button>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <!-- PAGE CONTENT BEGINS -->
+      <div class="row">
+        <div class="col-xs-12">
+
+          <table id="simple-table" class="table table-bordered table-hover">
+              <colgroup>
+                <col style="width:50px" />
+                <col style="width:100px" />
+                <col />
+                <col style="width:200px" />
+                <col style="width:50px" />
+              </colgroup>
+            <thead>
+              <tr class="bg-primary">
+                <th class="text-center">
+                 #
+                </th>
+                <th class="text-center">Code</th>
+                <th class="text-center">First Name</th>      
+                <th class="text-center">Last Name</th>                        
+                <th class="text-center">Description</th>
+                <th class="text-center">
+                    <i class="fa fa-pencil"></i>
+                    <i class="fa fa-trash-o"></i>
+                  </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let customer of customers, let idx=index">
+                <td class="text-center">
+                  {{idx+1}}
+                </td>
+                <td>{{customer.Code}}</td>
+                <td>{{customer.FirstName}}</td>
+                <td>{{customer.LastName}}</td>
+                <td>{{customer.Description}}</td>
+                <td style="width:125px">
+                  <div class="text-center"> <div class="hidden-sm hidden-xs btn-group">
+                      <button class="btn btn-xs btn-info" (click)="detail(customer)">
+                        <i class="ace-icon fa fa-pencil bigger-120"></i>
+                      </button>
+  
+                      <button class="btn btn-xs btn-danger" (click)="delete(customer)">
+                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                      </button>
+                    </div>
+                  </div>
+                 
+
+                  <div class="hidden-md hidden-lg">
+                    <div class="inline pos-rel">
+                      <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
+                        <i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+                      </button>
+
+                      <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+                        <li>
+                          <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+                            <span class="blue">
+                              <i class="ace-icon fa fa-search-plus bigger-120"></i>
+                            </span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+                            <span class="green">
+                              <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+                            </span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                            <span class="red">
+                              <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                            </span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <!-- /.span -->
+      </div>
+      <!-- /.row -->
+    </div>
+  </div>
+</div>

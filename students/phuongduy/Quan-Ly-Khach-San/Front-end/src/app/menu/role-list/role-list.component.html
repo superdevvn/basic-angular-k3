@@ -1,0 +1,58 @@
+<section id="content" class="table-layout animated fadeOut">
+  <div class="chute chute-center">
+    <div class="panel" id="spy2">
+      <header class="panel-heading">
+        <span class="panel-title">
+          <strong>DANH SÁCH VAI TRÒ</strong>
+        </span>
+      </header>
+      <div style="padding-left: 1030px;">
+        <button class="btn btn-primary" (click)="create()">Thêm
+          <i class="fa fa-plus"></i>
+        </button>
+      </div>
+      <div class="panel-body pn" style="margin-top: 10px;">
+        <div class="table-responsive">
+          <div class="bs-component">
+            <table class="table table-bordered table-hover mb-none">
+              <colgroup>
+                <col width="150" />
+                <col />
+                <col width="100" />
+                <col width="100" />
+              </colgroup>
+              <thead>
+                <tr align-text="center">
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let role of roles">
+                  <td>{{role.Name}}</td>
+                  <td>{{role.Description}}</td>
+                  <td align="center">
+                    <div class="hidden-sm hidden-xs btn-group">
+                      <button class="btn btn-xs btn-info" (click)="detail(role)">
+                        <i class="ace-icon fa fa-pencil bigger-120"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td align="center">
+                    <div class="hidden-sm hidden-xs btn-group">
+                      <button class="btn btn-xs btn-danger" (click)="delete(role)">
+                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

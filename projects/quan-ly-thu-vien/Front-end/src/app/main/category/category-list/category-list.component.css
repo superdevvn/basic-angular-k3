@@ -1,0 +1,27 @@
+.contain {
+    position: relative;
+}
+
+.my-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    overflow: hidden;
+    height: 100%;
+    transition: .7s ease;
+    opacity: 0;
+}
+
+.contain:hover .my-overlay {
+    opacity: 1;
+
+}
+
+.contain:hover .text {
+    transform: scale(1.1);
+}
+
+.text {
+
+}

@@ -31,7 +31,8 @@ export class UserDetailComponent implements OnInit {
   }
 
   save() {
-    this.userService.saveUser(this.user).then(user=>{
+    this.userService.saveUser(this.user).then((user:any)=>{
+      if(this.id==0) this.router.navigate(['main/role-detail'])
       this.notifyService.success("OK con de");
     }).catch(err=>{
       this.notifyService.error("sai roi ban ei!!!");

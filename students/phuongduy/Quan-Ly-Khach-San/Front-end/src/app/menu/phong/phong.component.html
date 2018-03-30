@@ -1,0 +1,72 @@
+<section id="content" class="table-layout animated fadeIn">
+  <div class="chute chute-center">
+    <div class="panel" id="spy2">
+      <div class="panel-heading">
+        <span class="panel-title">DANH SÁCH PHÒNG</span>
+      </div>
+      <div style="padding-left: 1030px;">
+        <button class="btn btn-primary" (click)="create()">Thêm
+          <i class="fa fa-plus"></i>
+        </button>
+      </div>
+      <div class="panel-body pn" style="margin-top: 10px;">
+        <div class="table-responsive">
+          <div class="bs-component">
+            <table class="table table-bordered table-hover">
+              <colgroup>
+                <col width="70" />
+                <col />
+                <col width="270" />
+                <col width="120" />
+                <col width="120" />
+                <col width="120" />
+                <col width="120" />
+                <col width="100" />
+                <col width="90" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>CODE</th>
+                  <th>NAME</th>
+                  <th>DESCRIPTION</th>
+                  <th>SIZE</th>
+                  <th>TYPE</th>
+                  <th>PRICE/HOUR</th>
+                  <th>PRICE/DAY</th>
+                  <th>CHỈNH SỬA</th>
+                  <th>XÓA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let room of rooms">
+                  <td>{{room.Code}}</td>
+                  <td>{{room.Name}}</td>
+                  <td>{{room.Description}}</td>
+                  <td>{{room.Size}}</td>
+                  <td>{{room.Type}}</td>
+                  <td>{{room.PricePerHour}}</td>
+                  <td>{{room.PricePerDay}}</td>
+                  <td>
+                    <div class="hidden-sm hidden-xs btn-group">
+                      <button class="btn btn-xs btn-info" (click)="detail(room)">
+                        <i class="ace-icon fa fa-pencil bigger-120"></i>
+                      </button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="hidden-sm hidden-xs btn-group">
+
+                      <button class="btn btn-xs btn-danger">
+                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
