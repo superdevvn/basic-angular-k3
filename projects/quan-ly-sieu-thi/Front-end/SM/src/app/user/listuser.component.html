@@ -36,9 +36,12 @@
           <td class="text-center">{{user.Password}}</td>
           <td class="text-center">{{user.FirstName}} {{user.LastName}}</td>
           <td class="text-center">{{user.Description}}</td>
-          <td class="text-center">{{user.IsActived}}</td>
+          <td class="text-center">
+            <span class="label" [ngClass]="{'label-success':user.IsActived, 'label-danger':!user.IsActived}">
+              {{user.IsActived?'Actived':'Blocked'}}
+            </span></td>
           <td class="text-center">{{user.IsDeleted}}</td>
-          <td class="text-center">{{user.CreatedDate}}</td>
+          <td class="text-center">{{user.CreatedDate | date:'HH:mm dd/MM/yyyy'}}</td>
           <td class="text-center">{{user.CreatedBy}}</td>
           <td class="text-center">
             <label class="text-center">

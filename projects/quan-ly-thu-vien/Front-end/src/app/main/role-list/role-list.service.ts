@@ -1,10 +1,12 @@
 import {Injectable} from '@angular/core';
 import {ApiServiceService} from "../../service/api-service.service";
+import { NotificationService } from '../../service/notification.service';
 
 @Injectable()
 export class RoleListService {
 
-    constructor(private apiService: ApiServiceService) {
+    constructor(private apiService: ApiServiceService,
+    private notificationService:NotificationService) {
     }
 
     getRoles() {
@@ -28,7 +30,8 @@ export class RoleListService {
                     resolve(res)
                 })
                 .catch(err => {
-                    reject(err);
+                    if(err.json().Message) this.notificationService.error(err.json().Message);
+                    reject(err.json());
                 })
         });
     }

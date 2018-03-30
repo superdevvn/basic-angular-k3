@@ -30,6 +30,14 @@
       <div class="col-md-12">
         <input class="form-control hl-readonly" type="text" placeholder="Password" [(ngModel)]="user.Password">
       </div>
+      <div class="col-md-12 text-left">
+          <strong class="text-muted">Confirm Password:</strong>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group" [ngClass]="{'has-error':user.Password != user.ConfirmPassword}">
+          <input class="form-control hl-readonly" type="text" placeholder="Confirm Password" [(ngModel)]="user.ConfirmPassword">
+        </div>
+        </div>
       <div class="col-md-6">
         <div class="checkbox text-left">
           <label>
