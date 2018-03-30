@@ -29,10 +29,11 @@ import { ManuDetailComponent } from './manufacturer/manu-detail.component';
 import { ManufacturerService } from './manufacturer/manufacturer.service';
 import { WarehouseDetailComponent } from './warehouse/warehouse-detail.component';
 import { WarehouseService } from './warehouse/warehouse.service';
+import { UnitDetailComponent } from './unit/unit-detail.component';
+import { UnitService } from './unit/unit.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: '', redirectTo: 'main', pathMatch: 'full' },
   {
     path: 'main', component: MainComponent, children: [
       { path: 'user-list', component: ListuserComponent },
@@ -42,9 +43,12 @@ const routes: Routes = [
       { path: 'manu-list', component: ManufacturerComponent },
       { path: 'manu-detail/:id', component: ManuDetailComponent },
       { path: 'wh-list', component: WarehouseComponent },
-      { path: 'wh-detail/:id', component: WarehouseDetailComponent }
+      { path: 'wh-detail/:id', component: WarehouseDetailComponent },
+      { path: 'unit-list', component: UnitComponent },
+      { path: 'unit-detail/:id', component: UnitDetailComponent }
     ]
-  }
+  },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' }
 ]
 
 @NgModule({
@@ -63,7 +67,8 @@ const routes: Routes = [
     WarehouseComponent,
     RoleDetailComponent,
     ManuDetailComponent,
-    WarehouseDetailComponent
+    WarehouseDetailComponent,
+    UnitDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +79,7 @@ const routes: Routes = [
   providers: [CookieService, ApiService, NotifyService,
     LoadingService, LoginService, ListuserService,
     MainService, RoleService, ManufacturerService,
-    WarehouseService],
+    WarehouseService, UnitService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

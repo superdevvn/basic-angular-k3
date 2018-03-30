@@ -27,18 +27,17 @@ export class MainComponent implements OnInit, AfterViewInit {
     this.loginService.getAuthorize().catch(err => {
       this.router.navigate(['login']);
     });
-    // this.getUserInfo().then((user: any) => {
-    //   this.user = user;
-    // }).catch(err => {
-    //   alert(err);
-    // });
   }
 
-  newUser(){
+  newUnit() {
+    this.router.navigate(['main/unit-detail', 0]);
+  }
+
+  newUser() {
     this.router.navigate(['main/user-detail', 0]);
   }
 
-  newRole(){
+  newRole() {
     this.router.navigate(['main/role-detail', 0]);
   }
 
@@ -66,9 +65,7 @@ export class MainComponent implements OnInit, AfterViewInit {
       });
     });
   }
-
-  Logout() {
-    this.loginService.logout();
-    this.router.navigate(['login']);
+  logout() {
+    this.cookieService.delete('author-james');
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadingService } from '../services/loading.service';
 import { ManufacturerService } from './manufacturer.service';
+import { NotifyService } from '../services/notify.service';
 
 @Component({
   selector: 'app-manufacturer',
@@ -12,7 +13,8 @@ export class ManufacturerComponent implements OnInit {
   manus: any[];
   constructor(private router: Router,
     private manuService: ManufacturerService,
-    private loadingService: LoadingService) { }
+    private loadingService: LoadingService,
+    private notifyService: NotifyService) { }
 
   ngOnInit() {
     this.loadingService.start("../assets/images/gif/loading1.gif");
@@ -22,7 +24,8 @@ export class ManufacturerComponent implements OnInit {
       this.loadingService.stop();
     }).catch(err => {
       // console.log(err);
-      // this.loadingService.stop();
+      this.notifyService.error("Loading data failure!");
+      this.loadingService.stop();
     });
   }
 
