@@ -1,4 +1,4 @@
-<div class="panel panel-info col-md-6" style="padding: 0;">
+<div class="panel panel-info" style="padding: 0;">
   <div class="panel-heading">
     <div>
       <h3>Role Information</h3>
@@ -6,11 +6,13 @@
   </div>
   <div class="panel-body">
     <div class="col-md-12 text-center">
-      <div class="col-md-12 text-left">
-        <strong class="text-muted">ID:</strong>
-      </div>
-      <div class="col-md-12">
-        <input class="form-control hl-readonly" type="text" placeholder="ID" [(ngModel)]="role.Id">
+      <div class="hl-id" hidden>
+        <div class="col-md-12 text-left">
+          <strong class="text-muted">ID:</strong>
+        </div>
+        <div class="col-md-12">
+          <input class="form-control hl-readonly" type="text" placeholder="ID" [(ngModel)]="role.Id">
+        </div>
       </div>
       <div class="col-md-12 text-left">
         <strong class="text-muted">Name</strong>
@@ -22,7 +24,7 @@
         <strong class="text-muted">Description:</strong>
       </div>
       <div class="col-md-12">
-        <input class="form-control" type="text" placeholder="Description" [(ngModel)]="role.Description">
+        <textarea class="form-control" rows="5" placeholder="Description" [(ngModel)]="role.Description"></textarea>
       </div>
     </div>
   </div>

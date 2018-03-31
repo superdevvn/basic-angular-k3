@@ -4,6 +4,7 @@ import { ApiService } from '../services/api.service';
 import { LoginService } from './login.service';
 import { NotifyService } from '../services/notify.service';
 import { LoadingService } from '../services/loading.service';
+import { UserService } from '../user/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
     private apiService: ApiService,
     private loginService: LoginService,
     private notifyService: NotifyService,
-    private loadingService: LoadingService) { }
+    private loadingService: LoadingService,
+    private userService: UserService) { }
 
   ngOnInit() {
 
@@ -34,5 +36,4 @@ export class LoginComponent implements OnInit {
       this.notifyService.error("Log in failure! Please again!");
     });
   };
-
 }

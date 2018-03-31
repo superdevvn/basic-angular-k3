@@ -70,6 +70,11 @@
     animation-fill-mode: backwards;
 }
 
+.hlloginloading {
+    display: inline-block;
+    z-index: 1;
+}
+
 @keyframes start-page {
     0% {
         opacity: 0;

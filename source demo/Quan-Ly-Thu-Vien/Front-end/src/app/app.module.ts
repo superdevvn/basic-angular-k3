@@ -2,10 +2,10 @@ import * as $ from 'jquery';
 import { Injectable } from "@angular/core";
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule} from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { HttpModule } from "@angular/http";
-import {FormsModule} from "@angular/forms";
-import {CookieService} from"ngx-cookie-service";
+import { FormsModule } from "@angular/forms";
+import { CookieService } from "ngx-cookie-service";
 
 
 import { AppComponent } from './app.component';
@@ -44,27 +44,29 @@ import { BookingDetailReturn } from './booking/booking-detail-return.component';
 
 
 
-const routes: Routes =[
-  {path: '', redirectTo: 'main', pathMatch: 'full'},
-  {path: "main", component: MenuComponent, children:[
-    {path :'', redirectTo:"dashboard",pathMatch:"full"},
-    {path : 'sach-list', component: SachListComponent},
-    {path : 'sach-detail/:id', component: SachDetailComponent},
-    {path : 'role-list',component:RoleListComponent},
-    {path : 'role-detail/:id',component:RoleDetailComponent},
-    {path : 'user-detail/:id',component:UserDetailComponent},
-    {path : 'user-list',component:UserListComponent},
-    {path : 'customer-list',component:CustomerListComponent},
-    {path : 'customer-detail/:id',component:CustomerDetailComponent},
-    {path : 'booking-detail/:id',component:BookingDetailComponent},
-    {path : 'booking-list',component:BookingListComponent},
-    {path : 'category-list',component:CategoryListComponent},
-    {path : 'category-detail/:id',component:CategoryDetailComponent},
-    {path : 'booking-detail-return/:id',component:BookingDetailReturn},
-    {path : 'dashboard',component:DashboardComponent},
+const routes: Routes = [
+  { path: '', redirectTo: 'main', pathMatch: 'full' },
+  {
+    path: "main", component: MenuComponent, children: [
+      { path: '', redirectTo: "dashboard", pathMatch: "full" },
+      { path: 'sach-list', component: SachListComponent },
+      { path: 'sach-detail/:id', component: SachDetailComponent },
+      { path: 'role-list', component: RoleListComponent },
+      { path: 'role-detail/:id', component: RoleDetailComponent },
+      { path: 'user-detail/:id', component: UserDetailComponent },
+      { path: 'user-list', component: UserListComponent },
+      { path: 'customer-list', component: CustomerListComponent },
+      { path: 'customer-detail/:id', component: CustomerDetailComponent },
+      { path: 'booking-detail/:id', component: BookingDetailComponent },
+      { path: 'booking-list', component: BookingListComponent },
+      { path: 'category-list', component: CategoryListComponent },
+      { path: 'category-detail/:id', component: CategoryDetailComponent },
+      { path: 'booking-detail-return/:id', component: BookingDetailReturn },
+      { path: 'dashboard', component: DashboardComponent },
 
-  ]},
-  {path: 'login', component: LoginComponent, pathMatch: 'full'},
+    ]
+  },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' },
 ]
 
 @NgModule({
@@ -87,7 +89,7 @@ const routes: Routes =[
     BookingListComponent,
     BookingDetailReturn,
     DashboardComponent
-  
+
   ],
   imports: [
     BrowserModule,
@@ -95,8 +97,8 @@ const routes: Routes =[
     HttpModule,
     FormsModule
   ],
-  providers: [UtilityService,ApiService,LoginService,RoleService,UserService,CookieService,
-    NotificationService,LoadingService,SachService,CustomerService,CategoryService,BookingService],
+  providers: [UtilityService, ApiService, LoginService, RoleService, UserService, CookieService,
+    NotificationService, LoadingService, SachService, CustomerService, CategoryService, BookingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
