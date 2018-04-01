@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ListuserService } from '../user/listuser.service';
 import { NotifyService } from '../services/notify.service';
 import { LoadingService } from '../services/loading.service';
 import { ManufacturerService } from './manufacturer.service';
@@ -16,19 +15,21 @@ export class ManuDetailComponent implements OnInit {
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
     private manuService: ManufacturerService,
-    private notityService: NotifyService,
+    private notifyService: NotifyService,
     private loadingService: LoadingService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       this.id = +params['id'];
       if (this.id > 0) {
+        $(".hl-id").removeAttr("hidden");
         $(".hl-readonly").attr("readonly", "true");
-        $(".hl-date").removeAttr("type");
-        $(".hl-date").attr("type", "datetime");
         this.loadingService.start("../assets/images/gif/loading1.gif");
         this.manuService.getManu(this.id).then(manu => {
           this.manu = manu;
+          this.loadingService.stop();
+        }).catch(err=>{
+          this.notifyService.error("Loading failed!");
           this.loadingService.stop();
         });
       };
@@ -43,10 +44,10 @@ export class ManuDetailComponent implements OnInit {
   save() {
     this.manuService.saveManu(this.manu).then((res: any) => {
       if (this.id == 0) this.router.navigate(["main/manu-detail", res.Id]);
-      this.notityService.success("Save successful!");
+      this.notifyService.success("Save successful!");
       this.router.navigate(["main/manu-list"]);
     }).catch(err => {
-      this.notityService.error("Save failure!");
+      this.notifyService.error("Save failure!");
     });
   }
 }

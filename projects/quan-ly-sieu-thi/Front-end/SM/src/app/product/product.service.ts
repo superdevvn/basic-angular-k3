@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { ApiService } from '../services/api.service';
 
 @Injectable()
-export class WarehouseService {
+export class ProductService {
 
   constructor(private apiService: ApiService) { }
-  getWhs() {
+
+  getProducts() {
     return new Promise((resolve, reject) => {
-      this.apiService.post('api/getWarehouses', {}).then(res => {
+      this.apiService.post('api/getProducts', {}).then(res => {
         resolve(res);
       }).catch(err => {
         reject(err);
@@ -15,9 +16,9 @@ export class WarehouseService {
     })
   }
 
-  getWh(id: number) {
+  getProduct(id: number) {
     return new Promise((resolve, reject) => {
-      this.apiService.get(`api/getWarehouse/${id}`).then(res => {
+      this.apiService.get(`api/getProduct/${id}`).then(res => {
         resolve(res);
       }).catch(err => {
         reject(err);
@@ -25,9 +26,9 @@ export class WarehouseService {
     });
   }
 
-  saveWh(wh) {
+  saveProduct(user) {
     return new Promise((resolve, reject) => {
-      this.apiService.post('api/saveWarehouse/', wh).then(res => {
+      this.apiService.post('api/saveProduct/', user).then(res => {
         resolve(res);
       }).catch(err => {
         reject(err);
@@ -35,9 +36,9 @@ export class WarehouseService {
     });
   }
 
-  deleteWh(id) {
+  deleteProduct(id) {
     return new Promise((resolve, reject) => {
-      this.apiService.delete(`api/deleteWarehouse?id=${id}`).then(res => {
+      this.apiService.delete(`api/deleteProduct?id=${id}`).then(res => {
         resolve(res);
       }).catch(err => {
         reject(err);
