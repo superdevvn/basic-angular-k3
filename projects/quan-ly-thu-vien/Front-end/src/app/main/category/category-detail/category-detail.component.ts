@@ -12,6 +12,7 @@ export class CategoryDetailComponent implements OnInit {
 
     id: number;
     category: any = {};
+    loading = false;
 
     isEdit = false;
 
@@ -22,14 +23,17 @@ export class CategoryDetailComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.loading = true;
         this.activatedRoute.params.subscribe(params => {
             this.id = +params['id'];
             if (this.id > 0) {
                 this.categoryService.getCategoryByID(this.id)
                     .then(res => {
                         this.category = res;
+                        this.loading = false;
                     })
             }
+            this.loading = false;
         })
 
 

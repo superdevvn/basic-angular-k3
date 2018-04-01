@@ -10,15 +10,17 @@ import {Router} from "@angular/router";
 export class CategoryListComponent implements OnInit {
 
     categories: any[];
-
+    loading = false;
 
     constructor(private categoryService: CategoryService, private router: Router) {
     }
 
     ngOnInit() {
+        this.loading = true;
         this.categoryService.getCategories()
             .then((res: any[]) => {
                 this.categories = res;
+                this.loading = false;
             })
             .catch(err => {
                 alert(err);

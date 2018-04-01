@@ -24,6 +24,7 @@
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "ngx-cookie-service": "^1.0.10",
+    "ngx-loading": "^1.0.14",
     "rxjs": "^5.5.6",
     "sweetalert2": "^7.18.0",
     "zone.js": "^0.8.19"

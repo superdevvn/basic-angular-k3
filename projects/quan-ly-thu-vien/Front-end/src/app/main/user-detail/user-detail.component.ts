@@ -18,6 +18,7 @@ export class UserDetailComponent implements OnInit {
     isEdit = false;
     roles: any[];
     users: any[];
+    loading = false;
 
     constructor(private userService: UserDetailService,
                 private activatedRoute: ActivatedRoute,
@@ -28,6 +29,7 @@ export class UserDetailComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.loading = true;
         this.activatedRoute.params.subscribe(params => {
             this.roleService.getRoles()
                 .then((roles: any) => {
@@ -49,7 +51,9 @@ export class UserDetailComponent implements OnInit {
         this.userListService.getUsers()
             .then((users: any) => {
                 this.users = users;
+                this.loading = false;
             })
+
 
     }
 

@@ -31,6 +31,7 @@ export class UserDetailComponent implements OnInit {
         this.activatedRoute.params.subscribe(params => {
             this.roleService.getRoles()
                 .then((roles: any) => {
+                    console.log("hello: 2");
                     this.roles = roles;
                     console.log(this.roles);
                     if (this.id == 0) {
@@ -38,6 +39,7 @@ export class UserDetailComponent implements OnInit {
                     }
                 });
             this.id = +params['id'];
+            console.log("hello: 1");
             if (this.id > 0) {
                 this.userService.getUserByID(this.id)
                     .then(res => {
