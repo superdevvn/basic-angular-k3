@@ -1,6 +1,7 @@
 ﻿using SuperDev.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
 
 namespace SuperDev.Repositories
 {
@@ -29,11 +30,20 @@ namespace SuperDev.Repositories
             }
         }
 
-        public IEnumerable<Warehouse> GetEntities()
+        public IEnumerable GetEntities()
         {
             using (var context = new SuperDevDbContext())
             {
-                return context.Warehouses.ToList();
+                return context.Warehouses.Select(e => new WarehouseComplex
+                {
+                    Id = e.Id,
+                    ManagerId = e.ManagerId,
+                    ManagerName = e.Manager.LastName + " " + e.Manager.FirstName,
+                    Name = e.Name,
+                    Address = e.Address,
+                    Phone = e.Phone,
+                    Description = e.Description
+                }).ToList();
             }
         }
 
