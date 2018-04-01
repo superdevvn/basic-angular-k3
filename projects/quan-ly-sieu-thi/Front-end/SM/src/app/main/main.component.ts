@@ -15,6 +15,8 @@ declare var $: any;
 export class MainComponent implements OnInit, AfterViewInit {
   user: any;
   token: string = "none";
+  author: any = {};
+  title: string;
   constructor(private router: Router,
     private loginService: LoginService,
     private apiService: ApiService,
@@ -27,23 +29,40 @@ export class MainComponent implements OnInit, AfterViewInit {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         console.log(event.url);
+        switch (event.url) {
+          case "/main": this.title = "Home"; break;          
+          case "/main/user-list": this.title = "Users Management"; break;
+          case "/main/role-list": this.title = "Roles Management"; break;
+          case "/main/unit-list": this.title = "Units Management"; break; 
+          case "/main/manu-list": this.title = "Manufacturers Management"; break; 
+          case "/main/wh-list": this.title = "Warehouses Management"; break; 
+          case "/main/product-list": this.title = "Products Management"; break;           
+          case "/main/cate-list": this.title = "Categories Management"; break;           
+        }
       }
     });
-    this.loginService.getAuthorize().catch(err => {
+    this.loginService.getAuthorize().then(author => {
+      this.author = author;
+    }).catch(err => {
       this.router.navigate(['login']);
     });
-    // this.getUserInfo().then((user: any) => {
-    //   this.user = user;
-    // }).catch(err => {
-    //   alert(err);
-    // });
   }
 
-  newUser(){
+  ngAfterViewInit() {
+    $.getScript('assets/javascripts/theme.js', function () {
+      $.getScript('assets/javascripts/theme.init.js', function () { });
+    });
+  };
+
+  newUnit() {
+    this.router.navigate(['main/unit-detail', 0]);
+  }
+
+  newUser() {
     this.router.navigate(['main/user-detail', 0]);
   }
 
-  newRole(){
+  newRole() {
     this.router.navigate(['main/role-detail', 0]);
   }
 
@@ -55,13 +74,6 @@ export class MainComponent implements OnInit, AfterViewInit {
     this.router.navigate(['main/wh-detail', 0]);
   }
 
-
-  ngAfterViewInit() {
-    $.getScript('assets/javascripts/theme.js', function () {
-      $.getScript('assets/javascripts/theme.init.js', function () { });
-    });
-  };
-
   getUserInfo(id: number) {
     return new Promise((resolve, reject) => {
       this.mainService.getUserInfo(id).then(user => {
@@ -72,8 +84,8 @@ export class MainComponent implements OnInit, AfterViewInit {
     });
   }
 
-  Logout() {
-    this.loginService.logout();
+  logout() {
+    this.cookieService.delete('author-james');
     this.router.navigate(['login']);
   }
 }

@@ -10,36 +10,36 @@ import { NotificationService } from '../services/notification.service';
   templateUrl: './user-list.component.html'
 })
 export class UserListComponent implements OnInit {
-users: any[];
-constructor(private userService: UserService, private router:Router, private loadingService: LoadingService,
-  private apiService:ApiService, private Notification:NotificationService) { }
+  users: any[];
+  constructor(private userService: UserService, private router: Router, private loadingService: LoadingService,
+    private apiService: ApiService, private Notification: NotificationService) { }
 
   ngOnInit() {
-    this.userService.getUsers().then((users:any[])=>{
-    this.users = users;
-    this.loadingService.stop();
+    this.userService.getUsers().then((users: any[]) => {
+      this.users = users;
+      this.loadingService.stop();
 
-    }).catch(err=>{
+    }).catch(err => {
       alert(err);
       this.loadingService.stop();
     })
-    }
-
-    detail(user){
-      this.router.navigate(["/main/user-detail",user.Id]);
-    }
-
-    create(){
-      this.router.navigate(["/main/user-detail",0]);
-    }
-
-    delete(user) {
-      this.userService.deleteUser(user.Id).then(() => {
-        this.userService.getUsers().then((users: any[]) => {
-          this.users = users;
-        });
-      });
-      this.Notification.success('Deleted');
-    }
-
   }
+
+  detail(user) {
+    this.router.navigate(["/main/user-detail", user.Id]);
+  }
+
+  create() {
+    this.router.navigate(["/main/user-detail", 0]);
+  }
+
+  delete(user) {
+    this.userService.deleteUser(user.Id).then(() => {
+      this.userService.getUsers().then((users: any[]) => {
+        this.users = users;
+      });
+    });
+    this.Notification.success('Deleted');
+  }
+
+}

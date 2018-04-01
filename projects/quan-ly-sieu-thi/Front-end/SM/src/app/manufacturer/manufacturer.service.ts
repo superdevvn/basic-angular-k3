@@ -35,4 +35,14 @@ export class ManufacturerService {
       });
     });
   }
+
+  deleteManu(id) {
+    return new Promise((resolve, reject) => {
+      this.apiService.delete(`api/deleteManufacturer?id=${id}`).then(res => {
+        resolve(res);
+      }).catch(err => {
+        reject(err);
+      });
+    });
+  }
 }

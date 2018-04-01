@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ListuserService } from './listuser.service';
+import { UserService } from './user.service';
 import { LoadingService } from '../services/loading.service';
+import { NotifyService } from '../services/notify.service';
 
 @Component({
   selector: 'app-listuser',
@@ -11,21 +12,22 @@ import { LoadingService } from '../services/loading.service';
 export class ListuserComponent implements OnInit {
   users: any[];
   constructor(private router: Router,
-    private listUserService: ListuserService,
-    private loadingService: LoadingService) { }
+    private userService: UserService,
+    private loadingService: LoadingService,
+    private notifyService: NotifyService) { }
 
   ngOnInit() {
     this.loadingService.start("../assets/images/gif/loading1.gif");
-    this.listUserService.getList().then((users: any[]) => {
+    this.userService.getUsers().then((users: any[]) => {
       this.users = users;
       this.loadingService.stop();
     }).catch(err => {
-      // console.log(err);
-      // this.loadingService.stop();
+      this.notifyService.error("Undefined error!");
+      this.loadingService.stop();
     });
   }
 
-  newUser(){
+  newUser() {
     this.router.navigate(['main/user-detail', 0]);
   }
 
@@ -33,4 +35,38 @@ export class ListuserComponent implements OnInit {
     this.router.navigate(['main/user-detail', user.Id]);
   }
 
+  delete(user) {
+    this.notifyService.confirm("Delete","Are you sure to delete?").then(res => {
+      this.userService.deleteUser(user.Id).then(() => {
+        this.notifyService.success("Delete successful!");
+        this.userService.getUsers().then((users: any) => {
+          this.users = users;
+        }).catch(err => {
+          this.notifyService.error("Reloading failed!");
+        });
+      }).catch(err=>{
+        this.notifyService.error(err.message);
+      })
+    }).catch(err => {
+      this.notifyService.error("Deleting failed!");
+    });
+  }
+
+  block(user: any) {
+    user.IsActived = false;
+    this.userService.saveUser(user).then((res: any) => {
+      this.notifyService.success("Block account successful!");
+    }).catch(err => {
+      this.notifyService.error("Block account fail!");
+    });
+  }
+
+  active(user: any) {
+    user.IsActived = true;
+    this.userService.saveUser(user).then((res: any) => {
+      this.notifyService.success("Active account successful!");
+    }).catch(err => {
+      this.notifyService.error("Active account fail!");
+    });
+  }
 }

@@ -15,20 +15,22 @@ export class WarehouseDetailComponent implements OnInit {
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
     private whService: WarehouseService,
-    private notityService: NotifyService,
+    private notifyService: NotifyService,
     private loadingService: LoadingService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       this.id = +params['id'];
       if (this.id > 0) {
+        $(".hl-id").removeAttr("hidden");
         $(".hl-readonly").attr("readonly", "true");
-        $(".hl-date").removeAttr("type");
-        $(".hl-date").attr("type", "datetime");
         this.loadingService.start("../assets/images/gif/loading1.gif");
         this.whService.getWh(this.id).then(wh => {
           this.wh = wh;
           this.loadingService.stop();
+        }).catch(err => {
+          this.loadingService.stop();
+          this.notifyService.error("Loading failed!");
         });
       };
     });
@@ -42,10 +44,10 @@ export class WarehouseDetailComponent implements OnInit {
   save() {
     this.whService.saveWh(this.wh).then((res: any) => {
       if (this.id == 0) this.router.navigate(["main/wh-detail", res.Id]);
-      this.notityService.success("Save successful!");
+      this.notifyService.success("Save successful!");
       this.router.navigate(["main/wh-list"]);
     }).catch(err => {
-      this.notityService.error("Save failure!");
+      this.notifyService.error("Save fail!");
     });
   }
 }

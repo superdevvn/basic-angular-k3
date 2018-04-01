@@ -13,7 +13,7 @@ export class LoginService {
                 password: password
             }).then(res => {
                 this.apiService.token = res as string;
-                this.cookieService.set('author-superdev', this.apiService.token);
+                this.cookieService.set('author-james', this.apiService.token);
                 resolve(res);
             }).catch(err => {
                 reject(err);
@@ -26,13 +26,8 @@ export class LoginService {
             this.apiService.get("api/authorize").then(res => {
                 resolve(res);
             }).catch(err => {
-                debugger
                 reject(err);
-            })
+            });
         });
-    }
-
-    logout() {
-        this.cookieService.set('author-james', "");
-    }
+    };
 }

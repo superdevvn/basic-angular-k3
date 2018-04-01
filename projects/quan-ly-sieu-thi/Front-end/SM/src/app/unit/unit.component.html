@@ -1,3 +1,62 @@
-<p>
-  unit works!
-</p>
+<div class="panel panel-info" style="padding: 0;">
+    <div class="panel-heading">
+        <div class="col-md-3">
+            <h3>List Of Units</h3>
+        </div>
+        <div class="text-right" style="margin-top: 15px;">
+          <button class="btn btn-primary" (click)="newUnit();">
+            <i class="fa fa-plus"></i> Add New</button>
+        </div>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped table-hover">
+        <colgroup>
+          <col style="width: 80px;">
+          <col style="width: 120px;">
+          <col>
+          <col style="width: 180px;">
+        </colgroup>
+        <thead>
+          <tr class="bg-light">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let unit of units;">
+            <td class="text-left">{{unit.Id}}</td>
+            <td class="text-left">{{unit.Name}}</td>
+            <td class="text-left">{{unit.Description}}</td>
+            <td class="text-center">
+              <label class="text-center">
+                <button (click)="detail(unit);" style="width: 66.2031px;" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i> EDIT</button>
+                <button (click)="delete(unit);" class="btn btn-xs btn-warning"><i class="fa fa-trash-o"></i> DELETE</button>
+              </label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <script>
+    var count_particles, stats, update;
+    stats = new Stats;
+    stats.setMode(0);
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.left = '0px';
+    stats.domElement.style.top = '0px';
+    document.body.appendChild(stats.domElement);
+    count_particles = document.querySelector('.js-count-particles');
+    update = function () {
+      stats.begin();
+      stats.end();
+      if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+        count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+      }
+      requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+  </script>

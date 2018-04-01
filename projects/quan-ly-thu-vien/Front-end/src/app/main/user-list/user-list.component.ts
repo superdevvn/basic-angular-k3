@@ -12,6 +12,7 @@ import {NotificationService} from "../../service/notification.service";
 export class UserListComponent implements OnInit {
 
     users: any[];
+    loading = false;
 
     constructor(private userlistService: UserListService,
                 private router: Router,
@@ -19,10 +20,12 @@ export class UserListComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.loading = true;
         this.userlistService.getUsers()
             .then((users: any[]) => {
                 this.users = users;
                 console.log(this.users);
+                this.loading = false;
             })
             .catch(err => {
                 alert(err);
