@@ -1,4 +1,4 @@
-<div class="panel panel-info col-md-6" style="padding: 0;">
+<div class="panel panel-info" style="padding: 0;">
   <div class="panel-heading">
     <div>
       <h3>Warehouse Information</h3>
@@ -6,24 +6,34 @@
   </div>
   <div class="panel-body">
     <div class="col-md-12 text-center">
-      <div class="col-md-12 text-left">
-        <strong class="text-muted">ID:</strong>
+      <div class="hl-id" hidden>
+        <div class="col-md-12 text-left">
+          <strong class="text-muted">ID:</strong>
+        </div>
+        <div class="col-md-12">
+          <input class="form-control hl-readonly" type="text" placeholder="ID" [(ngModel)]="wh.Id">
+        </div>
       </div>
-      <div class="col-md-12">
-        <input class="form-control hl-readonly" type="text" placeholder="ID" [(ngModel)]="wh.Id">
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Manager:</strong>
       </div>
       <div class="col-md-12 text-left">
-        <strong class="text-muted">Name</strong>
+        <select class="form-control" [(ngModel)]="wh.ManagerId">
+          <option *ngFor="let user of users" [ngValue]="user.Id">{{user.FirstName}} {{user.LastName}}</option>
+        </select>
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Name:</strong>
       </div>
       <div class="col-md-12">
         <input class="form-control" type="text" placeholder="Name" [(ngModel)]="wh.Name">
       </div>
       <div class="col-md-12 text-left">
-          <strong class="text-muted">Address</strong>
-        </div>
-        <div class="col-md-12">
-          <input class="form-control" type="text" placeholder="Address" [(ngModel)]="wh.Address">
-        </div>
+        <strong class="text-muted">Address:</strong>
+      </div>
+      <div class="col-md-12">
+        <input class="form-control" type="text" placeholder="Address" [(ngModel)]="wh.Address">
+      </div>
       <div class="col-md-12 text-left">
         <strong class="text-muted">Description:</strong>
       </div>

@@ -9,16 +9,16 @@ export class NotifyService {
               class="alert alert-success"
               id="notificationsSuccess"
               style="position: fixed;
-              top: 60px;
+              bottom: 10px;
               right:0px;
               font-size: 1.5em;
               z-index:999999;
               display: none;">
               <i class="fa fa-check"></i>
               ${message}</div>`);
-    $('#notificationsSuccess').slideDown('slow');
+    $('#notificationsSuccess').slideDown('fast');
     setTimeout(() => {
-      $('#notificationsSuccess').slideUp('slow');
+      $('#notificationsSuccess').slideUp('medium');
       setTimeout(() => {
         $('#notificationsSuccess').remove();
       }, 1000);
@@ -30,23 +30,23 @@ export class NotifyService {
               class="alert alert-danger"
               id="notificationsError"
               style="position: fixed;
-              top: 60px;
+              bottom: 10px;
               right:0px;
               font-size: 1.5em;
               z-index:999999;
               display: none;">
               <i class="fa fa-times"></i>
               ${message}</div>`);
-    $('#notificationsError').slideDown('slow');
+    $('#notificationsError').slideDown('fast');
     setTimeout(() => {
-      $('#notificationsError').slideUp('slow');
+      $('#notificationsError').slideUp('medium');
       setTimeout(() => {
         $('#notificationsError').remove();
       }, 1000);
     }, 3000);
   };
 
-  confirm(message: string) {
+  confirm(title: string, message: string) {
     if (!$('#confirmModal').length) {
       $('body').append(`
     <div id="confirmModal" class="modal" role="dialog">
@@ -54,7 +54,7 @@ export class NotifyService {
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" id="closebtn" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Modal Header</h4>
+            <h4 class="modal-title">${title}</h4>
           </div>
           <div class="modal-body">
             <p>${message}</p>

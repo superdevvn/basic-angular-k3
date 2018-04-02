@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { WarehouseService } from './warehouse.service';
 import { NotifyService } from '../services/notify.service';
 import { LoadingService } from '../services/loading.service';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'app-warehouse-detail',
@@ -12,23 +13,33 @@ import { LoadingService } from '../services/loading.service';
 export class WarehouseDetailComponent implements OnInit {
   id: number;
   wh: any = {};
+  users: any[];
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
     private whService: WarehouseService,
-    private notityService: NotifyService,
-    private loadingService: LoadingService) { }
+    private notifyService: NotifyService,
+    private loadingService: LoadingService,
+    private userService: UserService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
+      this.userService.getUsers().then((users: any)=>{
+        this.users = users;
+        if (this.id == 0) {
+          this.wh.ManagerId = users[0].Id;
+        }
+      });
       this.id = +params['id'];
       if (this.id > 0) {
+        $(".hl-id").removeAttr("hidden");
         $(".hl-readonly").attr("readonly", "true");
-        $(".hl-date").removeAttr("type");
-        $(".hl-date").attr("type", "datetime");
         this.loadingService.start("../assets/images/gif/loading1.gif");
         this.whService.getWh(this.id).then(wh => {
           this.wh = wh;
           this.loadingService.stop();
+        }).catch(err => {
+          this.loadingService.stop();
+          this.notifyService.error("Loading failed!");
         });
       };
     });
@@ -42,10 +53,10 @@ export class WarehouseDetailComponent implements OnInit {
   save() {
     this.whService.saveWh(this.wh).then((res: any) => {
       if (this.id == 0) this.router.navigate(["main/wh-detail", res.Id]);
-      this.notityService.success("Save successful!");
-      this.router.navigate(["main/wh-list"]);
+      this.notifyService.success("Saving successful!");
+      this.router.navigate(['main/wh-list']);
     }).catch(err => {
-      this.notityService.error("Save failure!");
+      this.notifyService.error("Saving failed!");
     });
   }
 }

@@ -1,0 +1,77 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <div>
+      <h3>User Information</h3>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-6 text-center">
+      <div class="hl-id" hidden>
+        <div class="col-md-12 text-left">
+          <strong class="text-muted">ID:</strong>
+        </div>
+        <div class="col-md-12">
+          <input class="form-control hl-readonly" type="text" placeholder="ID" [(ngModel)]="product.Id">
+        </div>
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Manufacturer:</strong>
+      </div>
+      <div class="col-md-12">
+        <select class="form-control" [(ngModel)]="product.ManufacturerId">
+          <option *ngFor="let manu of manus" [ngValue]="manu.Id">{{manu.Name}}</option>
+        </select>
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Category:</strong>
+      </div>
+      <div class="col-md-12">
+        <select class="form-control" [(ngModel)]="product.CategoryId">
+          <option *ngFor="let cate of categories" [ngValue]="cate.Id">{{cate.Name}}</option>
+        </select>
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Unit:</strong>
+      </div>
+      <div class="col-md-12">
+        <select class="form-control" [(ngModel)]="product.UnitId">
+          <option *ngFor="let unit of units" [ngValue]="unit.Id">{{unit.Name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-6 text-center">
+      <div class="col-md-6">
+        <div class="col-md-12 text-left" style="padding: 0">
+          <strong class="text-muted">Code:</strong>
+        </div>
+        <div class="col-md-12" style="padding: 0">
+          <input class="form-control" type="text" placeholder="Code" [(ngModel)]="product.Code">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="col-md-12 text-left" style="padding: 0">
+          <strong class="text-muted">Name:</strong>
+        </div>
+        <div class="col-md-12" style="padding: 0">
+          <input class="form-control" type="text" placeholder="Name" [(ngModel)]="product.Name">
+        </div>
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Price:</strong>
+      </div>
+      <div class="col-md-12">
+        <input class="form-control hl-readonly" type="number" placeholder="Price" [(ngModel)]="product.Price">
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Description:</strong>
+      </div>
+      <div class="col-md-12">
+        <textarea class="form-control" rows="5" placeholder="Description" [(ngModel)]="product.Description"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer text-right">
+    <a class="btn btn-default" (click)="cancel();">Cancel</a>
+    <button class="btn btn-primary" (click)="save()">Save</button>
+  </div>
+</div>

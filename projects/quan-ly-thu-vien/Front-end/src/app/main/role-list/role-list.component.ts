@@ -3,6 +3,7 @@ import {RoleListService} from "./role-list.service";
 import {Router} from "@angular/router";
 import {NotificationService} from "../../service/notification.service";
 import swal from 'sweetalert2';
+import {LoadingService} from "../../service/loading.service";
 
 @Component({
     selector: 'app-role-list',
@@ -11,18 +12,22 @@ import swal from 'sweetalert2';
 })
 export class RoleListComponent implements OnInit {
 
+    loading: boolean = false;
     roles: any[];
 
     constructor(private rolesService: RoleListService,
                 private router: Router,
-                private notification: NotificationService) {
+                private notification: NotificationService,
+                ) {
     }
 
     ngOnInit() {
+        this.loading = true;
         this.rolesService.getRoles()
             .then((roles: any[]) => {
                 this.roles = roles as any;
                 console.log(this.roles);
+                this.loading = false;
             })
     }
 
@@ -32,15 +37,15 @@ export class RoleListComponent implements OnInit {
     }
 
     deleteRole(id: number) {
-        this.notification.confirm('delete role').then(()=>{
+        this.notification.confirm('delete role').then(() => {
             this.rolesService.delete(id)
-            .then(() => {
-                this.rolesService.getRoles()
-                    .then((roles: any[]) => {
-                        this.roles = roles;
-                    })
-                this.notification.success('Delete success');
-            });
+                .then(() => {
+                    this.rolesService.getRoles()
+                        .then((roles: any[]) => {
+                            this.roles = roles;
+                        })
+                    this.notification.success('Delete success');
+                });
         });
     }
 }

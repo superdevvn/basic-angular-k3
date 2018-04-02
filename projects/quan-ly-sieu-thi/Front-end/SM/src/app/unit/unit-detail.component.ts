@@ -15,19 +15,23 @@ export class UnitDetailComponent implements OnInit {
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
     private unitService: UnitService,
-    private notityService: NotifyService,
+    private notifyService: NotifyService,
     private loadingService: LoadingService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       this.id = +params['id'];
       if (this.id > 0) {
+        $(".hl-id").removeAttr("hidden");
         $(".hl-readonly").attr("readonly", "true");
         this.loadingService.start("../assets/images/gif/loading1.gif");
         this.unitService.getUnit(this.id).then(unit => {
           this.unit = unit;
           this.loadingService.stop();
-        });
+        }).catch(err=>{
+          this.loadingService.stop();
+          this.notifyService.error("Loading failed!");
+        })
       };
     });
   }
@@ -39,12 +43,10 @@ export class UnitDetailComponent implements OnInit {
   save() {
     this.unitService.saveUnit(this.unit).then((res: any) => {
       if (this.id == 0) this.router.navigate(['main/unit-detail', res.Id]);
-      this.notityService.success("Save successful!");
+      this.notifyService.success("Saving successful!");
       this.router.navigate(['main/unit-list']);
     }).catch(err => {
-      this.notityService.error("Save failure!");
+      this.notifyService.error("Saving failed!");
     })
   }
-
-
 }

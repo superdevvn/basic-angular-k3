@@ -200,12 +200,12 @@
     <div id="userbox" class="userbox">
       <a href="#" data-toggle="dropdown">
         <figure class="profile-picture">
-          <img src="assets/images/!logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg"
+          <img src="assets/images/admin.gif" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg"
           />
         </figure>
         <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-          <span class="name"></span>
-          <span class="role">administrator</span>
+          <span class="name">{{author.FirstName}} {{author.LastName}}</span>
+          <span class="role">{{author.Username}}</span>
         </div>
 
         <i class="fa custom-caret"></i>
@@ -223,7 +223,7 @@
               <i class="fa fa-lock"></i> Lock Screen</a>
           </li>
           <li>
-            <a role="menuitem" tabindex="-1" (click)="logout();">
+            <a role="menuitem" style="cursor: pointer;" tabindex="-1" (click)="logout();">
               <i class="fa fa-power-off"></i> Logout</a>
           </li>
         </ul>
@@ -260,95 +260,60 @@
             </li>
             <li class="nav-parent">
               <a>
-                <i class="fa fa-columns" aria-hidden="true"></i>
+                <i class="fa fa-archive" aria-hidden="true"></i>
                 <span>Products Management</span>
               </a>
               <ul class="nav nav-children">
-                <li class="nav-parent">
-                  <a>
+                <li>
+                  <a [routerLink]="['/main/product-list']">
                     Products
                   </a>
-                  <ul class="nav nav-children">
-                    <li>
-                      <a style="cursor: pointer;" (click)="newManu();">Add New Products</a>
-                    </li>
-                    <li>
-                      <a [routerLink]="['/main/manu-list']">List Of Products</a>
-                    </li>
-                  </ul>
                 </li>
-                <li class="nav-parent">
-                  <a>
-                    Manufacturer
+                <li>
+                  <a [routerLink]="['/main/cate-list']">
+                    Categories
                   </a>
-                  <ul class="nav nav-children">
-                    <li>
-                      <a style="cursor: pointer;" (click)="newManu();">Add New Manufacturer</a>
-                    </li>
-                    <li>
-                      <a [routerLink]="['/main/manu-list']">List Of Manufacturers</a>
-                    </li>
-                  </ul>
                 </li>
-                <li class="nav-parent">
-                  <a>
-                    Warehouse
+                <li>
+                  <a [routerLink]="['/main/manu-list']">
+                    Manufacturers
                   </a>
-                  <ul class="nav nav-children">
-                    <li>
-                      <a style="cursor: pointer;" (click)="newWh();">Add New Warehouse</a>
-                    </li>
-                    <li>
-                      <a [routerLink]="['/main/wh-list']">List Of Warehouses</a>
-                    </li>
-                  </ul>
                 </li>
-                <li class="nav-parent">
-                  <a>
+                <li>
+                  <a [routerLink]="['/main/unit-list']">
                     Unit
                   </a>
-                  <ul class="nav nav-children">
-                    <li>
-                      <a style="cursor: pointer;" (click)="newUnit();">Add New Unit</a>
-                    </li>
-                    <li>
-                      <a [routerLink]="['/main/unit-list']">List Of Units</a>
-                    </li>
-                  </ul>
                 </li>
               </ul>
             </li>
             <li class="nav-parent">
               <a>
-                <i class="fa fa-copy" aria-hidden="true"></i>
+                <i class="fa fa-users" aria-hidden="true"></i>
+                <span>Human Resource Management</span>
+              </a>
+              <ul class="nav nav-children">
+                <li>
+                  <a [routerLink]="['/main/user-list']">
+                    User
+                  </a>
+                </li>
+                <li>
+                  <a [routerLink]="['/main/role-list']">
+                    Role
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-parent">
+              <a>
+                <i class="fa fa-truck" aria-hidden="true"></i>
                 <span>Bussiness Management</span>
               </a>
               <ul class="nav nav-children">
-                <li class="nav-parent">
-                  <a>
-                    User
+                <li>
+                  <a [routerLink]="['/main/wh-list']">
+                    Warehouse
                   </a>
-                  <ul class="nav nav-children">
-                    <li>
-                      <a style="cursor: pointer;" (click)="newUser();">Add New User</a>
-                    </li>
-                    <li>
-                      <a [routerLink]="['/main/user-list']">List Of Users</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-parent">
-                  <a>
-                    Role
-                  </a>
-                  <ul class="nav nav-children">
-                    <li>
-                      <a style="cursor: pointer;" (click)="newRole();">Add New Role</a>
-                    </li>
-                    <li>
-                      <a [routerLink]="['/main/role-list']">List Of Roles</a>
-                    </li>
-                  </ul>
                 </li>
               </ul>
             </li>
@@ -362,17 +327,17 @@
 
   <section role="main" class="content-body">
     <header class="page-header">
-      <h2>Dashboard</h2>
+      <h2>{{title}}</h2>
 
       <div class="right-wrapper pull-right">
         <ol class="breadcrumbs">
           <li>
-            <a href="index.html">
+            <a [routerLink]="['main']">
               <i class="fa fa-home"></i>
             </a>
           </li>
           <li>
-            <span>Dashboard</span>
+            <span>{{title}}</span>
           </li>
         </ol>
 

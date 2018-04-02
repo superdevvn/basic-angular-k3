@@ -18,10 +18,24 @@ export class LoginService {
                 .then(res => {
                     this.apiService.token = res.json();
                     this.cookieService.set('auth-superdev', this.apiService.token);
+                    console.log('login : ', res.json());
                     resolve(res.json());
                 })
-                .catch(err=>{
-                    console.log(err);
+                .catch(err => {
+                    console.log(err.json());
+                    reject(err.json());
+                })
+        })
+    }
+
+    getAuthorize() {
+        return new Promise((resolve, reject) => {
+            this.apiService.get('/api/authorize')
+                .then(res => {
+                    resolve(res.json())
+                })
+                .catch(err => {
+                    reject(err);
                 })
         })
     }

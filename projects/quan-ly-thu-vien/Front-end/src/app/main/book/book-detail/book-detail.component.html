@@ -154,10 +154,13 @@
         </div>
         <!-- #END# Basic Validation -->
     </div>
-
-
 </div>
 
-<div *ngFor="let item of categories">
-    <h1>{{item.Id}}</h1>
+<button type="button" class="btn btn-primary waves-effect" [routerLink]="['/main/user-list']">
+    <i class="material-icons">keyboard_return</i>
+    <span>BACK USER LIST</span>
+</button>
+
+<div class="my-container">
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
 </div>

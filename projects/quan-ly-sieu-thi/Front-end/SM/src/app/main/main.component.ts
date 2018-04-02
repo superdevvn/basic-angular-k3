@@ -15,6 +15,10 @@ declare var $: any;
 export class MainComponent implements OnInit, AfterViewInit {
   user: any;
   token: string = "none";
+  author: any = {};
+  title: string = "Home";
+  any: any;
+  password: string;
   constructor(private router: Router,
     private loginService: LoginService,
     private apiService: ApiService,
@@ -27,12 +31,38 @@ export class MainComponent implements OnInit, AfterViewInit {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         console.log(event.url);
+        switch (event.url) {
+          case "/main": this.title = "Home"; break;
+          case "/main/user-list": this.title = "Users Management"; break;
+          case "/main/role-list": this.title = "Roles Management"; break;
+          case "/main/unit-list": this.title = "Units Management"; break;
+          case "/main/manu-list": this.title = "Manufacturers Management"; break;
+          case "/main/wh-list": this.title = "Warehouses Management"; break;
+          case "/main/product-list": this.title = "Products Management"; break;
+          case "/main/cate-list": this.title = "Categories Management"; break;
+
+          case "/main/user-detail/0": this.title = "Add new User"; break;
+          case "/main/role-detail/0": this.title = "Add new Role"; break;
+          case "/main/unit-detail/0": this.title = "Add new Unit"; break;
+          case "/main/manu-detail/0": this.title = "Add new Manufacturer"; break;
+          case "/main/wh-detail/0": this.title = "Add new Warehouse"; break;
+          case "/main/product-detail/0": this.title = "Add new Product"; break;
+          case "/main/cate-detail/0": this.title = "Add new Category"; break;
+        }
       }
     });
-    this.loginService.getAuthorize().catch(err => {
+    this.loginService.getAuthorize().then(author => {
+      this.author = author;
+    }).catch(err => {
       this.router.navigate(['login']);
     });
   }
+
+  ngAfterViewInit() {
+    $.getScript('assets/javascripts/theme.js', function () {
+      $.getScript('assets/javascripts/theme.init.js', function () { });
+    });
+  };
 
   newUnit() {
     this.router.navigate(['main/unit-detail', 0]);
@@ -54,13 +84,6 @@ export class MainComponent implements OnInit, AfterViewInit {
     this.router.navigate(['main/wh-detail', 0]);
   }
 
-
-  ngAfterViewInit() {
-    $.getScript('assets/javascripts/theme.js', function () {
-      $.getScript('assets/javascripts/theme.init.js', function () { });
-    });
-  };
-
   getUserInfo(id: number) {
     return new Promise((resolve, reject) => {
       this.mainService.getUserInfo(id).then(user => {
@@ -70,7 +93,15 @@ export class MainComponent implements OnInit, AfterViewInit {
       });
     });
   }
+
+  unlock(){
+    this.loginService.unlock(this.author.Username, this.password).then(res=>{
+      
+    })
+  }
+
   logout() {
     this.cookieService.delete('author-james');
+    this.router.navigate(['login']);
   }
 }

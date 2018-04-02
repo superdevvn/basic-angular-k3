@@ -1,7 +1,6 @@
-﻿using SuperDev.Models;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.Linq;
-using System.Collections;
+using SuperDev.Models;
 
 namespace SuperDev.Repositories
 {
@@ -57,7 +56,8 @@ namespace SuperDev.Repositories
                     IsActived = entity.IsActived,
                     IsDeleted = entity.IsDeleted,
                     CreatedDate = entity.CreatedDate,
-                    CreatedBy = entity.CreatedBy
+                    CreatedBy = entity.CreatedBy,
+                    CreatorName = entity.CreatedBy == null ? string.Empty : context.Users.FirstOrDefault(e => e.Id == entity.CreatedBy).Username
                 }).ToList();
             }
         }

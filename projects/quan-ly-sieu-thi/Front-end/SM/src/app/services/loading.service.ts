@@ -25,7 +25,7 @@ export class LoadingService {
   }
 
   startbtnloading() {
-    $('.hl-forget').append(`<img id="btnloading" width="30" style="float: right;" src="../assets/images/gif/btnloadingblue.gif">`)
+    $('.hlloginloading').append(`<img id="btnloading" width="25" style="margin-top: -20px; float: left;" src="../assets/images/gif/btnloadingblue.gif">`)
   }
 
   stopbtnloading() {

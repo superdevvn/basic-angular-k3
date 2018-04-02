@@ -1,0 +1,43 @@
+<div class="panel panel-info" style="padding: 0;">
+  <div class="panel-heading">
+    <div>
+      <h3>Category Information</h3>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-12 text-center">
+      <div class="hl-id" hidden>
+        <div class="col-md-12 text-left">
+          <strong class="text-muted">ID:</strong>
+        </div>
+        <div class="col-md-12">
+          <input class="form-control hl-readonly" type="text" placeholder="ID" [(ngModel)]="category.Id">
+        </div>
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Parent</strong>
+      </div>
+      <div class="col-md-12">
+        <select class="form-control" [(ngModel)]="category.ParentId">
+          <option *ngFor="let category of categories" [ngValue]="category.Id">{{category.Name}}</option>
+        </select>
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Name</strong>
+      </div>
+      <div class="col-md-12">
+        <input class="form-control" type="text" placeholder="Name" [(ngModel)]="category.Name">
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Description:</strong>
+      </div>
+      <div class="col-md-12">
+        <textarea class="form-control" rows="5" placeholder="Description" [(ngModel)]="category.Description"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer text-right">
+    <a class="btn btn-default" (click)="cancel();">Cancel</a>
+    <button class="btn btn-primary" (click)="save()">Save</button>
+  </div>
+</div>

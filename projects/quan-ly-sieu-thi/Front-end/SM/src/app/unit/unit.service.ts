@@ -34,4 +34,14 @@ export class UnitService {
       });
     });
   }
+
+  deleteUnit(id) {
+    return new Promise((resolve, reject) => {
+      this.apiService.delete(`api/deleteUnit?id=${id}`).then(res => {
+        resolve(res);
+      }).catch(err => {
+        reject(err);
+      });
+    });
+  }
 }

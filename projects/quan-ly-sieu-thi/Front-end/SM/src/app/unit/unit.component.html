@@ -1,23 +1,26 @@
-<div class="panel panel-info col-md-6" style="padding: 0;">
+<div class="panel panel-info" style="padding: 0;">
     <div class="panel-heading">
-      <div>
-        <h3>List Of Unit</h3>
-        <div class="text-right">
-          <button class="btn btn-success" (click)="newUnit();"><i class="fa fa-plus"></i> Add New</button>
+        <div class="col-md-3">
+            <h3>List Of Units</h3>
         </div>
-      </div>
+        <div class="text-right" style="margin-top: 15px;">
+          <button class="btn btn-primary" (click)="newUnit();">
+            <i class="fa fa-plus"></i> Add New</button>
+        </div>
     </div>
     <div class="panel-body">
       <table class="table table-striped table-hover">
         <colgroup>
+          <col style="width: 80px;">
+          <col style="width: 80px;">
+          <col style="width: 120px;">
           <col>
-          <col>
-          <col style="width: 60px;">
-          <col style="width: 60px;">
+          <col style="width: 180px;">
         </colgroup>
         <thead>
           <tr class="bg-light">
             <th>ID</th>
+            <th>Code</th>
             <th>Name</th>
             <th>Description</th>
             <th></th>
@@ -26,12 +29,13 @@
         <tbody>
           <tr *ngFor="let unit of units;">
             <td class="text-left">{{unit.Id}}</td>
+            <td class="text-left">{{unit.Code}}</td>
             <td class="text-left">{{unit.Name}}</td>
             <td class="text-left">{{unit.Description}}</td>
             <td class="text-center">
               <label class="text-center">
-                <button (click)="detail(unit);" style="width: 66.2031px;" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i> EDIT</button>
-                <button (click)="delete(unit);" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i> DELETE</button>
+                <button (click)="detail(unit);" style="width: 66.2031px;" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i> EDIT</button>
+                <button (click)="delete(unit);" class="btn btn-xs btn-warning"><i class="fa fa-trash-o"></i> DELETE</button>
               </label>
             </td>
           </tr>

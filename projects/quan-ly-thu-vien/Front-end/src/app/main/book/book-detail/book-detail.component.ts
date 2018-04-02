@@ -15,7 +15,7 @@ export class BookDetailComponent implements OnInit {
     categories: any[];
     id: number;
     isEdit = false;
-
+    loading = false;
     constructor(private bookService: BookService,
                 private activatedRoute: ActivatedRoute,
                 private router: Router,
@@ -24,6 +24,7 @@ export class BookDetailComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.loading = true;
         this.activatedRoute.params.subscribe(params => {
             this.categoryService.getCategories()
                 .then((categories: any) => {
@@ -32,15 +33,16 @@ export class BookDetailComponent implements OnInit {
                         console.log("category 0",categories[0]);
                         this.book.CategoryId = categories[0].Id;
                         console.log("Category ID", this.book.CategoryId);
+                        this.loading = false;
                     }
                 });
             this.id = +params['id'];
             if (this.id > 0) {
-
                 this.bookService.getBookByID(this.id)
                     .then(res => {
                         this.book = res;
                         console.log(" this is book", res);
+                        this.loading = false;
                     })
             }
         })
@@ -51,6 +53,7 @@ export class BookDetailComponent implements OnInit {
     }
 
     save() {
+
         this.bookService.saveBook(this.book)
             .then((res: any) => {
                 if (this.id === 0) {

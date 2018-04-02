@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 
 namespace SuperDev.Models
 {
@@ -12,9 +13,34 @@ namespace SuperDev.Models
 
         public int Id { get; set; }
 
+        public int ManagerId { get; set; }
+
         public string Name { get; set; }
 
         public string Address { get; set; }
+
+        public string Phone { get; set; }
+
+        public string Description { get; set; }
+
+        [ForeignKey("ManagerId")]
+        public virtual User Manager { get; set; }
+    }
+
+    public class WarehouseComplex
+    {
+
+        public int Id { get; set; }
+
+        public int ManagerId { get; set; }
+
+        public string ManagerName { get; set; }
+
+        public string Name { get; set; }
+
+        public string Address { get; set; }
+
+        public string Phone { get; set; }
 
         public string Description { get; set; }
     }
