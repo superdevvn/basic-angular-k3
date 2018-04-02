@@ -15,13 +15,21 @@
         </div>
       </div>
       <div class="col-md-12 text-left">
-        <strong class="text-muted">Name</strong>
+        <strong class="text-muted">Manager:</strong>
+      </div>
+      <div class="col-md-12 text-left">
+        <select class="form-control" [(ngModel)]="wh.ManagerId">
+          <option *ngFor="let user of users" [ngValue]="user.Id">{{user.FirstName}} {{user.LastName}}</option>
+        </select>
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Name:</strong>
       </div>
       <div class="col-md-12">
         <input class="form-control" type="text" placeholder="Name" [(ngModel)]="wh.Name">
       </div>
       <div class="col-md-12 text-left">
-        <strong class="text-muted">Address</strong>
+        <strong class="text-muted">Address:</strong>
       </div>
       <div class="col-md-12">
         <input class="form-control" type="text" placeholder="Address" [(ngModel)]="wh.Address">
