@@ -1,3 +1,67 @@
-<p>
-  products works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+      <div class="box">
+          <div class="box-header">
+              <div>
+                  <h3 class="box-title" id="roleList">Product List </h3>
+                  <button class="btn btn-success btn-md" (click)="newProduct(product)">New Product</button>
+              </div>
+              <div class="box-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                      <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                      <div class="input-group-btn">
+                          <button type="submit" class="btn btn-default">
+                              <i class="fa fa-search"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                  <tbody>
+                      <tr>
+                          <th>#</th>
+                          <th>ID</th>
+                          <th>Product name</th>
+                          <th>ManufacturerId</th>
+                          <th>CategoryId</th>
+                          <th>UnitId</th>
+                          <th>Code</th>
+                          <th>Price</th>
+                          <th>Description</th>
+                          <th>Action</th>
+                      </tr>
+                      
+                      <tr *ngFor="let product of products; let idx = index">
+                          <td>{{idx}}</td>
+                          <td>{{product.Id}}</td>
+                          <td>{{product.Name}}</td>
+                          <td>{{product.ManufacturerId}}</td>
+                          <td>{{product.CategoryId}}</td>
+                          <td>{{product.UnitId}}</td>
+                          <td>{{product.Code}}</td>
+                          <td>{{product.Price}}</td>
+                          <td>{{product.Description}}</td>
+                          <td class="text-center">
+                              <button class="btn btn-info btn-xs" (click)="detail(product)">
+                                  <i class="fa fa-pencil"></i>
+                                  <span>Edit</span>
+                              </button>
+                              <button class="btn btn-warning  btn-xs" (click)="delete(product)">
+                                  <i class="fa fa-trash-o"></i>
+                                  <span>Delete</span>
+                              </button>
+                          </td>
+                      </tr>
+
+                  </tbody>
+              </table>
+          </div>
+          <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+  </div>
+</div>
