@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 
 namespace SuperDev.Models
@@ -13,6 +15,8 @@ namespace SuperDev.Models
 
         public int Id { get; set; }
 
+        [Index("IX_Code", IsUnique = true)]
+        [MaxLength(15)]
         public string Code { get; set; }
 
         public string Name { get; set; }

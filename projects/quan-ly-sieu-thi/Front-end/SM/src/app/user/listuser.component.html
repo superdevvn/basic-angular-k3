@@ -25,7 +25,7 @@
           <th>ID</th>
           <th>Username</th>
           <th>FullName</th>
-          <th>Description</th>
+          <th>Role</th>
           <th>Actived</th>
           <th>Created Date</th>
           <th>Creator Name</th>
@@ -37,7 +37,7 @@
           <td>{{user.Id}}</td>
           <td>{{user.Username}}</td>
           <td>{{user.FirstName}} {{user.LastName}}</td>
-          <td>{{user.Description}}</td>
+          <td>{{user.RoleName}}</td>
           <td>
             <span class="label" [ngClass]="{'label-success':user.IsActived, 'label-danger':!user.IsActived}">
               {{user.IsActived?'Actived':'Blocked'}}

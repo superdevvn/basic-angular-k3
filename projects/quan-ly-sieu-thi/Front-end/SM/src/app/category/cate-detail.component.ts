@@ -33,7 +33,7 @@ export class CateDetailComponent implements OnInit {
         $(".hl-readonly").attr("readonly", "true");
         this.loadingService.start("../assets/images/gif/loading1.gif");
         this.categoryService.getCategory(this.id).then(category => {
-          this.category = this.category;
+          this.category = category;
           this.loadingService.stop();
         }).catch(err => {
           this.notifyService.error("Loading failed!");
@@ -47,7 +47,6 @@ export class CateDetailComponent implements OnInit {
     this.router.navigate(['main/cate-list']);
   }
 
-  //chưa save đc
   save() {
     this.categoryService.saveCategory(this.category).then((res: any) => {
       if (this.id == 0) this.router.navigate(["main/cate-detail", res.Id]);

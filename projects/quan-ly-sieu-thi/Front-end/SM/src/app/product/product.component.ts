@@ -20,8 +20,6 @@ export class ProductComponent implements OnInit {
     this.loadingService.start("../assets/images/gif/loading1.gif");
     this.productService.getProducts().then((products: any[]) => {
       this.products = products;
-      debugger
-      console.log(products);
       this.loadingService.stop();
     }).catch(err => {
       this.notifyService.error("Undefined error!");

@@ -21,6 +21,21 @@ export class LoginService {
         });
     };
 
+    unlock(username: string, password: string){
+        return new Promise((resolve, reject) => {
+            this.apiService.post("api/login", {
+                username: username,
+                password: password
+            }).then(res => {
+                this.apiService.token = res as string;
+                this.cookieService.set('author-james', this.apiService.token);
+                resolve(res);
+            }).catch(err => {
+                reject(err);
+            });
+        });
+    }
+
     getAuthorize() {
         return new Promise((resolve, reject) => {
             this.apiService.get("api/authorize").then(res => {

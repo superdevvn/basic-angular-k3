@@ -11,12 +11,12 @@
   <div class="panel-body">
     <table class="table table-striped table-hover table-responsive">
       <colgroup>
+        <col style="width: 30px;">
         <col style="width: 100px;">
-        <col style="width: 100px;">
         <col style="width: 70px;">
         <col style="width: 70px;">
         <col style="width: 70px;">
-        <col style="width: 70px;">
+        <col>
         <col style="width: 70px;">
         <col>
         <col style="width: 180px;">
@@ -37,9 +37,9 @@
       <tbody>
         <tr *ngFor="let product of products;">
           <td>{{product.Id}}</td>
-          <td>{{product.ManufacturerId}}</td>
-          <td>{{product.CategoryId}}</td>
-          <td>{{product.UnitId}}</td>
+          <td>{{product.ManufacturerName}}</td>
+          <td>{{product.CategoryName}}</td>
+          <td>{{product.UnitName}}</td>
           <td>{{product.Code}}</td>
           <td>{{product.Name}}</td>
           <td>{{product.Price}}</td>

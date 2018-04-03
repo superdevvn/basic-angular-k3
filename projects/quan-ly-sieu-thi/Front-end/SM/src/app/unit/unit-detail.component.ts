@@ -43,7 +43,7 @@ export class UnitDetailComponent implements OnInit {
   save() {
     this.unitService.saveUnit(this.unit).then((res: any) => {
       if (this.id == 0) this.router.navigate(['main/unit-detail', res.Id]);
-      this.notifyService.success("Save successful!");
+      this.notifyService.success("Saving successful!");
       this.router.navigate(['main/unit-list']);
     }).catch(err => {
       this.notifyService.error("Saving failed!");

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using SuperDev.Models;
 using SuperDev.Repositories;
 
@@ -13,7 +14,7 @@ namespace SuperDev.Services
             return warehouseRepository.Create(warehouse);
         }
 
-        public IEnumerable<Warehouse> GetList()
+        public IEnumerable GetList()
         {
             var warehouseRepository = new WarehouseRepository();
             return warehouseRepository.GetEntities();
