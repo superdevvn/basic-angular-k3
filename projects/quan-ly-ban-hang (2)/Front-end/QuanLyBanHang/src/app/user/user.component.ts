@@ -26,4 +26,8 @@ export class UserComponent implements OnInit {
   newUser() {
     this.router.navigate(['main/user-detail', 0]);
   }
+
+  // deleteUser(user){
+
+  // }
 }

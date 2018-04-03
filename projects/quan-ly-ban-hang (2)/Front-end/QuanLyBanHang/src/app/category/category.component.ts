@@ -24,10 +24,14 @@ export class CategoryComponent implements OnInit {
       this.categories = categories;
     });
   }
-  newCategory() {
-    this.router.navigate(['main/category-detail', 0]);
-  }
-  detail(category){
-    this.router.navigate(['main/category-detail', category.Id]);
-  }
+    newCategory() {
+      this.router.navigate(['main/category-detail', 0]);
+    }
+    detail(category){
+      this.router.navigate(['main/category-detail', category.Id]);
+    }
+
+    // delete(category){
+
+    // }
 }

@@ -37,18 +37,18 @@ export class CategoryService {
             reject(err);
         })
     })
-}
-
-delete(id){
-    debugger
-    return new Promise((resolve, reject) => {
-        this.apiService.delete(`api/deleteUnit?id=${+id}`).then(res => {
-          resolve(res);
-          debugger
-        }).catch(err => {
-            debugger
-          reject(err);
-        });
-      });
   }
+
+    delete(id){
+        debugger
+        return new Promise((resolve, reject) => {
+            this.apiService.delete(`api/deleteUnit?id=${+id}`).then(res => {
+            resolve(res);
+            debugger
+            }).catch(err => {
+                debugger
+            reject(err);
+            });
+        });
+    }
 }
