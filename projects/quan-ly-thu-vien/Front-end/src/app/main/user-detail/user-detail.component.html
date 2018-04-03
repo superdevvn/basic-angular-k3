@@ -13,14 +13,16 @@
             <div class="body">
 
                 <div class="body">
-                    <ul>
-                        <li>Username: {{user?.Username || 'None'}}</li>
-                        <li>Role: {{user?.Role || 'None' }}</li>
-                        <li>Description: {{user?.Description || 'None' }}</li>
-                        <li>Created By: {{user?.CreatedBy || 'None' }}</li>
-                        <li>Created Date: {{user?.CreatedDate | date : 'HH:mm dd/MM/yyyy' || 'None' }}</li>
-                        <li>Can Delete: {{user?.IsDeleted}}</li>
-                        <li>Can Active: {{user.IsActived}}</li>
+                    <ul class="list-group">
+                        <li class="list-group-item">  <strong>Username: </strong>{{user?.Username || 'None'}}</li>
+                        <li class="list-group-item"> <strong>Role:</strong> {{user?.Role || 'None' }}</li>
+                        <li class="list-group-item"> <strong>Description:</strong> {{user?.Description || 'None' }}</li>
+                        <li class="list-group-item"> <strong>Created By:</strong> {{user?.CreatedBy || 'None' }}</li>
+                        <li class="list-group-item"> <strong>Created Date:</strong> {{user?.CreatedDate | date : 'HH:mm dd/MM/yyyy' ||
+                            'None' }}
+                        </li>
+                        <li class="list-group-item"><strong>Can Delete:</strong> {{user?.IsDeleted}}</li>
+                        <li class="list-group-item"><strong>Can Active:</strong> {{user.IsActived}}</li>
                     </ul>
                 </div>
             </div>

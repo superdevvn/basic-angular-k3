@@ -32,6 +32,7 @@ import {CategoryService} from "./main/category/category.service";
 import {CustomerService} from "./main/customer/customer.service";
 import {LoadingService} from "./service/loading.service";
 import {LoadingModule} from "ngx-loading";
+import { BookingComponent } from './main/booking/booking.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import {LoadingModule} from "ngx-loading";
         CategoryDetailComponent,
         BookListComponent,
         BookDetailComponent,
+        BookingComponent,
 
     ],
     imports: [

@@ -23,15 +23,15 @@ export class LoginComponent implements OnInit {
     }
 
     login() {
-        this.loading = true;
+
         this.loginService.login(this.username, this.password)
             .then(() => {
-                this.loading = false;
+
                 this.router.navigate(["main/role-list"]);
 
             })
             .catch(err => {
-                this.loading = false;
+
                 console.log(err);
                 this.notification.error(err.Message);
             })
