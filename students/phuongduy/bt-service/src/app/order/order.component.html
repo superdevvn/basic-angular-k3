@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-xs-12">
+      <div class="box">
+          <div class="box-header">
+              <div>
+                  <h3 class="box-title">Order List </h3>
+                  <button class="btn btn-success btn-md" (click)="newOrder()">New Order</button>
+              </div>
+              <div class="box-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                      <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                      <div class="input-group-btn">
+                          <button type="submit" class="btn btn-default">
+                              <i class="fa fa-search"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                  <tbody>
+                      <tr>
+                          <th>#</th>
+                          <th>ID</th>
+                          <th>CustomerId</th>
+                          <th>ProductId</th>
+                          <th>Price</th>
+                          <th>Quantity</th>
+                          <th>Date</th>
+                          <th>DeliveryDate</th>
+                          <th>IsPayed</th>
+                          <th>Description</th>
+                          <th>Action</th>
+                      </tr>
+                      
+                      <tr *ngFor="let order of orders; let idx = index">
+                          <td>{{idx}}</td>
+                          <td>{{order.CustomerId}}</td>
+                          <td>{{order.ProductId}}</td>
+                          <td>{{order.Price}}</td>
+                          <td>{{order.Quantity}}</td>
+                          <td>{{order.Date}}</td>
+                          <td>{{order.DeliveryDate}}</td>
+                          <td>{{order.IsPayed}}</td>
+                          <td>{{order.Description}}</td>
+                          <td class="text-center">
+                              <button class="btn btn-info btn-xs" (click)="detail(order)">
+                                  <i class="fa fa-pencil"></i>
+                                  <span>Edit</span>
+                              </button>
+                              <button class="btn btn-warning  btn-xs" (click)="delete(order.Id)">
+                                  <i class="fa fa-trash-o"></i>
+                                  <span>Delete</span>
+                              </button>
+                          </td>
+                      </tr>
+
+                  </tbody>
+              </table>
+          </div>
+          <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+  </div>
+</div>

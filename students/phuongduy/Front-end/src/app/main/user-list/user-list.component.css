@@ -1,0 +1,46 @@
+.card-hover:hover {
+    cursor: pointer;
+}
+
+.button-detail {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    opacity: 0;
+}
+
+.parent-card {
+    position: relative;
+}
+
+.card-hover{
+    opacity:1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.button-detail{
+    transition: .5s ease;
+    opacity:0;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.parent-card:hover .card-hover {
+    opacity:0.3;
+}
+
+.parent-card:hover .button-detail{
+    opacity: 1;
+}
+
+.margin-top-30{
+    margin-top: 50px;
+}
