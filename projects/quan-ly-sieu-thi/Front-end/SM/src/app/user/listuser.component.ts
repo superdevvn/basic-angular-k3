@@ -36,7 +36,7 @@ export class ListuserComponent implements OnInit {
   }
 
   delete(user) {
-    this.notifyService.confirm("Delete","Are you sure to delete?").then(res => {
+    this.notifyService.confirm("Delete", "Are you sure to delete?").then(res => {
       this.userService.deleteUser(user.Id).then(() => {
         this.notifyService.success("Delete successful!");
         this.userService.getUsers().then((users: any) => {
@@ -44,7 +44,7 @@ export class ListuserComponent implements OnInit {
         }).catch(err => {
           this.notifyService.error("Reloading failed!");
         });
-      }).catch(err=>{
+      }).catch(err => {
         this.notifyService.error(err.message);
       })
     }).catch(err => {
@@ -53,19 +53,25 @@ export class ListuserComponent implements OnInit {
   }
 
   block(user: any) {
+    this.loadingService.startbtnloading('activeloading', 'activeloading');
     user.IsActived = false;
     this.userService.saveUser(user).then((res: any) => {
+      this.loadingService.stopbtnloading('activeloading');
       this.notifyService.success("Block account successful!");
     }).catch(err => {
+      this.loadingService.stopbtnloading('activeloading');
       this.notifyService.error("Block account fail!");
     });
   }
 
   active(user: any) {
+    this.loadingService.startbtnloading('activeloading', 'activeloading');    
     user.IsActived = true;
     this.userService.saveUser(user).then((res: any) => {
+      this.loadingService.stopbtnloading('activeloading');      
       this.notifyService.success("Active account successful!");
     }).catch(err => {
+      this.loadingService.stopbtnloading('activeloading');      
       this.notifyService.error("Active account fail!");
     });
   }

@@ -1,0 +1,81 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <div>
+      <h3>InOut Information</h3>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-6 text-center">
+      <div class="hl-id" hidden>
+        <div class="col-md-12 text-left">
+          <strong class="text-muted">ID:</strong>
+        </div>
+        <div class="col-md-12">
+          <input class="form-control hl-readonly" type="text" placeholder="ID" [(ngModel)]="inout.Id">
+        </div>
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Warehouse:</strong>
+      </div>
+      <div class="col-md-12">
+        <select class="form-control" [(ngModel)]="inout.WarehouseId">
+          <option *ngFor="let wh of whs" [ngValue]="wh.Id">{{wh.Name}}</option>
+        </select>
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">User:</strong>
+      </div>
+      <div class="col-md-12">
+        <select class="form-control" [(ngModel)]="inout.UserId">
+          <option *ngFor="let user of users" [ngValue]="user.Id">{{user.FirstName}} {{user.LastName}}</option>
+        </select>
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Product:</strong>
+      </div>
+      <div class="col-md-12">
+        <select class="form-control" [(ngModel)]="inout.ProductId">
+          <option *ngFor="let product of products" [ngValue]="product.Id">{{product.Name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-6 text-center">
+      <div class="col-md-6">
+        <div class="col-md-12 text-left" style="padding: 0">
+          <strong class="text-muted">Price:</strong>
+        </div>
+        <div class="col-md-12" style="padding: 0">
+          <input class="form-control" type="number" placeholder="Price" [(ngModel)]="inout.Price">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="col-md-12 text-left" style="padding: 0">
+          <strong class="text-muted">Quantity:</strong>
+        </div>
+        <div class="col-md-12" style="padding: 0">
+          <input class="form-control" type="number" placeholder="Quantity" [(ngModel)]="inout.Quantity">
+        </div>
+      </div>
+      <div class="col-md-12 text-left">
+        <strong class="text-muted">Type:</strong>
+      </div>
+      <div class="col-md-12">
+        <select class="form-control" [(ngModel)]="inout.Type">
+          <option *ngFor="let type of types" [ngValue]="type.value">{{type.name}}</option>
+        </select>
+      </div>
+      <div class="hl-id" hidden>
+        <div class="col-md-12 text-left">
+          <strong class="text-muted">Date:</strong>
+        </div>
+        <div class="col-md-12">
+          <input class="form-control hl-readonly" type="datetime" placeholder="Date" [(ngModel)]="inout.Date">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer text-right">
+    <a class="btn btn-default" (click)="cancel();">Cancel</a>
+    <button class="btn btn-primary" (click)="save()">Save</button>
+  </div>
+</div>
