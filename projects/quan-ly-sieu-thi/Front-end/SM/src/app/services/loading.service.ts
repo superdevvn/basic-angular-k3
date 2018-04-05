@@ -24,11 +24,11 @@ export class LoadingService {
     $('#globalloading').remove();
   }
 
-  startbtnloading() {
-    $('.hlloginloading').append(`<img id="btnloading" width="25" style="margin-top: -20px; float: left;" src="../assets/images/gif/btnloadingblue.gif">`)
+  startbtnloading(index: string, id: string) {
+    $(`.${index}`).append(`<img id="${id}" width="20" style="margin-top: -20px; float: left;" src="../assets/images/gif/btnloadingblue.gif">`)
   }
 
-  stopbtnloading() {
-    $('#btnloading').remove();
+  stopbtnloading(id: string) {
+    $(`#${id}`).remove();
   }
 }

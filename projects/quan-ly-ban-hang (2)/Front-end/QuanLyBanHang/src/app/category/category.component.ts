@@ -28,6 +28,7 @@ export class CategoryComponent implements OnInit {
     });
     
   }
+<<<<<<< HEAD
   newCategory() {
     this.router.navigate(['main/category-detail', 0]);
   }
@@ -45,4 +46,16 @@ export class CategoryComponent implements OnInit {
     }).catch(()=>{
     });
   }
+=======
+    newCategory() {
+      this.router.navigate(['main/category-detail', 0]);
+    }
+    detail(category){
+      this.router.navigate(['main/category-detail', category.Id]);
+    }
+
+    // delete(category){
+
+    // }
+>>>>>>> d5c891c60fca61f77385c4f78ea06d6599fad69a
 }

@@ -16,15 +16,6 @@ export class UserService {
     })
   }
 
-//   getUserDetail(id: number){
-//       return new Promise((resolve,reject)=>{
-//           this.apiService.get(`api/getUser/${id}`).then(user=>{
-//               resolve(user);
-//           }).catch(err=>{
-//               reject(err);
-//           })
-//       })
-//   }
 getUserDetail(id: number){
     return new Promise((resolve, reject)=>{
         this.apiService.get(`api/getUser/${id}`).then(user =>{
@@ -43,5 +34,17 @@ saveUser(user: any){
             reject(err);
         })
     })
+}
+
+deleteUser(id) {
+    return new Promise((resolve, reject) => {
+        this.apiService.delete(`api/deleteUser?id=${id}`)
+            .then(res => {
+                resolve(res)
+            })
+            .catch(err => {
+               reject(err);
+            })
+    });
 }
 }

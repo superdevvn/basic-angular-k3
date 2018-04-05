@@ -16,6 +16,7 @@ export class UserService {
     })
   }
 
+<<<<<<< HEAD
 getUserDetail(id: number){
     return new Promise((resolve, reject)=>{
         this.apiService.get(`api/getUser/${id}`).then(user =>{
@@ -23,16 +24,37 @@ getUserDetail(id: number){
             resolve(user);
         }).catch(err=>{
             reject(err);
+=======
+//   getUserDetail(id: number){
+//       return new Promise((resolve,reject)=>{
+//           this.apiService.get(`api/getUser/${id}`).then(user=>{
+//               resolve(user);
+//           }).catch(err=>{
+//               reject(err);
+//           })
+//       })
+//   }
+    getUserDetail(id: number){
+        return new Promise((resolve, reject)=>{
+            this.apiService.get(`api/getUser/${id}`).then(user =>{
+            
+                resolve(user);
+            }).catch(err=>{
+                reject(err);
+            })
+>>>>>>> d5c891c60fca61f77385c4f78ea06d6599fad69a
         })
-    })
-  }
-saveUser(user: any){
-    return new Promise((resolve, reject)=>{
-        this.apiService.post("api/saveUser", user ).then(user =>{
-            resolve(user);
-        }).catch(err=>{
-            reject(err);
+    }
+
+    saveUser(user: any){
+        return new Promise((resolve, reject)=>{
+            this.apiService.post("api/saveUser", user ).then(user =>{
+                resolve(user);
+            }).catch(err=>{
+                reject(err);
+            })
         })
+<<<<<<< HEAD
     })
 }
 
@@ -47,4 +69,17 @@ deleteUser(id) {
             })
     });
 }
+=======
+    }
+
+    deleteUser(id){
+        return new Promise((resolve,reject)=>{
+            this.apiService.delete(`api/deleteUser?id=${id}`).then(res=>{
+                resolve(res);
+            }).catch(err=>{
+                reject(err);
+            })
+        })
+    }
+>>>>>>> d5c891c60fca61f77385c4f78ea06d6599fad69a
 }

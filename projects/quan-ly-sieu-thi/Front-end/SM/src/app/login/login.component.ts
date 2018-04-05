@@ -26,13 +26,13 @@ export class LoginComponent implements OnInit {
 
   Login() {
     // this.apiService.userInfo("James", "Le");
-    this.loadingService.startbtnloading();
+    this.loadingService.startbtnloading("hlloginloading", "loginloading");
     this.loginService.login(this.username, this.password).then(() => {
       this.router.navigate(['main']);
-      this.loadingService.stopbtnloading();
+      this.loadingService.stopbtnloading("loginloading");
       this.notifyService.success("Log in successfully!");
     }).catch(() => {
-      this.loadingService.stopbtnloading();
+      this.loadingService.stopbtnloading("loginloading");
       this.notifyService.error("Log in failure! Please again!");
     });
   };

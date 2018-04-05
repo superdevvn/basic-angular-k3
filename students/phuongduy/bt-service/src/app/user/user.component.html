@@ -4,10 +4,9 @@
           <div class="box-header">
             <div>
                 <h3 class="box-title" id="roleList">User </h3>
-                <button class="btn btn-success btn-md" (click)="newUser()">New User</button>
             </div>
               <div class="box-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
+                  <!-- <div class="input-group input-group-sm" style="width: 150px;">
                       <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
 
                       <div class="input-group-btn">
@@ -15,7 +14,8 @@
                               <i class="fa fa-search"></i>
                           </button>
                       </div>
-                  </div>
+                  </div> -->
+                  <button class="btn btn-success btn-md" (click)="newUser()">New User</button>
               </div>
           </div>
           <!-- /.box-header -->
@@ -37,13 +37,13 @@
                           <td>{{user.RoleId}}</td>
                           <td>{{user.RoleName}}</td>
                           <td>{{user.Username}}</td>
-                          <td>{{user.Password}}</td>
+                          <td>*****************</td>
                           <td class="text-center">
                               <button class="btn btn-info btn-xs" (click)="detail(user)">
                                   <i class="fa fa-pencil"></i>
                                   <span>Edit</span>
                               </button>
-                              <button class="btn btn-warning  btn-xs" (click)="delete(user)">
+                              <button class="btn btn-warning  btn-xs" (click)="delete(user.Id)">
                                   <i class="fa fa-trash-o"></i>
                                   <span>Delete</span>
                               </button>

@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RoleService } from '../role/role.service';
 import * as $ from 'jquery';
 import { NotifyService } from '../services/notify.service';
+import {Location} from '@angular/common';
 @Component({
     selector: 'app-user-detail',
     templateUrl: './user-detail.component.html'
@@ -17,7 +18,8 @@ export class UserDetailComponent implements OnInit {
         private userService: UserService,
         private router: Router,
         private roleService: RoleService,
-        private notifyService: NotifyService
+        private notifyService: NotifyService,
+        private location: Location
     ) { }
 
     ngOnInit() {
@@ -33,21 +35,21 @@ export class UserDetailComponent implements OnInit {
             }
         });
 
-        this.roleService.getRoleList().then(roles=>{
+        this.roleService.getRoles().then(roles=>{
             this.roles = roles;
-            console.log("lay roles thanh cong");
         }).catch(err=>{
-            console.log("lay roles that bai");
         })
     }
    
     save(){
         this.userService.saveUser(this.user).then(user=>{
-            this.notifyService.success("Saved");
-            this.router.navigate(['/main/user']);
+            this.notifyService.printEditSuccess();
+           this.location.back();
         }).catch(()=>{
-            this.notifyService.error("Save Error!");
+            this.notifyService.error("Có lỗi xảy ra!");
         });
     }
-
+    goBack(){
+        this.location.back();
+    }
 }

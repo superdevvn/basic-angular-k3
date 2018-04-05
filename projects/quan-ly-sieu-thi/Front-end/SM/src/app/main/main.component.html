@@ -215,7 +215,7 @@
         <ul class="list-unstyled">
           <li class="divider"></li>
           <li>
-            <a role="menuitem" tabindex="-1" href="pages-user-profile.html">
+            <a role="menuitem" tabindex="-1" [routerLink]="['/main/profile']">
               <i class="fa fa-user"></i> My Profile</a>
           </li>
           <li>
@@ -315,6 +315,11 @@
                     Warehouse
                   </a>
                 </li>
+                <li>
+                  <a [routerLink]="['/main/inout-list']">
+                    In-Out
+                  </a>
+                </li>
               </ul>
             </li>
           </ul>
@@ -332,7 +337,7 @@
       <div class="right-wrapper pull-right">
         <ol class="breadcrumbs">
           <li>
-            <a [routerLink]="['main']">
+            <a [routerLink]="['/main']">
               <i class="fa fa-home"></i>
             </a>
           </li>

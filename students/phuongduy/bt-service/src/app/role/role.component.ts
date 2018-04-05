@@ -3,6 +3,7 @@ import { RoleService } from './role.service';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
 import { LoadingService } from '../services/loading.service';
+import { NotifyService } from '../services/notify.service';
 @Component({
   selector: 'app-role',
   templateUrl: './role.component.html',
@@ -14,12 +15,13 @@ export class RoleComponent implements OnInit {
   constructor(
     private roleService: RoleService,
     private router: Router,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private notifyService: NotifyService
   ) { }
 
   ngOnInit() {
     this.loadingService.start();
-    this.roleService.getRoleList().then((roles: any[]) => {
+    this.roleService.getRoles().then((roles: any[]) => {
       this.roles = roles;
     }).then(()=>{
       this.loadingService.stop();
@@ -34,11 +36,15 @@ export class RoleComponent implements OnInit {
     this.router.navigate(['main/role-detail', 0]);
   }
 
-  delete(roleId) {
-    this.roleService.deleteRole(roleId).then(() => {
-      this.roleService.getRoleList().then((roles: any[]) => {
-        this.roles = roles;
+  delete(id: number) {
+    this.notifyService.confirm("Bạn có muốn xóa không?").then(()=>{
+      this.roleService.deleteRole(id).then(() => {
+        this.roleService.getRoles().then((roles: any[]) => {
+          this.roles = roles;
+        });
       });
+      this.notifyService.printDeleteSuccess();
+    }).catch(()=>{
     });
   }
 }

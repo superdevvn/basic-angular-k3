@@ -12,7 +12,6 @@ export class OrderService {
       return new Promise((resolve, reject)=>{
           this.apiService.post("api/getOrders", {}).then(orders =>{
               resolve(orders);
-              console.log(orders)
           }).catch(err=>{
               reject(err);
           })
@@ -29,7 +28,7 @@ export class OrderService {
   }
   save(order: any){
       return new Promise((resolve, reject)=>{
-          this.apiService.post("api/saveManufacturer", order).then(res=>{
+          this.apiService.post("api/saveOrder", order).then(res=>{
               resolve(res);
           }).catch(err=>{
               reject(err);

@@ -35,7 +35,6 @@ export class MainComponent implements OnInit {
   }
   signOut(){
     this.cookieService.deleteAll();
-    alert(this.cookieService.get("cookie"));
     this.router.navigate(['login']);
   }
 }

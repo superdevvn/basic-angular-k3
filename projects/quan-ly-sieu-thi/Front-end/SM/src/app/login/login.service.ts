@@ -34,7 +34,7 @@ export class LoginService {
                 reject(err);
             });
         });
-    }
+    };
 
     getAuthorize() {
         return new Promise((resolve, reject) => {

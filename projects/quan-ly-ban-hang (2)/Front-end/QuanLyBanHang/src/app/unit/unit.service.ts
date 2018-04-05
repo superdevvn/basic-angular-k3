@@ -41,18 +41,18 @@ export class UnitService {
     })
 }
 
-deleteUnit(id){
-    debugger
-    return new Promise((resolve, reject) => {
-        this.apiService.delete(`api/deleteUnit?id=${+id}`).then(res => {
-          resolve(res);
-          debugger
-          alert("1");
-        }).catch(err => {
+    deleteUnit(id){
+        debugger
+        return new Promise((resolve, reject) => {
+            this.apiService.delete(`api/deleteUnit?id=${+id}`).then(res => {
+            resolve(res);
             debugger
-          reject(err);
-          alert("12");
+            alert("1");
+            }).catch(err => {
+                debugger
+            reject(err);
+            alert("12");
+            });
         });
-      });
-  }
+    }
 }

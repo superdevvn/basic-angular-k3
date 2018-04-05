@@ -3,6 +3,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { UnitService } from './unit.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { NotifyService } from '../services/notify.service';
 @Component({
   selector: 'app-unit-detail',
   templateUrl: './unit-detail.component.html'
@@ -14,7 +15,8 @@ export class UnitDetailComponent implements OnInit {
     private cookieService: CookieService,
     private unitService: UnitService,
     private activatedRoute : ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private notifyService: NotifyService
   ) { }
 
   ngOnInit() {
@@ -32,7 +34,7 @@ export class UnitDetailComponent implements OnInit {
   
   save(){
     this.unitService.save(this.unit).then(res=>{
-        alert("Luu thanh cong");
+        this.notifyService.printEditSuccess();
         this.location.back();
     })
   }

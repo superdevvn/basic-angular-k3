@@ -37,7 +37,7 @@ export class ManufacturerService {
       })
   }
 
-  delete(id){
+  deleteManufacturer(id){
     return new Promise((resolve, reject) => {
         this.apiService.delete(`api/deleteManufacturer?id=${id}`).then(res => {
           resolve(res);

@@ -3,6 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import {Location} from '@angular/common';
 import { OrderService } from './order.service';
+import { ProductService } from '../product/product.service';
+import { CustomerService } from '../customer/customer.service';
+import { NotifyService } from '../services/notify.service';
 @Component({
   selector: 'app-order-detail',
   templateUrl: './order-detail.component.html',
@@ -12,11 +15,17 @@ export class OrderDetailComponent implements OnInit {
     order: any = {};
     routerSubscription: any;
     title: string;
+    customers: any[];
+    products: any[];
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private orderService: OrderService,
     private router: Router,
-    private location: Location
+    private location: Location,
+    private productService: ProductService,
+    private customerService: CustomerService,
+    private notifyService: NotifyService
   ) { }
 
   ngOnInit() {
@@ -29,11 +38,20 @@ export class OrderDetailComponent implements OnInit {
                 alert(err);
             });
         }
-    })
+    });
+
+    this.customerService.getCustomers().then((customers:any[])=>{
+        this.customers = customers;
+    }).catch(()=>{
+    });
+    this.productService.getProducts().then((products:any[])=>{
+        this.products = products;
+    }).catch(()=>{
+    });     
   }
-  save(){
+  save(order){
     this.orderService.save(this.order).then(res=>{
-        alert("Luu thanh cong");
+       this.notifyService.printEditSuccess();
         this.location.back();
     })
   }

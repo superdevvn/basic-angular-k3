@@ -1,0 +1,75 @@
+<div class="panel panel-info" style="padding: 0;">
+  <div class="panel-heading">
+    <div>
+      <h3>My Profile</h3>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-12 text-center">
+      <div class="col-md-6">
+        <div class="hl-id">
+          <div class="col-md-12 text-left">
+            <strong class="text-muted">ID:</strong>
+          </div>
+          <div class="col-md-12">
+            <input class="form-control" readonly type="text" placeholder="ID" [(ngModel)]="profile.Id">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="col-md-12 text-left" style="padding: 0">
+            <strong class="text-muted">First Name:</strong>
+          </div>
+          <div class="col-md-12" style="padding: 0">
+            <input class="form-control" type="text" placeholder="First Name" [(ngModel)]="profile.FirstName">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="col-md-12 text-left" style="padding: 0">
+            <strong class="text-muted">Last Name:</strong>
+          </div>
+          <div class="col-md-12" style="padding: 0">
+            <input class="form-control" type="text" placeholder="Last Name" [(ngModel)]="profile.LastName">
+          </div>
+        </div>
+        <div class="col-md-12 text-left">
+          <strong class="text-muted">Description:</strong>
+        </div>
+        <div class="col-md-12">
+          <textarea class="form-control" rows="4" placeholder="Description" [(ngModel)]="profile.Description"></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="col-md-12 text-left">
+          <strong class="text-muted">Username:</strong>
+        </div>
+        <div class="col-md-12">
+          <input class="form-control" readonly type="text" placeholder="Username" [(ngModel)]="profile.Username">
+        </div>
+        <div class="col-md-12 text-left">
+          <strong class="text-muted">Current Password:</strong>
+        </div>
+        <div class="col-md-12">
+          <input class="form-control" type="password" placeholder="Current Password" [(ngModel)]="oldPassword">
+        </div>
+        <div class="col-md-12 text-left">
+          <strong class="text-muted">New Password:</strong>
+        </div>
+        <div class="col-md-12">
+          <input class="form-control" type="password" placeholder="New Password" [(ngModel)]="newPassword">
+        </div>
+        <div class="col-md-12 text-left">
+          <strong class="text-muted">Confirm New Password:</strong>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group" [ngClass]="{'has-error': newPassword != confirmNewPassword}">
+            <input class="form-control" type="password" placeholder="Confirm New Password" [(ngModel)]="confirmNewPassword">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer text-right">
+    <a class="btn btn-default" (click)="cancel();">Cancel</a>
+    <button class="btn btn-primary" (click)="save()">Save</button>
+  </div>
+</div>

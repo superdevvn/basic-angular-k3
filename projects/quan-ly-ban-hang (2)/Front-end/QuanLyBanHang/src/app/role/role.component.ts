@@ -36,6 +36,7 @@ export class RoleComponent implements OnInit {
     this.router.navigate(['main/role-detail', 0]);
   }
 
+<<<<<<< HEAD
   delete(id: number) {
     this.notifyService.confirm("Bạn có muốn xóa không?").then(()=>{
       this.roleService.deleteRole(id).then(() => {
@@ -46,5 +47,22 @@ export class RoleComponent implements OnInit {
       this.notifyService.printDeleteSuccess();
     }).catch(()=>{
     });
+=======
+  delete(role) {
+    // this.notifyService.confirm("Delete", "Are you sure want to delete this role?").then(res=>{
+    //   this.roleService.deleteRole(role.Id).then(()=>{
+    //     this.notifyService.success("Delete successful");
+    //     this.roleService.getRoleList().then((roles:any[])=>{
+    //       this.roles = roles;
+    //     }).catch(err=>{
+    //       this.notifyService.error("Reload fail!");
+    //     });
+    //   }).catch(err=>{
+    //     this.notifyService.error("err.massage");
+    //   })
+    // }).catch(err=>{
+    //   this.notifyService.error("Delete fail!");
+    // });
+>>>>>>> d5c891c60fca61f77385c4f78ea06d6599fad69a
   }
 }

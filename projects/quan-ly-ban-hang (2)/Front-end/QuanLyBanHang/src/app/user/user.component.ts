@@ -33,6 +33,7 @@ export class UserComponent implements OnInit {
     this.router.navigate(['main/user-detail', 0]);
   }
 
+<<<<<<< HEAD
   delete(id: number) {
     this.notifyService.confirm("Bạn có muốn xóa không?").then(()=>{
       this.userService.deleteUser(id).then(() => {
@@ -44,4 +45,9 @@ export class UserComponent implements OnInit {
     }).catch(()=>{
     });
   }
+=======
+  // deleteUser(user){
+
+  // }
+>>>>>>> d5c891c60fca61f77385c4f78ea06d6599fad69a
 }

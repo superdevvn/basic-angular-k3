@@ -1,80 +1,71 @@
-<div class="row">
-    <div class="col-xs-12">
-        <div class="box">
-            <div class="box-header">
-                <div>
-                    <h3 class="box-title">Product Detail </h3>
+<div class="box box-default">
+    <div class="box-header with-border">
+      <h3 class="box-title">Prudct ID: {{product.Id}}</h3>
 
-                </div>
-                <!-- <div class="box-tools">
-                        <div class="input-group input-group-sm" style="width: 150px;">
-                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-    
-                            <div class="input-group-btn">
-                                <button type="submit" class="btn btn-default">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div> -->
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-                <table class="table table-hover">
-                    <tbody>
-                        <tr>
-                            <th>ID</th>
-                            <th>ManufacturerId</th>
-                            <th>CategoryId</th>
-                            <th>UnitId</th>
-                            <th>Code</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Description</th>
-                            <th>Action</th>
-                        </tr>
-
-                        <tr>
-                            <td>{{product.Id}}</td>
-                            <td>
-                                <input [(ngModel)]="product.ManufacturerId" class="form-control">
-                            </td>
-                            <td>
-                                <input [(ngModel)]="product.CategoryId" class="form-control">
-                            </td>
-                            <td>
-                                <input [(ngModel)]="product.UnitId" class="form-control">
-                            </td>
-                            <td>
-                                <input [(ngModel)]="product.Code" class="form-control">
-                            </td>
-                            <td>
-                                <input [(ngModel)]="product.Name" class="form-control">
-                            </td>
-                            <td>
-                                <input [(ngModel)]="product.Price" class="form-control">
-                            </td>
-                            <td>
-                                <input [(ngModel)]="product.Description" class="form-control">
-                            </td>
-                        
-                            <td class="text-center">
-                                <button class="btn btn-info btn-md" (click)="save(product)">
-                                    <i class="fa fa-pencil"></i>
-                                    <span>Save</span>
-                                </button>
-                                <button class="btn btn-warning  btn-md" (click)="goBack()">
-                                    <i class="fa fa-trash-o"></i>
-                                    <span>Back</span>
-                                </button>
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <!-- /.box-body -->
-        </div>
-        <!-- /.box -->
+      <div class="box-tools pull-right">
+        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button> -->
+      </div>
     </div>
-</div>
+    <!-- /.box-header -->
+    <div class="box-body" style="display: block;">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Manufacturer</label>
+            <select class="form-control" [(ngModel)]="product.ManufacturerId">
+                <option *ngFor="let manufacturer of manufacturers" [ngValue]="manufacturer.Id">{{manufacturer.Name}}</option>
+            </select>
+          </div>
+          <!-- /.form-group -->
+          <div class="form-group">
+            <label>Category</label>
+            <select class="form-control" [(ngModel)]="product.CategoryId">
+                <option *ngFor="let category of categories" [ngValue]="category.Id">{{category.Name}}</option>
+            </select>
+          </div>
+          <!-- /.form-group -->
+          <div>
+              <label>Unit</label>
+              <select class="form-control" [(ngModel)]="product.UnitId">
+                <option *ngFor="let unit of units" [ngValue]="unit.Id">{{unit.Name}}</option>
+            </select>
+          </div>
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-5 col-md-offset-1">
+          <div class="form-group">
+            <label>Product Code</label>
+           <input type="text" [(ngModel)]="product.Code" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Product Name</label>
+           <input type="text" [(ngModel)]="product.Name" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Product Price</label>
+           <input type="text" [(ngModel)]="product.Price" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Product Description</label>
+           <input type="text" [(ngModel)]="product.Description" class="form-control">
+          </div>
+          <!-- /.form-group -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <div>
+        <button class="btn btn-info btn-md" (click)="save(product)">
+            <i class="fa fa-pencil"></i>
+            <span>Save</span>
+        </button>
+        <button class="btn btn-warning  btn-md pull-right" (click)="goBack()">
+            <i class="fa fa-arrow-left"></i>
+            <span>Back</span>
+        </button>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.box-body -->
+  </div>

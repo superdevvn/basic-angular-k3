@@ -8,7 +8,7 @@ export class RoleService {
       private apiService : ApiService
   ) { }
   
-  getRoleList(){
+  getRoles(){
       return new Promise((resolve, reject)=>{
           this.apiService.post("api/getRoles", {}).then(roles =>{
               resolve(roles);
@@ -17,7 +17,7 @@ export class RoleService {
           })
       })
   }
-  getRoleDetail(id: number){
+  getRole(id: number){
     return new Promise((resolve, reject)=>{
         this.apiService.get(`api/getRole/${id}`).then(role =>{
             resolve(role);
@@ -36,13 +36,16 @@ export class RoleService {
       })
   }
 
-  deleteRole(id){
+  deleteRole(id) {
     return new Promise((resolve, reject) => {
-        this.apiService.delete(`api/deleteRole?id=${id}`).then(res => {
-          resolve(res);
-        }).catch(err => {
-          reject(err);
-        });
-      });
-  }
+        this.apiService.delete(`api/deleteRole?id=${id}`)
+            .then(res => {
+                resolve(res)
+            })
+            .catch(err => {
+               reject(err);
+            })
+    });
+}
+
 }

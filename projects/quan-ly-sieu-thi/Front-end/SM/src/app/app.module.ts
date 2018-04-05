@@ -35,6 +35,10 @@ import { ProductDetailComponent } from './product/product-detail.component';
 import { ProductService } from './product/product.service';
 import { CateDetailComponent } from './category/cate-detail.component';
 import { CategoryService } from './category/category.service';
+import { InoutService } from './in-out/inout.service';
+import { InoutDetailComponent } from './in-out/inout-detail.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ProfileService } from './profile/profile.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -53,7 +57,10 @@ const routes: Routes = [
       { path: 'wh-list', component: WarehouseComponent },
       { path: 'wh-detail/:id', component: WarehouseDetailComponent },
       { path: 'unit-list', component: UnitComponent },
-      { path: 'unit-detail/:id', component: UnitDetailComponent }
+      { path: 'unit-detail/:id', component: UnitDetailComponent },
+      { path: 'inout-list', component: InOutComponent },
+      { path: 'inout-detail/:id', component: InoutDetailComponent },
+      { path: 'profile', component: ProfileComponent }
     ]
   },
   { path: 'login', component: LoginComponent, pathMatch: 'full' }
@@ -78,7 +85,9 @@ const routes: Routes = [
     WarehouseDetailComponent,
     UnitDetailComponent,
     ProductDetailComponent,
-    CateDetailComponent
+    CateDetailComponent,
+    InoutDetailComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -87,19 +96,21 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   providers: [
-    CookieService, 
-    ApiService, 
+    CookieService,
+    ApiService,
     NotifyService,
-    LoadingService, 
-    LoginService, 
+    LoadingService,
+    LoginService,
     UserService,
-    MainService, 
-    RoleService, 
+    MainService,
+    RoleService,
     ManufacturerService,
-    WarehouseService, 
-    UnitService, 
+    WarehouseService,
+    UnitService,
     ProductService,
-    CategoryService],
+    CategoryService,
+    InoutService,
+    ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
