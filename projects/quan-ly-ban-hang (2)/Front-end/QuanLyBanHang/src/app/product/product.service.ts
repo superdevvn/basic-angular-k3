@@ -29,9 +29,9 @@ export class ProductService {
             })
         })
     }
-    save(order: any) {
+    save(product: any) {
         return new Promise((resolve, reject) => {
-            this.apiService.post("api/saveProduct", order).then(res => {
+            this.apiService.post("api/saveProduct", product).then(res => {
                 resolve(res);
             }).catch(err => {
                 reject(err);
@@ -39,7 +39,7 @@ export class ProductService {
         })
     }
 
-    delete(id) {
+    deleteProduct(id) {
         return new Promise((resolve, reject) => {
             this.apiService.delete(`api/deleteProduct?id=${id}`).then(res => {
                 resolve(res);

@@ -3,6 +3,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { ManufacturerService } from './manufacturer.service';
 import { Router } from '@angular/router';
 import { LoadingService } from '../services/loading.service';
+import { NotifyService } from '../services/notify.service';
 
 @Component({
   selector: 'app-manufacturer',
@@ -15,7 +16,8 @@ export class ManufacturerComponent implements OnInit {
     private cookieService: CookieService,
     private manufacturerService: ManufacturerService,
     private router: Router,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private notifyService: NotifyService
   ) { }
 
   ngOnInit() {
@@ -31,5 +33,17 @@ export class ManufacturerComponent implements OnInit {
   }
   detail(manufacturer){
     this.router.navigate(['main/manufacturer-detail', manufacturer.Id]);
+  }
+
+  delete(id: number) {
+    this.notifyService.confirm("Bạn có muốn xóa không?").then(()=>{
+      this.manufacturerService.deleteManufacturer(id).then(() => {
+        this.manufacturerService.getManufacturers().then((manufacturers: any[]) => {
+          this.manufacturers = manufacturers;
+        });
+      });
+      this.notifyService.printDeleteSuccess();
+    }).catch(()=>{
+    });
   }
 }

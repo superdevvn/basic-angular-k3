@@ -40,7 +40,7 @@ export class CustomerService {
     })
 }
 
-delete(id){
+deleteCustomer(id){
     return new Promise((resolve, reject) => {
         this.apiService.delete(`api/deleteCustomer?id=${+id}`).then(res => {
           resolve(res);

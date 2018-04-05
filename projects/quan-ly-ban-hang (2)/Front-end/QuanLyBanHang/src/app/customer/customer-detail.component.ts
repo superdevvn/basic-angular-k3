@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from './customer.service';
 import {Location} from '@angular/common';
+import { NotifyService } from '../services/notify.service';
 @Component({
   selector: 'app-customer',
   templateUrl: './customer-detail.component.html',
@@ -15,7 +16,8 @@ export class CustomerDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private customerService: CustomerService,
     private router: Router,
-    private location: Location
+    private location: Location,
+    private notifyService: NotifyService
   ) { }
 
   ngOnInit() {
@@ -32,7 +34,7 @@ export class CustomerDetailComponent implements OnInit {
   }
   save(){
     this.customerService.save(this.customer).then(res=>{
-        alert("Luu thanh cong");
+        this.notifyService.printEditSuccess();
         this.location.back();
     })
   }

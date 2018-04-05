@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from './user.service';
 import { Router } from '@angular/router';
+import { LoadingService } from '../services/loading.service';
+import { NotifyService } from '../services/notify.service';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -10,12 +12,16 @@ export class UserComponent implements OnInit {
   users: any[];
   constructor(
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private loadingService: LoadingService,
+    private notifyService: NotifyService
   ) { }
 
   ngOnInit() {
+    this.loadingService.start();
     this.userService.getUser().then((users: any[])=>{
       this.users = users;
+      this.loadingService.stop();
     })
   }
 
@@ -25,5 +31,17 @@ export class UserComponent implements OnInit {
   }
   newUser() {
     this.router.navigate(['main/user-detail', 0]);
+  }
+
+  delete(id: number) {
+    this.notifyService.confirm("Bạn có muốn xóa không?").then(()=>{
+      this.userService.deleteUser(id).then(() => {
+        this.userService.getUser().then((users: any[]) => {
+          this.users = users;
+        });
+      });
+      this.notifyService.printDeleteSuccess();
+    }).catch(()=>{
+    });
   }
 }

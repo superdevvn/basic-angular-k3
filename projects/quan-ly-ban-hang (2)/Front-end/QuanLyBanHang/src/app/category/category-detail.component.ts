@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from './category.service';
 import {Location} from '@angular/common';
+import { NotifyService } from '../services/notify.service';
 @Component({
   selector: 'app-category-detail',
   templateUrl: './category-detail.component.html',
@@ -15,7 +16,8 @@ export class CategoryDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private categoryService: CategoryService,
     private router: Router,
-    private location: Location
+    private location: Location,
+    private notifyService: NotifyService
   ) { }
 
   ngOnInit() {
@@ -32,7 +34,7 @@ export class CategoryDetailComponent implements OnInit {
   }
   save(){
     this.categoryService.save(this.category).then(res=>{
-        alert("Luu thanh cong");
+        this.notifyService.printEditSuccess();
         this.location.back();
     })
   }

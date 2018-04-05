@@ -17,7 +17,14 @@ export class LoadingService {
     background-image: url(../assets/loading.gif);
     background-position: center;
     background-repeat: no-repeat;"
-    ></any>`)
+    ></any>
+    <div class="col-md-12 text-center" style="top: 65%"> 
+    <button id="huy" class="btn btn-danger">Hủy</button> 
+</div>
+    `)
+    $('#huy').click(function(){
+      $('#globalloading').remove();
+    })
   }
   stop(){
     $('#globalloading').remove();
