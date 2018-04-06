@@ -22,7 +22,7 @@ export class MainComponent implements OnInit {
     private loadingService: LoadingService,
     private userService: UserService,
     private loginService: LoginService
-  ) { 
+  ) {
   }
 
   ngOnInit() {

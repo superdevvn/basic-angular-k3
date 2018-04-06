@@ -25,6 +25,7 @@
     "core-js": "^2.4.1",
     "jquery": "^3.3.1",
     "ngx-cookie-service": "^1.0.10",
+    "npm-cli": "^0.1.0",
     "rxjs": "^5.5.6",
     "sweetalert2": "^7.18.0",
     "zone.js": "^0.8.19"
