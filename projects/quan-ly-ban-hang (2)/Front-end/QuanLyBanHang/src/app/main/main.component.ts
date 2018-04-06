@@ -4,19 +4,24 @@ import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Location } from '@angular/common';
 import { LoadingService } from '../services/loading.service';
+import { UserService } from '../user/user.service';
+import { LoginService } from '../login/login.service';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-
+  username: any
   constructor(
     private apiService: ApiService,
     private router: Router,
     private cookieService: CookieService,
     private location: Location,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private userService: UserService,
+    private loginService: LoginService
   ) { 
   }
 
@@ -30,6 +35,12 @@ export class MainComponent implements OnInit {
           this.location.back();
         }
       }).then(()=>{
+        this.loginService.getAuthorize().then(username =>{
+          this.username = username;
+          console.log("username: ", this.username);
+        }).catch(err=>{
+          this.router.navigate(['main/login']);
+        })
         this.loadingService.stop();
       })
   }
@@ -37,4 +48,5 @@ export class MainComponent implements OnInit {
     this.cookieService.deleteAll();
     this.router.navigate(['login']);
   }
+
 }
