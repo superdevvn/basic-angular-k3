@@ -39,11 +39,13 @@ import { InoutService } from './in-out/inout.service';
 import { InoutDetailComponent } from './in-out/inout-detail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileService } from './profile/profile.service';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
   {
     path: 'main', component: MainComponent, children: [
+      { path: '', component: HomeComponent },
       { path: 'user-list', component: ListuserComponent },
       { path: 'user-detail/:id', component: UserdetailComponent },
       { path: 'role-list', component: RoleComponent },
@@ -87,7 +89,8 @@ const routes: Routes = [
     ProductDetailComponent,
     CateDetailComponent,
     InoutDetailComponent,
-    ProfileComponent
+    ProfileComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

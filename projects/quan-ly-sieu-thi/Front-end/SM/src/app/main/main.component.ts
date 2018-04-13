@@ -94,9 +94,9 @@ export class MainComponent implements OnInit, AfterViewInit {
     });
   }
 
-  unlock(){
-    this.loginService.unlock(this.author.Username, this.password).then(res=>{
-      
+  unlock() {
+    this.loginService.unlock(this.author.Username, this.password).then(res => {
+
     })
   }
 

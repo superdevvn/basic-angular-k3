@@ -18,7 +18,7 @@ export class ProfileService {
 
   changePassword(oldPassword: string, newPassword: string) {
     return new Promise((resolve, reject) => {
-      this.apiService.post('api/changePassword/', {
+      this.apiService.post("api/changePassword/", {
         oldPassword: oldPassword,
         newPassword: newPassword
       }).then(res => {

@@ -52,13 +52,9 @@ export class ProfileComponent implements OnInit {
           this.notifyService.error("The confirm password does not match!");
           this.reset();
         } else if (this.newPassword == this.confirmNewPassword) {
-          debugger
-          this.profileService.changePassword(this.oldPassword, this.newPassword).then(() => {
-            debugger
+          this.profileService.changePassword(this.oldPassword, this.newPassword).then(res => {
             this.notifyService.success("Change successful!");
           }).catch(err => {
-            debugger
-            console.log(err);
             this.notifyService.error("The current password does not match!");
             this.reset();
           });

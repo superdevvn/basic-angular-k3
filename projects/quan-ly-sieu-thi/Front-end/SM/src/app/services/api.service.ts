@@ -34,7 +34,8 @@ export class ApiService {
         headers.append("Auth-SuperDev", this.token);
         return new Promise((resolve, reject) => {
             this.http.post(this.host + url, body, { headers: headers }).toPromise().then((res) => {
-                resolve(res.json());
+                if (res.text()) resolve(res.json());
+                else resolve();
             }).catch((err) => {
                 reject(err);
             });
